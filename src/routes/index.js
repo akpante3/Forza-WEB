@@ -1,5 +1,6 @@
 import React from "react";
 import Home from '../components/home/Home'
+import About from '../pages/about/About'
 import {
   Switch,
   Route,
@@ -13,6 +14,7 @@ import {
 const Routes = () => ( 
   <Switch>
       {/* <Route path='/' component={page} />  */}
+      <Route name="home" path='/about' component={About} />
       <Route name="home" path='/' component={Home} />
   </Switch>
 );

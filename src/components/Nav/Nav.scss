@@ -6,7 +6,12 @@
     top: 0px;
     padding: 30px 70px;
     box-sizing: border-box;
-    z-index: 3;
+    &__close {
+        animation: close-icon 0.7s forwards;
+    }
+    &__open {
+        animation: open-icon  0.7s forwards;    
+    }
     &__logo {
         svg {
             width: 120px;
@@ -19,4 +24,22 @@
             height: 50px;
         }
     }
+}
+
+@keyframes close-icon {
+    from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+}
+
+@keyframes open-icon {
+    from {
+        transform: rotate(360deg);
+      }
+      to {
+        transform: rotate(0deg);
+      }
 }
