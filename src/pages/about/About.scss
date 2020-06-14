@@ -1,0 +1,12 @@
+.about {
+    width: 100%;
+    &__item {
+        padding-top: 160px;      
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__header {
+        border-top: 2px solid #4A4A47;
+        border-bottom: 2px solid #4A4A47;
+    }
+}
