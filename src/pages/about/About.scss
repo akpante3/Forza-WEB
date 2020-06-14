@@ -1,12 +1,77 @@
-.about {
+.who-we-are {
+    font-family: 'Nexa Light';
     width: 100%;
-    &__item {
-        padding-top: 160px;      
+    color: #4A4A47;
+    justify-content: flex-end;
+    display: flex;
+    height: 100vh;
+    &__item-container {     
         display: flex;
-        justify-content: flex-end;
+        padding-top: 10%;
+        margin-right: 70px;
+        width: 76%;
+        max-width: 1200px;
+    }
+    &__item {
+        // width: 700px;
+        p {
+            font-size: 20px;
+            line-height: 34px;
+        }
+    }
+    &__video {
+        margin-right: 5%;
     }
     &__header {
+        font-family: 'Nexa Bold';
         border-top: 2px solid #4A4A47;
         border-bottom: 2px solid #4A4A47;
+        font-size: 70px;
+        padding: 15px 0px; 
     }
+
+}
+
+// philosophy
+.philosophy {
+    font-family: 'Nexa Light';
+    width: 100%;
+    height: 100vh;
+    background-color: #333232;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+     &__text{
+        max-width: 550px;
+        color: #FFFFFF;
+        position: absolute;
+        bottom: 24%;
+        left: 70px;
+        &__header {
+            font-family: 'Nexa Bold';
+            border-top: 2px solid #FFFFFF;
+            border-bottom: 2px solid #FFFFFF;
+            font-size: 80px;
+            width: 90%;
+            padding: 10px 0px; 
+        }
+        &__body {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+     &__forza-fuse {
+        position: absolute;
+        right: 9%;
+        top: -3%;
+        width: 600px;
+     }
+}
+
+// Thinking
+.thinking {
+    font-family: 'Nexa Light';
+    width: 100%;
+    height: 100vh;
 }

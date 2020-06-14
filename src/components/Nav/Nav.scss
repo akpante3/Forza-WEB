@@ -1,11 +1,11 @@
 .nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
     width: 100%;
     top: 0px;
     padding: 30px 70px;
     box-sizing: border-box;
+    margin: 0 auto;
     &__close {
         animation: close-icon 0.7s forwards;
     }
