@@ -11,9 +11,11 @@
         margin-right: 70px;
         width: 76%;
         max-width: 1200px;
+        justify-content: flex-end;
     }
     &__item {
-        // width: 700px;
+        max-width: 570px;
+        float: right;
         p {
             font-size: 20px;
             line-height: 34px;
@@ -42,7 +44,7 @@
     justify-content: space-between;
     overflow: hidden;
     position: relative;
-     &__text{
+     &__text {
         max-width: 550px;
         color: #FFFFFF;
         position: absolute;
@@ -57,8 +59,8 @@
             padding: 10px 0px; 
         }
         &__body {
-            font-size: 20px;
-            line-height: 30px;
+            font-size: 23px;
+            line-height: 32px;
         }
     }
      &__forza-fuse {
@@ -74,4 +76,77 @@
     font-family: 'Nexa Light';
     width: 100%;
     height: 100vh;
+    position: relative;
+    color: #4A4A47;
+    &__text {
+        position:  absolute;
+        max-width: 470px;
+        right: 70px;
+        bottom: 20%;
+        &__header {
+            font-family: 'Nexa Bold';
+            border-top: 2px solid #4A4A47;
+            border-bottom: 2px solid #4A4A47;
+            font-size: 80px;
+            width: 90%;
+            padding: 10px 0px; 
+        }
+        &__body {
+            margin-top: 50px;
+            font-size: 23px;
+            line-height: 32px;
+        }
+    }
+    &__cloud {
+        position:  absolute;
+        left: 5%;
+        top: 18%;
+    }
+    &__cloud-image {
+        position:  absolute;
+        left: 10%;
+        bottom: 12%;
+        width: 550px;
+
+    }
+}
+
+.workflow {
+    font-family: 'Nexa Light';
+    width: 100%;
+    height: 100vh;
+    background-color: #333232;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    &__list {
+        position: absolute;
+        bottom: 15%;
+        right: 70px;
+        max-width: 610px;
+        &__item {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &__text{
+        max-width: 600px;
+        color: #FFFFFF;
+        position: absolute;
+        bottom: 15%;
+        left: 70px;
+        &__header {
+            font-family: 'Nexa Bold';
+            border-top: 2px solid #FFFFFF;
+            border-bottom: 2px solid #FFFFFF;
+            font-size: 80px;
+            width: 90%;
+            padding: 10px 0px; 
+        }
+        &__body {
+            font-size: 23px;
+            line-height: 32px;
+            width: 550px;
+        }
+    }
 }

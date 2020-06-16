@@ -9,14 +9,61 @@ html, body {
 }
 .main-container {
   position: relative;
-  max-width: 1800px;
+  max-width: 1600px;
   margin: 0 auto;
   &__nav {
     position: fixed;
     width: 100%;
-    max-width: 1800px;
+    max-width: 1600px;
     z-index: 1500;
   }
+}
+
+.list {
+  &--white {
+      color: white;
+  }
+  &__header {
+      font-size: 30px;
+      color: white;
+      font-weight: 700;
+  }
+  &__body {
+      font-size: 23px;
+      line-height: 32px;
+      max-width: 550px;
+  }
+  &__number {
+      font-family: 'Nexa Bold';
+      border-right: 2px solid #FF5F4B;
+      font-weight: 500;
+      color: white;
+      font-size: 80px;
+      width: 70px;
+      height: 100px;
+      overflow: hidden;
+      position: relative;
+      margin-right: 20px;
+      // span {
+      //     position: absolute;
+      //     top: 15%;
+      // }
+      &__figures {
+          position: absolute;
+          top: 15%;
+          color: #FF5F4B;
+          &--one {
+              right: -13px;
+          }
+          &--two {
+              right: -22px;
+          }
+          &--three {
+              right: -22px;
+          }
+      }
+  }
+
 }
 
 @keyframes App-logo-spin {
