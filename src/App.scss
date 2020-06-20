@@ -3,6 +3,7 @@
 html, body {
   padding: 0px;
   margin: 0px;
+  color: #4A4A47;
 }
 * {
   box-sizing: border-box;
@@ -38,7 +39,7 @@ html, body {
       border-right: 2px solid #FF5F4B;
       font-weight: 500;
       color: white;
-      font-size: 80px;
+      font-size: 90px;
       width: 70px;
       height: 100px;
       overflow: hidden;
@@ -52,14 +53,23 @@ html, body {
           position: absolute;
           top: 15%;
           color: #FF5F4B;
+          &--animate-out {
+            animation: numberout 1s ease forwards;             
+          }
+          &--animate-in {
+            animation: numberin 1s ease forwards;  
+          }
           &--one {
               right: -13px;
           }
           &--two {
-              right: -22px;
+              right: -25px;
           }
           &--three {
               right: -22px;
+          }
+          &--four {
+            right: -15px;
           }
       }
   }
@@ -73,4 +83,18 @@ html, body {
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes numberout {
+  0%{ 
+    transform: translateX(0px)
+  }
+  100%{      transform: translateX(300px)}
+}
+
+@keyframes numberin {
+  0%{ 
+      transform: translateX(300px)
+  }
+  100%{transform: translateX(0px)}
 }

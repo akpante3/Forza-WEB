@@ -4,6 +4,7 @@ import BrandIdentityDev from '../../components/whatwedo/BrandIdentityDev';
 import DesginAndCreative from '../../components/whatwedo/DesignAndCreative';
 import Communication from '../../components/whatwedo/Communication';
 import MarketStrategy from '../../components/whatwedo/MarketStrategy';
+import Footer from '../../components/footer/footer'
 import {
   Link
 } from "react-router-dom";
@@ -18,6 +19,7 @@ const WhatWeDo = (props) => {
         <DesginAndCreative />
         <Communication />
         <MarketStrategy />
+        <Footer bg='white' previous="Our team" next="Our Works" />
       </div>
   );
 }
