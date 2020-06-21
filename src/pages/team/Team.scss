@@ -1,8 +1,89 @@
 .team {
     &__founders {
         width: 100%;
-        padding: 200px 50px 50px 50px;
-        height: 700px;
+        padding: 150px 70px 70px 70px;
+        height: 100vh;
         background-color: #333232;
+    }
+}
+
+.founders {
+    &__text {
+        max-width: 100%;
+        color: #FFFFFF;
+        display: flex;
+        margin-left: 50px;
+        &__header {
+            font-family: 'Nexa Bold';
+            border-top: 2px solid #FFFFFF;
+            border-bottom: 2px solid #FFFFFF;
+            font-size: 65px;
+            width: 300px;
+            padding: 10px 0px; 
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        &__body {
+            font-size: 20px;
+            line-height: 32px;
+            max-width: 400px;
+            font-family: "Nexa Light";
+            margin-left: 40px;
+        }
+        p {
+            margin-top: 0px;
+        }
+    }
+    &__images {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+    &__image {
+        position: relative;
+        margin-left: 50px;
+        &__text {
+          position: absolute;
+          left: -80px;
+          top: 50%;
+            &__name {
+                font-size: 20px;
+                color: white;
+                font-family: 'Nexa bold';
+                h1 {
+                   margin: 0px;
+                   text-shadow: 1px 1px rgba(80, 79, 79, 0.3);;
+                }
+            }
+            &__role {
+                color: #FF5F4B;
+                font-family: 'Nexa bold';
+                font-weight: 300;
+                text-shadow: 1px 1px rgba(80, 79, 79, 0.3);;
+            }
+        }
+        img {
+            width: 200px;
+        } 
+    }
+}
+
+.team-section {
+    &_profiles {
+        display: flex;
+    }
+    &__profile {
+        img {
+            width: 200px;
+        }
+       &__text {
+           &__name {
+            font-size: 20px;
+            font-family: 'Nexa bold';
+            margin: 0px;
+            text-shadow: 1px 1px rgba(80, 79, 79, 0.3);;
+           }
+       } 
     }
 }
