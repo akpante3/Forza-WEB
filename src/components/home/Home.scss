@@ -14,7 +14,8 @@
         overflow: hidden;
        }
        &__animate {
-        animation: slide 3s infinite; 
+        animation: slide 3s forwards;
+        color: #FF5F4B;
        }
     }
     .border-left {
@@ -49,7 +50,10 @@
         }
         &__bird-one {
             position: absolute;
-            animation: bird 60s infinite;      
+            animation: bird 60s infinite;
+            svg {
+                fill: blue;
+            }    
         }
     }
     &__text {
@@ -65,6 +69,7 @@
         padding-left: 15px;
     }
 }
+
 
 @keyframes move {
     0%{ 

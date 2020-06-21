@@ -2,10 +2,10 @@ import React from "react";
 import Home from '../components/home/Home'
 import About from '../pages/about/About'
 import WhatweDo from '../pages/whatWeDo/WhatWeDo';
+import Team from '../pages/team/Team';
 import {
   Switch,
   Route,
-  Redirect
 } from "react-router-dom";
 
 /**
@@ -15,7 +15,8 @@ import {
 const Routes = () => ( 
   <Switch>
       {/* <Route path='/' component={page} />  */}
-      <Route name="home" path='/what-we-do' component={WhatweDo} />
+      <Route name="home" path='/team' component={Team} />
+      <Route name="home" path='/our-services' component={WhatweDo} />
       <Route name="home" path='/about' component={About} />
       <Route name="home" path='/' component={Home} />
   </Switch>

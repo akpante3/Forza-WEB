@@ -21,15 +21,15 @@ const App = () => {
   }
   return (
     <main className="main-container">
-      <Menu toggleMenu={toggleMenu} class={menuClass} />
-      <div  className="main-container__nav">
-        <Nav toggleMenu={toggleMenu} showMenu={showMenu} />
-      </div>
-      <div>
-        <Router >
+      <Router >      
+        <Menu toggleMenu={toggleMenu} class={menuClass} />
+        <div  className="main-container__nav">
+          <Nav toggleMenu={toggleMenu} showMenu={showMenu} />
+        </div>
+        <div>
           <Routes />
-        </Router>
-      </div>
+        </div>
+      </Router>
     </main>
   );
 }

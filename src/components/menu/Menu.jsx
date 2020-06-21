@@ -9,12 +9,12 @@ const Menu = (props) => {
   return (
     <div className={['menu','menu--bg-white', `${props.class}`].join(' ')}>
        <div className="menu__items">
-            <div className="menu__item" onClick={props.toggleMenu}>Home</div>
-            <div className="menu__item" onClick={props.toggleMenu}>About Us</div>
-            <div className="menu__item" onClick={props.toggleMenu}>Our Services</div>
-            <div className="menu__item" onClick={props.toggleMenu}>Our Works</div>
-            <div className="menu__item" onClick={props.toggleMenu}>The Team</div>
-            <div className="menu__item" onClick={props.toggleMenu}>Contact Us</div>
+            <div className="menu__item" onClick={props.toggleMenu}><Link to="/">Home</Link></div>
+            <div className="menu__item" onClick={props.toggleMenu}><Link to="/about">About Us</Link></div>
+            <div className="menu__item" onClick={props.toggleMenu}><Link to="/our-services">Our Services</Link></div>
+            <div className="menu__item" onClick={props.toggleMenu}><Link to="/about">Our Works</Link></div>
+            <div className="menu__item" onClick={props.toggleMenu}><Link to="/team">The Team</Link></div>
+            <div className="menu__item" onClick={props.toggleMenu}><Link to="/about">Contact Us</Link></div>
        </div>
     </div>
   );
