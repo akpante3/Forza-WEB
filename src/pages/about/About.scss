@@ -29,10 +29,13 @@
         font-family: 'Nexa Bold';
         border-top: 2px solid #4A4A47;
         border-bottom: 2px solid #4A4A47;
-        font-size: 70px;
+        font-size: 80px;
         overflow: hidden;
         padding: 15px 0px;
         transition: 1s;
+        span {
+            color: #FF5F4B;
+        }
         &--on {
             height: inherit;
         }

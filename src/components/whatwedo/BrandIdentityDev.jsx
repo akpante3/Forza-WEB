@@ -3,12 +3,15 @@ import {
   Link
 } from "react-router-dom";
 import { useOnScreen } from '../../hooks/index';
+import SideNav from '../sideNav/SideNav';
+import { ourservicesNavList } from '../../utils/lists'
 
 const BrandIdentityDev = (props) => {
   const [ref, visible] = useOnScreen({ threshold: 0.8 })
 
   return (
       <div className="brand-identity-dev what-we-do-container" ref={ref}>
+            <SideNav visible={visible} bg='white' list={ourservicesNavList} />
             <div className="what-we-do-container__text brand-identity-dev__text">
                 <div className="list__number"><span className={['list__number__figures', 'list__number__figures--one', visible ? 'list__number__figures--animate-in' : 'list__number__figures--animate-out' ].join(' ')}>1</span></div>
                 <div className="what-we-do-container__text__details">

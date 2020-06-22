@@ -1,0 +1,2 @@
+export const aboutNavList = ['Who we are', 'Philosophy', 'Perspective', 'Workflow']
+export const ourservicesNavList = ['Our services', 'Brand Identity Develoment', 'Design & Creative', 'Communications', 'Market Strategy']

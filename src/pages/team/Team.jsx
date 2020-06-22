@@ -14,7 +14,7 @@ const Team = (props) => {
         <div className="team__team">
              <TeamSection />
         </div>
-        <Footer previous="What we do" next="Our Works" bg="white"  />
+        <Footer previous="Our works" next="Our services" bg="white"  />
       </div>
   );
 }

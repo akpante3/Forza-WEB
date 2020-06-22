@@ -3,14 +3,15 @@ import {
   Link
 } from "react-router-dom";
 import { useOnScreen } from '../../hooks/index';
+import { ourservicesNavList } from '../../utils/lists';
+import SideNav from '../sideNav/SideNav';
 
 const DesignAndCreative = (props) => {
   const [ref, visible] = useOnScreen({ threshold: 0.8 })
   return (
       <div className="design-and-creative what-we-do-container" ref={ref}>
-            {
-              visible ? (<img className="what-we-do__image" src={require('../../icons/images/image-3-on.png')} />) : (<img className="what-we-do__image" src={require('../../icons/images/image-3.png')} />)
-            }
+            <SideNav visible={visible}  list={ourservicesNavList} />
+            { visible ? (<img className="what-we-do__image" src={require('../../icons/images/image-3-on.png')} />) : (<img className="what-we-do__image" src={require('../../icons/images/image-3.png')} />)}
             <div className="what-we-do-container__text design-and-creative__text">
             <div className="list__number"><span className={['list__number__figures', 'list__number__figures--two', visible ? 'list__number__figures--animate-in' : 'list__number__figures--animate-out' ].join(' ')}>2</span></div>
                 <div className="what-we-do-container__text__details">

@@ -3,14 +3,15 @@ import { ReactComponent as ThinkingImage } from '../../icons/thinking.svg';
 import { ReactComponent as ThinkingCloud } from '../../icons/thinkingcloud.svg';
 import { useOnScreen } from '../../hooks/index';
 import SideNav from '../sideNav/SideNav';
+import { aboutNavList } from '../../utils/lists'
 
 
 const Thinking = (props) => {
     const [ref, visible] = useOnScreen({ threshold: 0.7 })
 
     return (
-        <div className="thinking" ref={ref}>
-            <SideNav visible={visible} />
+        <div className="thinking" ref={ref} list={aboutNavList}>
+            <SideNav visible={visible} list={aboutNavList}/>
             <div>
                 <ThinkingCloud className="thinking__cloud"/>
                 <ThinkingImage className={['thinking__cloud-image', visible ? 'thinking__cloud-image--on' : 'thinking__cloud-image--off'].join(' ')}/>
