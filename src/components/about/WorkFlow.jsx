@@ -3,12 +3,15 @@ import {
   Link
 } from "react-router-dom";
 import { useOnScreen } from '../../hooks/index';
+import SideNav from '../sideNav/SideNav';
+
 
 const WorkFlow = (props) => {
     const [ref, visible] = useOnScreen({ threshold: 0.8 })
 
     return (
         <div className="workflow" ref={ref}>
+                 <SideNav visible={visible}  bg='white' />
                 <div className="workflow__text">
                     <div className="workflow__text__header">Workflow</div>
                     <p className="workflow__text__body">Like the rush of electrons when a power switch is turned on, we want to enable our clients with the power to create impact in their chosen field of business. Thus we don’t create fleeting moments of hype, we create lasting experiences that deliver real business impact. We assess the situation, agree objectives, create the components of service, test, iterate and measure continuously.</p>

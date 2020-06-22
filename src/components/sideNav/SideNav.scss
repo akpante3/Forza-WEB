@@ -1,0 +1,52 @@
+.side-nav {
+    position: absolute;
+    left: 70px;
+    top: 15%;
+    font-size: 18px;
+    width: 400px;
+    overflow: hidden;
+    z-index: 10;
+    &--white {
+        color: white;
+    }
+    &--transform-out {
+        animation: sideout 1s ease forwards; 
+    }
+    &--transform-in {
+        animation: sidein 1s ease forwards; 
+    }
+
+    ul {
+        list-style: none;
+        padding: 0px;
+        li {
+            text-decoration: none;
+            margin-bottom: 10px;
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+                margin-bottom: 10px;
+                color: #FF5F4B; 
+            }
+        }
+    }
+}
+
+@keyframes sideout {
+    0% { 
+        transform: translateX(0px)
+    }
+    100% {
+        transform: translateX(-120px)
+    }
+}
+
+@keyframes sidein {
+    0% { 
+        transform: translateX(-120px)
+    }
+    100% {
+        transform: translateX(0px)
+    }
+}
+

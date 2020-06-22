@@ -34,12 +34,13 @@
         height: 100%;
         align-items: flex-end;
         &__cloud {
-            animation: move 100s infinite; 
+            animation: move 120s infinite; 
+            padding-top: 30px; 
         }
         &__cloud-top {
             position: absolute;
             width: 70%;
-            animation: move 400s infinite; 
+            animation: move 300s infinite; 
         }
         svg {
             width: 100%;

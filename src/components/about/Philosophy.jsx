@@ -3,6 +3,7 @@ import { ReactComponent as Buldwire } from '../../icons/buldwire.svg';
 import { ReactComponent as ForzaFuse } from '../../icons/forzaFuze.svg';
 import { ReactComponent as ForzaFuseOff } from '../../icons/forzaFuzeoff.svg';
 import { useOnScreen } from '../../hooks/index';
+import SideNav from '../sideNav/SideNav';
 import {
   Link
 } from "react-router-dom";
@@ -11,6 +12,7 @@ const WhoWeAre = (props) => {
     const [ref, visible] = useOnScreen({ threshold: 0.8 })
     return (
         <div className="philosophy" ref={ref}>
+        <SideNav visible={visible} bg='white' />
         <div>
             <div className="philosophy__text">
                     <div className={['philosophy__text__header', visible ? 'philosophy__text__header--on' : 'philosophy__text__header--off'].join(' ')}>

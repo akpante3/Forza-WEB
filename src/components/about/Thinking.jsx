@@ -2,6 +2,7 @@ import React from 'react';
 import { ReactComponent as ThinkingImage } from '../../icons/thinking.svg';
 import { ReactComponent as ThinkingCloud } from '../../icons/thinkingcloud.svg';
 import { useOnScreen } from '../../hooks/index';
+import SideNav from '../sideNav/SideNav';
 
 
 const Thinking = (props) => {
@@ -9,6 +10,7 @@ const Thinking = (props) => {
 
     return (
         <div className="thinking" ref={ref}>
+            <SideNav visible={visible} />
             <div>
                 <ThinkingCloud className="thinking__cloud"/>
                 <ThinkingImage className={['thinking__cloud-image', visible ? 'thinking__cloud-image--on' : 'thinking__cloud-image--off'].join(' ')}/>

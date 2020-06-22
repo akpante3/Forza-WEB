@@ -35,8 +35,8 @@ const Founders = (props) => {
     return (
       <div className="founders__image">
       <div className="founders__image__text">
-        <div className="founders__image__text__name"><h1>{data.firstName}</h1><h1>{data.lastName}</h1></div>
-        <div className="founders__image__text__role">{data.role}</div>
+        <div className="founders__image__text__name"><h1>{ data.firstName }</h1><h1>{ data.lastName }</h1></div>
+        <div className="founders__image__text__role">{ data.role }</div>
       </div>
       <img src={data.image}/>
     </div>

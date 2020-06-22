@@ -2,11 +2,14 @@ import React from 'react';
 import {
   Link
 } from "react-router-dom";
+import SideNav from '../sideNav/SideNav';
+import { useOnScreen } from '../../hooks/index';
 
 const WhoWeAre = (props) => {
-
+  const [ref, visible] = useOnScreen({ threshold: 0.1 })
   return (
-      <div className="who-we-are">
+      <div className="who-we-are" ref={ref}>
+        <SideNav visible={visible} />
         <div className="who-we-are__item-container">
           <div className="who-we-are__item who-we-are__video">
               <iframe width="460" height="415" src="https://www.youtube.com/embed/1YuN3POoNnQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
