@@ -1,12 +1,14 @@
 import React from 'react';
+import { useRouteMatch } from "react-router-dom";
 import { ReactComponent as Logo } from '../../icons/logo.svg';
 import { ReactComponent as MenuButton } from '../../icons/hamburger.svg';
 import { ReactComponent as CloseButton } from '../../icons/closebutton.svg';
 import'./Nav.scss'
-import { createPublicKey } from 'crypto';
 
 const Nav = (props) => {
   const { toggleMenu,  showMenu } = props
+  let match = useRouteMatch("/");
+  
   return (
     <nav className="nav">
         <div className="nav__logo">
