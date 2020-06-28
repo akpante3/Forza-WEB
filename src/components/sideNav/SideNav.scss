@@ -19,9 +19,11 @@
     ul {
         list-style: none;
         padding: 0px;
+        display: inline-block;
         li {
             text-decoration: none;
             margin-bottom: 10px;
+            width: inherit;
             cursor: pointer;
             &:hover {
                 text-decoration: underline;
@@ -31,7 +33,15 @@
                 font-family: 'Nexa Bold';
             }
         }
+        .active {
+            text-decoration: underline;
+            margin-bottom: 10px;
+            color: #FF5F4B; 
+            font-weight: 600;
+            font-family: 'Nexa Bold';           
+        }
     }
+
 }
 
 @keyframes sideout {
