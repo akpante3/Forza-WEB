@@ -19,9 +19,7 @@ const BrandIdentityDev = (props) => {
                    <p className="what-we-do-container__text__details__body">Good branding should spark an emotional connection within a brand’s target audience. It is a careful marriage between the brand’s positioning statement and the visual elements of that brand. We immerse ourselves in rigorous strategy that helps us craft dynamic branding elements for our customers, delivering a long standing identity that sets you apart.</p>
                 </div>                  
             </div>
-            {
-              visible ? (<img className="what-we-do__image" src={require('../../icons/images/image-2-on.png')} />) : (<img className="what-we-do__image" src={require('../../icons/images/image-2.png')} />)
-            }
+            { visible ? (<img className="what-we-do__image" src={ require('../../icons/images/image-2-on.png') } />) : (<img className="what-we-do__image" src={require('../../icons/images/image-2.png')} />) }
            
       </div>
   );

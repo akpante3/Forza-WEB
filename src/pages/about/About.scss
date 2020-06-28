@@ -6,6 +6,10 @@
     display: flex;
     height: 100vh;
     position: relative;
+    &__power-icon {
+        display: inline-block;
+        width: 45px;
+    }
     &__item-container {     
         display: flex;
         padding-top: 10%;

@@ -13,16 +13,26 @@
         animation: open-icon  0.7s forwards;    
     }
     &__logo {
-        svg {
-            width: 120px;
-            height: 50px;
-        }
+            svg {
+                // width: 120px;
+                height: 50px;
+            }
     }
     &__menu {
         svg {
             width: 50px;
             height: 50px;
         }
+    }
+}
+.nav-icon {
+    position: relative;
+    &__name {
+        position: absolute;
+        font-family: 'Nexa Bold';
+        width: 120px;
+        top: 35%;
+        padding-left: 10px;
     }
 }
 
