@@ -4,10 +4,12 @@ import { ReactComponent as Building } from '../../icons/building.svg';
 import { ReactComponent as Cloud } from '../../icons/cloud.svg';
 import { ReactComponent as CloudTop } from '../../icons/cloudTop.svg';
 import { ReactComponent as Bird } from '../../icons/bird.svg';
+import { ReactComponent as Moon } from '../../icons/moon.svg';
+import { ReactComponent as Sun } from '../../icons/sun.svg';
 
 const Home = () => {
     const [ switchText, setSwitchText ] = useState('Branding')
-    // const [ HeaderText, setHeaderText ]= useState('')
+    const [ isDay, setIsDay ]= useState( true )
     const headerWords = ['Branding', 'Marketing']
     
 
@@ -16,12 +18,16 @@ const Home = () => {
         setSwitchText(headerWords[number])
     }, 3000))
 
+    const toggleTheme = () => {
+      setIsDay(!isDay)
+    }
+
     useEffect(() => {
       textSwitch()
     }, []);
 
     return (
-      <div className="home">
+      <div className={['home', isDay ? '' : 'home--dark-theme' ].join(' ')} >
         <div className="home__text">
           <div>
               <div className="home__header__wrapper">
@@ -37,6 +43,11 @@ const Home = () => {
           </div>
         </div>
         <div className="home__images">
+             <div className="">
+             {
+               isDay ? (<div className="home__images__theme" onClick={ () => toggleTheme() }><Sun /></div>) : (<div className="home__images__theme" onClick={ () => toggleTheme() }><Moon /></div>)
+             }
+             </div>
             <div className="home__images__bird-one">
               <Bird />
             </div>

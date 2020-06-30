@@ -4,7 +4,7 @@
     <title>Final Website</title>
     <desc>Created with Sketch.</desc>
     <g id="Final-Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <circle id="Oval-Copy" stroke="#333232" stroke-width="2" cx="34" cy="34" r="33"></circle>
+        <circle id="Oval-Copy" stroke-width="2" cx="34" cy="34" r="33"></circle>
         <polygon id="x-copy" fill="#333232" points="21.9545455 51 33 35.7894737 44.0454545 51 48 51 48 50.8623482 34.9772727 33.3805668 47.0454545 17.1376518 47.0454545 17 43.0227273 17 33 30.902834 22.9772727 17 18.9545455 17 18.9545455 17.1376518 31.0227273 33.3805668 18 50.8623482 18 51"></polygon>
     </g>
 </svg>

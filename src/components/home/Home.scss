@@ -2,20 +2,25 @@
 
 
 .home {
-    height: 100%;
+    height: 100vh;
     width: 100%;
-    position: absolute;
+    position: relative;
+    overflow: hidden;
+    &--dark-theme {
+        background-color: #333232;
+        color: white;
+    }
     &__header {
        font-family: 'Nexa Bold';
-       font-size: 100px;
+       font-size: 80px;
        
        &__wrapper {
         padding: 10px;
         overflow: hidden;
        }
        &__animate {
-        animation: slide 3s forwards;
-        color: #FF5F4B;
+            animation: slide 3s forwards;
+            color: #FF5F4B;
        }
     }
     .border-left {
@@ -33,38 +38,52 @@
         width: 100%;
         height: 100%;
         align-items: flex-end;
+        &__theme {
+            position: absolute;
+            width: 50px;
+            right: 70px;
+            animation: theme 1.5s forwards;
+            cursor: pointer;
+        }
         &__cloud {
-            animation: move 120s infinite; 
-            padding-top: 30px; 
+            animation: move 150s infinite; 
+            padding-top: 30px;
+            height: 200px;
         }
         &__cloud-top {
             position: absolute;
             width: 70%;
+            height: 300px;
             animation: move 300s infinite; 
         }
         svg {
             width: 100%;
         }
         &__building {
-            width: 80%;
-            float: right;
+            width: 45%;
+            right: 0px;
+            position: absolute;
+            bottom: -10px;
         }
         &__bird-one {
             position: absolute;
             animation: bird 60s infinite;
+            z-index: 6;
             svg {
                 fill: blue;
             }    
         }
     }
     &__text {
-        margin-top: 230px;
+        padding-top: 150px;
         padding-left: 70px;
+        position: absolute;
+        z-index: 100;
     }
     &__decription {
-        margin-top: 20%;
+        padding-top: 30px;
         font-family: 'Nexa Light';
-        font-size: 50px;
+        font-size: 30px;
     }
     &_pd {
         padding-left: 15px;
@@ -76,8 +95,22 @@
     0%{ 
         transform: translateX(-1000px)
     }
-    100%{transform: translateX(1000px)}
+    100%{transform: translateX(1500px)}
 }
+
+@keyframes theme {
+    0%{ 
+        z-index: -1;
+        opacity: 0;
+        top: 400px;
+    }
+    100%{            
+        z-index: 10;
+        opacity: 1;
+        top: 200px;
+    }
+}
+
 
 @keyframes bird {
     0%{ 
