@@ -15,6 +15,7 @@ const WorkFlow = (props) => {
                  <SideNav visible={visible} list={ aboutNavList }  bg='white' />
                  <div className={["workflow__image", visible ? 'workflow__image--animate' : 'workflow__image--kite' ].join(' ')}>
                      <Kite />
+                     
                  </div>
                 <div className="workflow__text">
                     <div className="workflow__text__header">Workflow</div>
