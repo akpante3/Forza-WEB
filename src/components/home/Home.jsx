@@ -6,6 +6,7 @@ import { ReactComponent as CloudTop } from '../../icons/cloudTop.svg';
 import { ReactComponent as Bird } from '../../icons/bird.svg';
 import { ReactComponent as Moon } from '../../icons/moon.svg';
 import { ReactComponent as Sun } from '../../icons/sun.svg';
+import { ReactComponent as LetsTalk } from '../../icons/letsTalk.svg';
 
 const Home = () => {
     const [ switchText, setSwitchText ] = useState('Branding')
@@ -27,6 +28,7 @@ const Home = () => {
     }, []);
 
     return (
+      <div>
       <div className={['home', isDay ? '' : 'home--dark-theme' ].join(' ')} >
         <div className="home__text">
           <div>
@@ -43,24 +45,30 @@ const Home = () => {
           </div>
         </div>
         <div className="home__images">
-             <div className="">
-             {
-               isDay ? (<div className="home__images__theme" onClick={ () => toggleTheme() }><Sun /></div>) : (<div className="home__images__theme" onClick={ () => toggleTheme() }><Moon /></div>)
-             }
-             </div>
-            <div className="home__images__bird-one">
-              <Bird />
+              <div className="">
+              {
+                isDay ? (<div className="home__images__theme" onClick={ () => toggleTheme() }><Sun /></div>) : (<div className="home__images__theme" onClick={ () => toggleTheme() }><Moon /></div>)
+              }
+              </div>
+              <div className="home__images__bird-one">
+                <Bird />
+              </div>
+              <div className="home__images__cloud-top">
+                  <CloudTop />
+              </div>
+              <div className="home__images__cloud">
+                <Cloud />
+              </div>
+            <div className="home__images__building">
+              <Building />
             </div>
-            <div className="home__images__cloud-top">
-                <CloudTop />
-            </div>
-            <div className="home__images__cloud">
-              <Cloud />
-            </div>
-          <div className="home__images__building">
-            <Building />
-          </div>
         </div>
+      </div>
+      <div className="home-footer">
+        <div>
+           <LetsTalk />
+        </div>
+      </div>
       </div>
     );
 }

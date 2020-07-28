@@ -5,7 +5,6 @@
     height: 100vh;
     width: 100%;
     position: relative;
-    overflow: hidden;
     &--dark-theme {
         background-color: #333232;
         color: white;
@@ -88,6 +87,10 @@
     &_pd {
         padding-left: 15px;
     }
+}
+
+.home-footer {
+    
 }
 
 
