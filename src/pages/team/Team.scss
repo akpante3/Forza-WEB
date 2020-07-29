@@ -18,7 +18,6 @@
         display: flex;
         margin-left: 50px;
         &__header {
-            font-family: 'Nexa Bold';
             border-top: 2px solid #FFFFFF;
             border-bottom: 2px solid #FFFFFF;
             font-size: 65px;
@@ -31,7 +30,6 @@
             font-size: 20px;
             line-height: 32px;
             max-width: 400px;
-            font-family: "Nexa Light";
             margin-left: 40px;
         }
         p {
@@ -62,7 +60,6 @@
             &__name {
                 font-size: 20px;
                 color: white;
-                font-family: 'Nexa bold';
                 h1 {
                    margin: 0px;
                    text-shadow: 1px 1px rgba(80, 79, 79, 0.3);;
@@ -70,7 +67,6 @@
             }
             &__role {
                 color: #FF5F4B;
-                font-family: 'Nexa bold';
                 font-weight: 300;
                 text-shadow: 1px 1px rgba(80, 79, 79, 0.3);;
             }

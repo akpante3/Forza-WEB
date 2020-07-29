@@ -10,7 +10,6 @@
         color: white;
     }
     &__header {
-       font-family: 'Nexa Bold';
        font-size: 80px;
        
        &__wrapper {
@@ -26,7 +25,6 @@
         border-left: solid #FF5F4B 4px;
     }
     &__link {
-        font-family: 'Nexa Bold';
         font-size: 14px;
         text-decoration: underline;
     }
@@ -81,7 +79,6 @@
     }
     &__decription {
         padding-top: 30px;
-        font-family: 'Nexa Light';
         font-size: 30px;
     }
     &_pd {
@@ -90,7 +87,41 @@
 }
 
 .home-footer {
+    width: 100%;
+    align-content: center;
+    padding: 40px 40px;
+    &__lets-talk {
+       max-width: 600px;
+       margin: 0 auto;
+       &__text {
+           text-align: center;
+           margin-top: 30px;
+           &__link {
+            text-align: center;
+               p {
+                color: #FF5F4B;
+                text-decoration: underline;
+                font-weight: 800;
+                cursor: pointer;
+               }
+           }
+           p {
+               margin: 0px;
+               font-weight: 500;
+           }
+       }
+    }
+}
+.home-text {
     
+}
+.home-header {
+    width: 100%;
+    height: 100vh;
+    img {
+        width: 100%;
+        height: 100vh;
+    }
 }
 
 

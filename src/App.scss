@@ -5,6 +5,7 @@ html, body {
   margin: 0px;
   color: #4A4A47;
   scroll-behavior: smooth;
+  font-family: 'Montserrat', sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -36,7 +37,6 @@ html, body {
       max-width: 550px;
   }
   &__number {
-      font-family: 'Nexa Bold';
       border-right: 2px solid #FF5F4B;
       font-weight: 500;
       color: white;
