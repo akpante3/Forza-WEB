@@ -5,10 +5,12 @@
     height: 100vh;
     z-index: 1000;
     position: fixed;
-    font-family: 'Nexa Bold';
     animation: menu-open 0.8s ease forwards;
     padding-left: 70px;
     display: none;
+    @media (max-width: 700px) {
+        padding-left: 30px;
+    }
     &--open {
         animation: menu-open 0.8s ease forwards; 
         display: block; 
@@ -31,8 +33,14 @@
         cursor: pointer;
         letter-spacing: 2px;
         margin-bottom: 20px;
-        &:hover {
-            color: #FF5F4B;          
+        @media (max-width: 700px) {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+        a {
+            &:hover {
+                color: #FF5F4B;          
+            }
         }
     }
 }
@@ -48,5 +56,5 @@
     0%{ 
         transform: translateY(0px)
     }
-    100%{transform: translateY(-1000px)}
+    100%{transform: translateY(-2000px)}
 }

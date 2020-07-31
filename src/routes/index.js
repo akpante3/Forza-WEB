@@ -4,6 +4,7 @@ import About from '../pages/about/About'
 import Contact from '../pages/contact/Contact';
 import WhatweDo from '../pages/whatWeDo/WhatWeDo';
 import Team from '../pages/team/Team';
+import OurWorks from '../pages/ourWorks/OurWorks'
 import {
   Switch,
   Route,
@@ -16,7 +17,8 @@ import {
 const Routes = () => ( 
   <Switch>
       {/* <Route path='/' component={page} />  */}
-      <Route name="home" exact  path='/contact' component={Contact} />
+      <Route name="our-works" exact  path='/our-works' component={OurWorks} />
+      <Route name="contact" exact  path='/contact' component={Contact} />
       <Route name="team" exact path='/team' component={Team} />
       <Route name="our-services" exact path='/services/:section' component={WhatweDo} />
       <Route name="about" exact path='/about/:section' component={About} />

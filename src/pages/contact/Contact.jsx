@@ -4,7 +4,7 @@ import {
 } from "react-router-dom";
 import './Contact.scss';
 
-const Menu = (props) => {
+const Contact= (props) => {
 
   return (
     <main className="contact">
@@ -28,22 +28,22 @@ const Menu = (props) => {
                     <legend className="contact__form__header">What Services do you need?</legend>
                     <label>
                         <input type="radio" name="test" value="true" disabled="" />
-                        Brand Identity Development
+                        Brand Identity Development<span></span>
                     </label>
                     <br />
                     <label>
                         <input type="radio" name="test" value="true" disabled="" />
-                        Design & Creative
+                        Design & Creative<span></span>
                     </label>
                     <br />
                     <label>
                         <input type="radio" name="test" value="true" disabled="" />
-                        Communications
+                        Communications<span></span>
                     </label>
                     <br />
                     <label>
                         <input type="radio" name="test" value="true" disabled="" />
-                        Market Entry & Consumer Behaviour
+                        Market Entry & Consumer Behaviour<span></span>
                     </label>
                 </fieldset>
                 <div className="contact__user-details">
@@ -64,4 +64,4 @@ const Menu = (props) => {
   );
 }
 
-export default Menu;
+export default Contact;
