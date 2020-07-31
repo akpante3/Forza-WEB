@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import'./Home.scss'
+import Typing from 'react-typing-animation';
 import { ReactComponent as Building } from '../../icons/building.svg';
 import { ReactComponent as Cloud } from '../../icons/cloud.svg';
 import { ReactComponent as CloudTop } from '../../icons/cloudTop.svg';
@@ -28,25 +29,32 @@ const Home = () => {
     }, []);
 
     return (
-      <div>
-        <div className="home-text">
-           <p>Design</p>
-           <p>that</p>
-           <p>works</p>
-           <p>
-                GET TO KNOW US
-              </p>
+      <main className={['home', isDay ? '' : 'home--dark-theme' ].join(' ')}>
+        <div className="home-text-headers">
+           <p className="home-text-headers__text home-text-headers__bold">
+           Design
+           {/* <Typing>
+              <span>Design</span>
+              <Typing.Backspace count={20} />
+            </Typing> */}
+            </p>
+           <p className="home-text-headers__text home-text-headers__medium">that</p>
+           <p className="home-text-headers__text home-text-headers__medium">works</p>
+           <p className="home-text-headers__link">GET TO KNOW US</p>
         </div>
         <div className="home-header">
           <img src={require('../../icons/images/homepagephoto.png')} />
         </div>
-        <div className={['home', isDay ? '' : 'home--dark-theme' ].join(' ')} >
+        <div className="home-body">
+          <div className="home-text-body">
+              We’re a marketing agency. We work with goal oriented brands and companies to create digital marketing solutions that people love. Because what works for people, works for business.
+          </div>
           <div className="home__images">
-                <div className="">
+                {/* <div className="">
                 {
                   isDay ? (<div className="home__images__theme" onClick={ () => toggleTheme() }><Sun /></div>) : (<div className="home__images__theme" onClick={ () => toggleTheme() }><Moon /></div>)
                 }
-                </div>
+                </div> */}
                 <div className="home__images__bird-one">
                   <Bird />
                 </div>
@@ -75,7 +83,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </main>
     );
 }
 

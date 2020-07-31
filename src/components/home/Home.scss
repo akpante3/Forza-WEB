@@ -57,10 +57,15 @@
             width: 100%;
         }
         &__building {
-            width: 40%;
+            width: 54%;
             right: 0px;
+            bottom: -7%;
             position: absolute;
             bottom: -10px;
+            transition: 1s;
+            @media (max-width: 500px) {
+              width: 94%;
+            }
         }
         &__bird-one {
             position: absolute;
@@ -84,6 +89,13 @@
     &_pd {
         padding-left: 15px;
     }
+}
+.home-body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    border-bottom: #333232 solid 3px;
 }
 
 .home-footer {
@@ -112,8 +124,49 @@
        }
     }
 }
-.home-text {
-    
+.home-text-headers {
+    border-left: #FF5F4B solid 1px;
+    padding-left: 10px;
+    max-width: 500px;
+    margin-left: 70px;
+    height: 600px;
+    position: absolute;
+    top: 60vh;
+    @media (max-width: 1080px) {
+        height: 700px;
+    }
+    @media (max-width: 700px) {
+        margin-left: 20px;
+        height: 600px;
+        .home-text-headers__text {
+            font-size: 60px;
+            line-height: 55px;
+        }
+        .home-text-headers__link {
+            font-size: 12px;          
+        }
+    }
+    p {
+        margin: 0px;
+    }
+    &__text {
+        font-size: 70px;
+        line-height: 70px;
+    }
+    &__bold {
+        font-weight: 800;
+        color: #FF5F4B;
+    }
+    &__medium {
+        font-weight: 600;
+        color: white;
+    }
+    &__link {
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: underline;
+        color: white
+    }
 }
 .home-header {
     width: 100%;
@@ -121,6 +174,23 @@
     img {
         width: 100%;
         height: 100vh;
+        object-fit: cover;
+    }
+}
+.home-text-body {
+    max-width: 500px;
+    border-top: #FF5F4B solid 1px;
+    padding: 30px 50px;
+    position: absolute;
+    top: 20vh;
+    margin-left: 35px;
+    @media (max-width: 1080px) {
+       top: 8vh
+    }
+    @media (max-width: 750px) {
+        margin-left: 10px;
+        top: 10vh;
+        padding: 20px 30px;
     }
 }
 

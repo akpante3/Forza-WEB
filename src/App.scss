@@ -9,13 +9,14 @@ html, body {
 }
 * {
   box-sizing: border-box;
+  transition: 1s;
 }
 .main-container {
   position: relative;
   max-width: 1600px;
   margin: 0 auto;
   &__nav {
-    position: fixed;
+    position: absolute;
     width: 100%;
     max-width: 1600px;
     z-index: 1500;
