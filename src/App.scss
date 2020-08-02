@@ -31,11 +31,18 @@ html, body {
       font-size: 30px;
       color: white;
       font-weight: 700;
+      @media (max-width: 1080px) { 
+        font-size: 20px;
+      }
   }
   &__body {
       font-size: 23px;
       line-height: 32px;
       max-width: 550px;
+      @media (max-width: 1080px) { 
+        font-size: 18px;
+        line-height: 22px;
+      }
   }
   &__number {
       border-right: 2px solid #FF5F4B;

@@ -8,7 +8,7 @@ import { aboutNavList } from '../../utils/lists'
 import { ReactComponent as Kite } from '../../icons/kite.svg';
 
 const WorkFlow = (props) => {
-    const [ref, visible] = useOnScreen({ threshold: 0.8 })
+    const [ref, visible] = useOnScreen({ threshold: 0.7 })
 
     return (
         <div className="workflow" ref={ ref }>

@@ -89,7 +89,37 @@
         right: 9%;
         top: -3%;
         width: 600px;
-     }
+    }
+    @media (max-width: 400px) {
+        &__forza-fuse {
+            width: 400px;
+            top: -5%;
+        }
+    }
+    @media (max-width: 1080px) {
+        &__forza-fuse {
+            width: 300px;
+        }
+        &__text {
+            max-width: 300px;
+            bottom: 4%;
+            left: 30px;
+            &__header {
+                font-family: 'Nexa Bold';
+                border-top: 2px solid #FFFFFF;
+                border-bottom: 2px solid #FFFFFF;
+                font-size: 40px;
+                width: 90%;
+                padding: 10px 0px; 
+                overflow: hidden;
+                transition: 1s;
+            }
+            &__body {
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
+    }
 }
 
 // Thinking
@@ -98,6 +128,7 @@
     width: 100%;
     height: 100vh;
     position: relative;
+    overflow: hidden;
     color: #4A4A47;
     &__text {
         position:  absolute;
@@ -138,6 +169,61 @@
         }
 
     }
+    @media (max-width: 1080px) {
+        &__text {
+            max-width: 300px;
+            bottom: 4%;
+            left: 30px;
+            &__header {
+                font-size: 40px;
+                width: 90%;
+                padding: 10px 0px; 
+                overflow: hidden;
+                transition: 1s;
+            }
+            &__body {
+                font-size: 18px;
+                line-height: 22px;
+                margin-top: 30px;
+            }
+        }
+        &__cloud {
+            position:  absolute;
+            left: 5%;
+            top: 1%;
+        }
+        &__cloud-image {
+            position:  absolute;
+            transition: 1s;
+            &--on {
+                left: 10%;
+                top: -20%;
+                width: 300px;
+            }
+            &--off {
+                left: 10%;
+                top: -10%;
+                width: 200px;
+            }
+    
+        }
+    }
+    @media (max-width: 400px) {
+        &__cloud-image {
+            &--on {
+                left: 10%;
+                top: -32%;
+                width: 200px;
+            }
+            &--off {
+                left: 10%;
+                top: -32%;
+                width: 100px;
+            }
+    
+        }
+    }
+
 }
 
 .workflow {
@@ -190,6 +276,85 @@
             width: 550px;
         }
     }
+    @media (max-width: 1080px) {
+        &__image {
+            width: 100px;
+            &--kite {
+                top: 35%;
+                left: 20%;
+                animation: kiteoutSmallScreen 1.5s ease forwards;
+            }
+            &--animate {
+                animation: kiteSmallScreen 1.5s ease forwards;   
+            } 
+        }
+        &__text {
+            max-width: 300px;
+            bottom: 1%;
+            left: 30px;
+            &__header {
+                font-size: 40px;
+                width: 90%;
+                overflow: hidden;
+                transition: 1s;
+            }
+            &__body {
+                font-size: 18px;
+                line-height: 22px;
+                margin-top: 30px;
+                width: 350px;
+            }
+        }
+        &__list {
+            top: 10%;
+            left: 20px;
+            width: 100%;
+            overflow: auto;
+            display: flex;
+            .list__body {
+                width: 200px
+            }
+            .list__number {
+                width: 50px;
+            }
+            &__item {
+                display: flex;
+            }
+        }
+    }
+
+    @media (max-width: 400px) { 
+        &__text {
+            left: 10px;
+            &__header {
+                font-size: 40px;
+                width: 90%;
+                overflow: hidden;
+                transition: 1s;
+            }
+            &__body {
+                font-size: 18px;
+                line-height: 22px;
+                margin-top: 10px;
+                width: 350px;
+            }
+        }
+        &__image {
+           width: 100px;
+        }
+        &__list {
+            top: 20px;
+            .list__body {
+                width: 200px
+            }
+            .list__number {
+                width: 50px;
+            }
+            &__item {
+                display: flex;
+            }
+        }
+    }
 }
 
 @keyframes aboutheaders {
@@ -217,6 +382,28 @@
     }
     100%{
         top: 20%;
+        left: 15%;
+    }
+}
+
+@keyframes kiteSmallScreen {
+    0%{ 
+        top: 35%;
+        left: 15%;
+    }
+    100%{
+        top: 40%;
+        left: 20%;
+    }
+}
+
+@keyframes kiteoutSmallScreen {
+    0%{ 
+        top: 40%;
+        left: 20%;
+    }
+    100%{
+        top: 35%;
         left: 15%;
     }
 }
