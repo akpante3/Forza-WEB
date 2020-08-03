@@ -4,7 +4,8 @@ import About from '../pages/about/About'
 import Contact from '../pages/contact/Contact';
 import WhatweDo from '../pages/whatWeDo/WhatWeDo';
 import Team from '../pages/team/Team';
-import Project from '../pages/Project/Project'
+import Project from '../pages/Project/Project';
+import OurWorks from '../pages/ourWorks/OurWorks';
 import {
   Switch,
   Route,
