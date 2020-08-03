@@ -1,0 +1,15 @@
+
+<svg width="150px" height="120px" viewBox="0 0 225 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Final-Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="What-we-do" transform="translate(-1382.000000, -3288.000000)">
+            <g id="Communications" transform="translate(1166.500000, 3240.000000)">
+                <g id="Group-3" transform="translate(215.500000, 48.000000)">
+                    <ellipse id="Oval" fill="#FFFFFF" cx="112.5" cy="79.5" rx="112.5" ry="79.5"></ellipse>
+                    <text id="Hello!" font-family="Montserrat-Black, Montserrat" font-size="48" font-weight="700" letter-spacing="0.048696775" fill="#4A4A47">
+                        <tspan x="37" y="97">Hello!</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

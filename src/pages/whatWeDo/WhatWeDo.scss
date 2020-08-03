@@ -4,6 +4,10 @@
         right: 70px;
         height: 100vh;
         width: 35%;
+        @media (max-width: 1300px) { 
+            right: 30px;
+            width: 40%;
+        }
     }
 }
 .what-we-do-container {
@@ -80,6 +84,35 @@
         top: 16%;
         right: 45%;
     }
+    &__image-wrapper {
+        position: relative;
+    }
+    &__thought {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 250px;
+        right: 35%;
+        z-index: 5;
+
+        &__1{
+            animation: appear 2.5s ease forwards; 
+        }
+        &__2{
+            animation: appear 2s ease forwards;            
+        }
+        &__3{
+            animation: appear 1.5s ease forwards;
+            margin-right: 5px;            
+        }
+        &__4{
+            animation: appear 1s ease forwards; 
+            margin-right: 10px;            
+        }
+
+    }
 }
 
 .market-strategy {
@@ -96,3 +129,15 @@
         right: 45%;
     }
 }
+
+@keyframes appear {
+    0%{ 
+        opacity: 0
+    }
+    70%{ 
+        opacity: 0
+    }
+    100%{
+        opacity: 1 
+    }
+  }

@@ -4,6 +4,10 @@ import {
 } from "react-router-dom";
 import { useOnScreen } from '../../hooks/index';
 import SideNav from '../sideNav/SideNav';
+import { ReactComponent as Thought1 } from '../../icons/thought/1.svg';
+import { ReactComponent as Thought2 } from '../../icons/thought/2.svg';
+import { ReactComponent as Thought3 } from '../../icons/thought/3.svg';
+import { ReactComponent as Thought4 } from '../../icons/thought/4.svg';
 import { ourservicesNavList } from '../../utils/lists'
 
 const Communication= (props) => {
@@ -11,7 +15,17 @@ const Communication= (props) => {
     return (
         <div className="communition what-we-do-container" ref={ref}>
                 <SideNav visible={visible} bg='white' list={ourservicesNavList} />
-                { visible ? (<img className="what-we-do__image" src={require('../../icons/images/image-4-on.png')} />) : (<img className="what-we-do__image" src={require('../../icons/images/image-4.png')} />)}
+                <div className="what-we-do__image">
+                    <div style={ {position: 'relative', width: '100%'}}>
+                        <div className={[ visible ? 'communition__thought' : 'dont-display' ].join(' ')}>
+                            <Thought4 className="communition__thought__1" />
+                            <Thought3 className="communition__thought__2" />
+                            <Thought2 className="communition__thought__3" />
+                            <Thought1 className="communition__thought__4" />
+                        </div>
+                        { visible ? (<img style={ {height: '100vh', width: '100%'}} src={require('../../icons/images/image-4-on.png')} />) : (<img style={ {height: '100vh', width: '100%'}} src={require('../../icons/images/image-4.png')} />)}
+                    </div>
+                </div>
                 <div className="what-we-do-container__text communition__text">
                     <div className="list__number"><span className={['list__number__figures', 'list__number__figures--three', visible ? 'list__number__figures--animate-in' : 'list__number__figures--animate-out' ].join(' ')}>3</span></div>
                     <div className="what-we-do-container__text__details">
