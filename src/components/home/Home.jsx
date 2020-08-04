@@ -43,7 +43,7 @@ const Home = () => {
            <p className="home-text-headers__link">GET TO KNOW US</p>
         </div>
         <div className="home-header">
-          <img src={require('../../icons/images/homepagephoto.png')} />
+          <img src="https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/Screen%20Shot%202020-08-04%20at%201.03.16%20AM.png?alt=media&token=a7817bff-96b5-488e-bc21-0fd0a4d9bfca"/>
         </div>
         <div className="home-body">
           <div className="home-text-body">

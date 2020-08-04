@@ -121,6 +121,34 @@
         top: 16%;
         right: 45%;   
     }
+    &__boat-image {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        bottom: 15%;
+        width: 100%;
+        z-index: 5;
+        &__path3 {
+            margin-left: 47%;
+            margin-bottom: 12px;
+            animation: appear 2s ease forwards; 
+        }
+        &__path2 {
+            margin-left: 38%;
+            margin-bottom: 15px;
+            animation: appear 1.5s ease forwards;
+        }
+        &__path1 {
+            margin-left: 36%;
+            margin-bottom: 15px;  
+            animation: appear 1s ease forwards;
+        }
+        &__boat {
+            margin-left: 59%; 
+            margin-bottom: 10px;
+            animation: appear 2.5s ease forwards;          
+        }
+    }
 }
 .design-and-creative {
     &__text {

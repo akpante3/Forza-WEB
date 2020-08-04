@@ -5,13 +5,31 @@ import {
 import { useOnScreen } from '../../hooks/index';
 import SideNav from '../sideNav/SideNav';
 import { ourservicesNavList } from '../../utils/lists';
+import { ReactComponent as Path1 } from '../../icons/boat/path1.svg';
+import { ReactComponent as Path2 } from '../../icons/boat/path2.svg';
+import { ReactComponent as Path3 } from '../../icons/boat/path3.svg';
+import { ReactComponent as Path4 } from '../../icons/boat/path4.svg';
+
 
 const MarketStrategy = (props) => {
   const [ref, visible] = useOnScreen({ threshold: 0.8 })
+  
   return (
       <div className="market-strategy what-we-do-container" ref={ref}>
             <SideNav visible={visible}  list={ourservicesNavList} />
-            { visible ? (<img className="what-we-do__image" src={require('../../icons/images/image-5-on.png')} />) : (<img className="what-we-do__image" src={require('../../icons/images/image-5.png')} />)}
+            <div className="what-we-do__image">
+                <div style={ {position: 'relative', width: '100%'}}>
+                    <div className="market-strategy__boat">
+                        <div className={[ visible ? 'market-strategy__boat-image' : 'dont-display' ].join(' ')}>
+                            <img className="market-strategy__boat-image__boat" style={ { width: '110px'}} src={require('../../icons/boat/boat.png')} />
+                            <Path3 className="market-strategy__boat-image__path3" />
+                            <Path2 className="market-strategy__boat-image__path2"/>
+                            <Path1 className="market-strategy__boat-image__path1"/>
+                        </div>
+                    </div>
+                    { visible ? (<img style={ {height: '100vh', width: '100%'}} src={require('../../icons/images/boatimage.png')} />) : (<img style={ {height: '100vh', width: '100%'}} src={require('../../icons/images/boatimage.png')} />)}
+                </div>
+            </div>
             <div className="what-we-do-container__text market-strategy__text">
             <div className="list__number"><span className={['list__number__figures', 'list__number__figures--four', visible ? 'list__number__figures--animate-in' : 'list__number__figures--animate-out' ].join(' ')}>4</span></div>
                 <div className="what-we-do-container__text__details">

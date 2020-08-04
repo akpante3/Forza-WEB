@@ -30,6 +30,12 @@
     &__video {
         // margin-right: 5%;
     }
+    &__playbutton {
+        position: absolute;
+        top: 40%;
+        left: 45%;
+        z-index: 5
+    }
     &__header {
         font-family: 'Nexa Bold';
         border-top: 2px solid #4A4A47;
