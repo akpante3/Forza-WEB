@@ -55,7 +55,7 @@ const About = (props) => {
      <div>
         <Client />
      </div>
-      <Footer previous="What we do" next="Our Works"  />
+      <Footer bg='white' previous="What we do" next="Our Works"  />
     </div>
   );
 }

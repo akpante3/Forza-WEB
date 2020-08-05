@@ -70,7 +70,6 @@
 
 // philosophy
 .philosophy {
-    font-family: 'Nexa Light';
     width: 100%;
     height: 100vh;
     background-color: #333232;
@@ -85,18 +84,26 @@
         bottom: 24%;
         left: 70px;
         &__header {
-            font-family: 'Nexa Bold';
             border-top: 2px solid #FFFFFF;
             border-bottom: 2px solid #FFFFFF;
-            font-size: 80px;
+            font-size: 70px;
+            font-weight: 700;
             width: 90%;
-            padding: 10px 0px; 
+            height: 0px;
             overflow: hidden;
             transition: 1s;
+            position: relative;
+            span {
+                position: absolute;
+                top: -4%;
+            }
+            &--animate {
+                animation: textHeader 1.5s ease forwards;
+            }
         }
         &__body {
-            font-size: 23px;
-            line-height: 32px;
+            font-size: 18px;
+            line-height: 27px;
         }
     }
      &__forza-fuse {
@@ -139,7 +146,6 @@
 
 // Thinking
 .thinking {
-    font-family: 'Nexa Light';
     width: 100%;
     height: 100vh;
     position: relative;
@@ -151,17 +157,27 @@
         right: 70px;
         bottom: 20%;
         &__header {
-            font-family: 'Nexa Bold';
             border-top: 2px solid #4A4A47;
             border-bottom: 2px solid #4A4A47;
-            font-size: 80px;
+            font-size: 70px;
+            font-weight: 700;
             width: 90%;
-            padding: 10px 0px; 
+            height: 0px;
+            overflow: hidden;
+            transition: 1s;
+            position: relative;
+            span {
+                position: absolute;
+                top: -4%;
+            }
+            &--animate {
+                animation: textHeader 2s ease forwards;
+            }
         }
         &__body {
-            margin-top: 50px;
-            font-size: 23px;
-            line-height: 32px;
+            margin-top: 40px;
+            font-size: 18px;
+            line-height: 27px;
         }
     }
     &__cloud {
@@ -242,7 +258,6 @@
 }
 
 .workflow {
-    font-family: 'Nexa Light';
     width: 100%;
     height: 100vh;
     background-color: #333232;
@@ -269,6 +284,7 @@
         &__item {
             display: flex;
             justify-content: space-between;
+            margin-top: 30px; 
         }
     }
     &__text{
@@ -280,13 +296,23 @@
         &__header {
             border-top: 2px solid #FFFFFF;
             border-bottom: 2px solid #FFFFFF;
-            font-size: 80px;
+            font-size: 70px;
+            font-weight: 700;
             width: 90%;
-            padding: 10px 0px; 
+            height: 0px;
+            overflow: hidden;
+            transition: 1s;
+            position: relative;
+            span {
+                position: absolute;
+            }
+            &--animate {
+                animation: textHeader 2s ease forwards;
+            }
         }
         &__body {
-            font-size: 23px;
-            line-height: 32px;
+            font-size: 18px;
+            line-height: 25px;
             width: 550px;
         }
     }
@@ -372,20 +398,31 @@
 }
 .cleints {
     width: 100%;
-    padding-top: 150px;
+    padding-top: 100px;
     &__text{
         width: 100%;
         display: flex;
         flex-direction: row-reverse;
+        margin-bottom: 50px;
+        height: 80px;
         &__header {
-            border-top: 2px solid #4A4A47;
-            border-bottom: 2px solid #4A4A47;
-            font-size: 50px;
-            font-weight: 800;
+            border-top: 1px solid #4A4A47;
+            border-bottom: 1px solid #4A4A47;
+            font-size: 70px;
+            font-weight: 700;
             width: 90%;
-            margin-right: 100px;
+            margin-right: 250px;
             max-width: 300px;
-            padding: 10px 0px;
+            height: 0px;
+            overflow: hidden;
+            transition: 1s;
+            position: relative;
+            span {
+                position: absolute;
+            }
+            &--animate {
+                animation: textHeader 2s ease forwards;
+            }
 
         }
     }
@@ -405,11 +442,20 @@
     }
 }
 
+@keyframes textHeader {
+    0%{ 
+        height: 0px;
+        // padding: 0px 0px;
+    }
+    100%{
+        height: 85px;
+    }
+}
 @keyframes aboutheaders {
     0%{ 
         height: 5px;
     }
-    100%{height: inherit;}
+    100%{ height: 20px }
 }
 
 @keyframes kite {

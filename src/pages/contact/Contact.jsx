@@ -3,11 +3,19 @@ import {
   Link
 } from "react-router-dom";
 import './Contact.scss';
+import { ReactComponent as Cloud } from '../../icons/cloud.svg';
+import { ReactComponent as CloudTop } from '../../icons/cloudTop.svg';
 
 const Contact= (props) => {
 
   return (
     <main className="contact">
+                    <div className="home__images__cloud-top">
+                    <CloudTop />
+                </div>
+                <div className="home__images__cloud">
+                  <Cloud />
+                </div>
         <div>
             <header>
                 <div className="contact__header">

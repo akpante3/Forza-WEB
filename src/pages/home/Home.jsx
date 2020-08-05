@@ -52,7 +52,7 @@ const Home = () => {
       }
     }
 
-    const image = () => (<img ref={headerRef} className="home-header__cover-image" src={coverImage} style={{ transition: '1s'}}/>)
+    const image = () => (<img ref={headerRef} className="home-header__cover-image" src={coverImage} />)
 
     return (
       <main className={['home', isDay ? '' : 'home--dark-theme' ].join(' ')}>
