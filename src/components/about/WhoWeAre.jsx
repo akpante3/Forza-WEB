@@ -24,7 +24,7 @@ const WhoWeAre = (props) => {
       <div className="who-we-are" ref={ref}>
         <SideNav visible={visible} list={ aboutNavList } />
         { showPlayButton ? <Play className="who-we-are__playbutton" onClick={() => playVideo() } /> : '' }
-        <ReactPlayer onPause={handlePause} controls={!showPlayButton} playing={play} width="100%" height="100vh" url='https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/%234%20WooCommerce%20and%20React%20-%20Next.js%20with%20WooCommerce%20-%20WooCommerce%20Store%20-%20WooCommerce%20REST%20API.mp4?alt=media&token=2bc8f72a-8a72-417c-9c40-4fcff68e1e0a' />
+        <ReactPlayer onPause={handlePause} controls={!showPlayButton} playing={play} width="100%" height="100vh" url='https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/Self-Made%20-%20I%20Am%20Giannis%2C%20Episode%201%20-%20Nike.mp4?alt=media&token=8c59e336-e3b5-45cc-bbb5-f3f49e89e8a7' />
       </div>
   );
 }

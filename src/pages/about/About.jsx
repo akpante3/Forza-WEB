@@ -7,6 +7,7 @@ import Philosophy from '../../components/about/Philosophy';
 import Thinking from '../../components/about/Thinking';
 import WorkFlow from '../../components/about/WorkFlow';
 import Footer from '../../components/footer/footer';
+import Client from '../../components/about/Clients';
 import './About.scss'
 
 
@@ -18,8 +19,10 @@ const About = (props) => {
   const whoWeAreRef = React.useRef(null)
   const workFlowRef = React.useRef(null)
   let { section } = useParams();
+  let canvas;
+  let c;
   const executeScroll = (ref) => scrollToRef(ref)
-
+  
   useEffect(() => {
     setTimeout(() => {
       if( section === 'perspective') {
@@ -49,6 +52,9 @@ const About = (props) => {
       <div ref={ workFlowRef }>
         <WorkFlow />
       </div>
+     <div>
+        <Client />
+     </div>
       <Footer previous="What we do" next="Our Works"  />
     </div>
   );

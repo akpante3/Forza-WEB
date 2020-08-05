@@ -7,6 +7,7 @@ import BrandIdentityDev from '../../components/whatwedo/BrandIdentityDev';
 import DesginAndCreative from '../../components/whatwedo/DesignAndCreative';
 import Communication from '../../components/whatwedo/Communication';
 import MarketStrategy from '../../components/whatwedo/MarketStrategy';
+import Client from '../../components/about/Clients';
 import Footer from '../../components/footer/footer'
 import {
   Link
@@ -45,6 +46,8 @@ const WhatWeDo = (props) => {
     }, 0.1)
   }, [section]);
 
+
+
   return (
       <div>
         <div ref={ ourServicesRef }>
@@ -61,6 +64,9 @@ const WhatWeDo = (props) => {
         </div>
         <div ref={marketStrategyRef}>
           <MarketStrategy />
+        </div>
+        <div>
+          <Client />
         </div>
         <Footer bg='white' previous="Our team" next="Our Works" />
       </div>
