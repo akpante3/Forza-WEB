@@ -88,16 +88,52 @@ html, body {
   }
 
 }
+.cloud {
+  animation: move 110s infinite; 
+  padding-top: 30px;
+  height: 200px;
+}
+.cloud-top {
+  position: absolute;
+  width: 70%;
+  height: 300px;
+  animation: move 150s infinite; 
+}
+.double-birds {
+  position: absolute;
+  animation: birds-flight 60s ease infinite;  
+}
 
 a {
   text-decoration: none;
   color: inherit;
 }
 
+
 .animate-appear {
   animation: animateappear 2s ease forwards;  
 }
 
+@keyframes birds-flight {
+  0% { 
+    top: -3%;
+    left: 30%;
+    width: 100px;
+  }
+  15% {
+    top: 15%;
+    left: 45%;
+  }
+  50% {
+    top: 5%;
+    left: 45%;
+  }
+  100% {
+    top: 10%;
+    left: 30%;
+    width: 5px;
+  }
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

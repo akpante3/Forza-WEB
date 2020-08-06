@@ -42,7 +42,7 @@ const Home = () => {
 
     const AfterType = () => {
       setSwitchText(headerWords[counter])
-      console.log(counter, coverImage)
+
       setCoverImage(coverImageList[counter])
       if ( counter == headerWords.length - 1) {
         setCounter(0)

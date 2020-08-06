@@ -16,7 +16,6 @@ import './WhatWeDo.scss';
 
 
 
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
 
 
 const WhatWeDo = (props) => {
@@ -25,6 +24,11 @@ const WhatWeDo = (props) => {
   const desginAndCreativeRef = React.useRef(null)
   const communicationRef = React.useRef(null)
   const marketStrategyRef = React.useRef(null)
+
+  const scrollToRef = (ref) =>{
+    if (ref.current && ref.current.offsetTop) window.scrollTo(0, ref.current.offsetTop) 
+  }
+
   const executeScroll = (ref) => scrollToRef(ref)
 
   let { section } = useParams();
@@ -43,7 +47,7 @@ const WhatWeDo = (props) => {
       } else if (section === 'market-strategy') {
         executeScroll(marketStrategyRef)
       }
-    }, 0.1)
+    }, 0.5)
   }, [section]);
 
 
@@ -64,9 +68,6 @@ const WhatWeDo = (props) => {
         </div>
         <div ref={marketStrategyRef}>
           <MarketStrategy />
-        </div>
-        <div>
-          <Client />
         </div>
         <Footer bg='white' previous="Our team" next="Our Works" />
       </div>

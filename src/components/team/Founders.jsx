@@ -1,6 +1,9 @@
 import React from 'react';
+import { useOnScreen } from '../../hooks/index'
 
 const Founders = (props) => {
+    const [ ref, visible ] = useOnScreen({ threshold: 0.8 })
+
    const foundersList = [
       {
         firstName: 'Chikodi',
@@ -45,11 +48,13 @@ const Founders = (props) => {
 
 
   return (
-      <div className="founders">
+      <div className="founders" ref={ref}>
           <div className="founders__text">
             <div>
-                <div className={['founders__text__header'].join(' ')}>
-                  The Crew
+                <div className={['founders__text__header', visible ? "founders__text__header--animate" : '' ].join(' ')}>
+                  <span>
+                    The Crew
+                  </span>
                 </div>
             </div>
             <p className='founders__text__body'>

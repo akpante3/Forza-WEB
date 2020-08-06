@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import {
   Link
 } from "react-router-dom";
 import './Project.scss';
 import AwesomeSlider from 'react-awesome-slider';
+import AppContext from '../../context/context';
 import 'react-awesome-slider/dist/custom-animations/scale-out-animation.css';
 import 'react-awesome-slider/dist/styles.css';
 
 const Project= (props) => {
+const { setNavColor } = useContext(AppContext);
+
+useEffect(() => { 
+    // user()
+    setNavColor('black')
+}, [])
 
   return (
     <main className="project">

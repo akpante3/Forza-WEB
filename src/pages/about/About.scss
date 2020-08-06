@@ -14,6 +14,11 @@
     display: flex;
     height: 100vh;
     position: relative;
+    video {
+        width: 100%;
+        object-fit: cover;
+        height: 100vh;
+    }
     &__power-icon {
         display: inline-block;
         width: 45px;
@@ -118,7 +123,7 @@
             top: -5%;
         }
     }
-    @media (max-width: 1080px) {
+    @media (max-width: 800px) {
         &__forza-fuse {
             width: 300px;
         }
@@ -200,7 +205,7 @@
         }
 
     }
-    @media (max-width: 1080px) {
+    @media (max-width: 800px) {
         &__text {
             max-width: 300px;
             bottom: 4%;
@@ -316,7 +321,7 @@
             width: 550px;
         }
     }
-    @media (max-width: 1080px) {
+    @media (max-width: 800px) {
         &__image {
             width: 100px;
             &--kite {
@@ -403,7 +408,7 @@
         width: 100%;
         display: flex;
         flex-direction: row-reverse;
-        margin-bottom: 50px;
+        margin-bottom: 10%;
         height: 80px;
         &__header {
             border-top: 1px solid #4A4A47;
@@ -411,7 +416,7 @@
             font-size: 70px;
             font-weight: 700;
             width: 90%;
-            margin-right: 250px;
+            margin: 0 auto;
             max-width: 300px;
             height: 0px;
             overflow: hidden;

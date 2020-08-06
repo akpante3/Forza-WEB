@@ -25,16 +25,28 @@
         svg {
             width: 50px;
             height: 50px;
-            circle {
-                stroke: #333232;
-            }
-            polygon {
-                fill: #333232;
-            }
-            g {
-                stroke: #333232;;
+        }
+        &--black {
+            svg {
+                circle {
+                    stroke: #4A4A47;
+                }
+                polygon {
+                    fill: #4A4A47;
+                }
+                g {
+                    stroke: #4A4A47;
+                }
             }
         }
+        &--white {
+            svg {
+                g {
+                    stroke: rgb(255, 255, 255);
+                }
+            }
+        }
+
     }
 
 }
@@ -42,10 +54,13 @@
     position: relative;
     &__name {
         position: absolute;
-        font-family: 'Nexa Bold';
         width: 120px;
+        font-weight: 600;
         top: 35%;
         padding-left: 10px;
+        &--white {
+            color: white;
+        }
     }
 }
 

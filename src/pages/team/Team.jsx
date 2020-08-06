@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './Team.scss'
 import Founders from '../../components/team/Founders';
 import TeamSection from '../../components/team/TeamSection';
-import Footer from '../../components/footer/footer'
-import db, { user }from '../../services/firestore'
+import Footer from '../../components/footer/footer';
+import AppContext from '../../context/context';
+import db, { user }from '../../services/firestore';
 
 const Team = (props) => {
-    useEffect(async () => { 
-        user()
-    }, [ ])
+  const { setNavColor } = useContext(AppContext);
+
+  useEffect(() => { 
+      // user()
+      setNavColor('white')
+  }, [])
+
   return (
       <div className="team">
         <div className="team__founders">

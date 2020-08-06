@@ -21,14 +21,24 @@
             border-top: 2px solid #FFFFFF;
             border-bottom: 2px solid #FFFFFF;
             font-size: 65px;
-            width: 300px;
-            padding: 10px 0px; 
+            font-weight: 700;
+            width: 350px;
             overflow: hidden;
             margin-top: 10px;
+            height: 0px;
+            overflow: hidden;
+            transition: 1s;
+            position: relative;
+            span {
+                position: absolute;
+            }
+            &--animate {
+                animation: textHeader 1.5s ease forwards;
+            }
         }
         &__body {
-            font-size: 20px;
-            line-height: 32px;
+            font-size: 18px;
+            line-height: 27px;
             max-width: 400px;
             margin-left: 40px;
         }

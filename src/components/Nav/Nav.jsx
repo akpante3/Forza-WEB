@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useRouteMatch, useLocation } from "react-router-dom";
 import { ReactComponent as  NavIcon } from '../../icons/navIcon.svg';
 import { ReactComponent as Logo } from '../../icons/logo.svg';
+import AppContext from '../../context/context';
 import { ReactComponent as MenuButton } from '../../icons/hamburger.svg';
 import { ReactComponent as CloseButton } from '../../icons/closebutton.svg';
 import'./Nav.scss'
@@ -10,9 +11,10 @@ const Nav = (props) => {
   const { toggleMenu,  showMenu } = props
   const location = useLocation()
   const [ navName, setNavName ] = useState('')
+  const { navColor } = useContext(AppContext);
 
   useEffect(() => {
-      if (location.pathname === '/about') {
+      if (location.pathname.includes('/about')) {
         setNavName('About')
       } else if (location.pathname === '/team') {
         setNavName('Our Team')
@@ -34,10 +36,10 @@ const Nav = (props) => {
   return (
     <nav className="nav">
         <div className="nav__logo">
-          { match.isExact ? <Logo /> : <div className="nav-icon"><NavIcon /><span className="nav-icon__name">{ navName }</span></div> }
+          { match.isExact ? <Logo /> : <div className="nav-icon"><NavIcon /><span className={["nav-icon__name", navColor == 'white' ? 'nav-icon__name--white' : ''].join(' ')}>{ navName }</span></div> }
         </div>
-        <div className="nav__menu" onClick={() => toggleMenu()}>
-            { showMenu ?  <CloseButton className="nav__close nav__menu" /> : <MenuButton className="nav__menu nav__open" /> }
+        <div className={[ 'nav__menu']} onClick={() => toggleMenu()}>
+            { showMenu ?  <div className={['nav__menu', 'nav__menu--black'].join(' ')}> <CloseButton className="nav__close" />  </div>: <div className={[ navColor == 'white' ? 'nav__menu--white' : 'nav__menu--black']}><MenuButton className={[ "nav__open"].join(' ')} /></div> }
         </div>
     </nav>
   );

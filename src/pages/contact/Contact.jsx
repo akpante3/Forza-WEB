@@ -5,17 +5,21 @@ import {
 import './Contact.scss';
 import { ReactComponent as Cloud } from '../../icons/cloud.svg';
 import { ReactComponent as CloudTop } from '../../icons/cloudTop.svg';
+import { ReactComponent as DoubleBirds } from '../../icons/doubleBirds.svg';
 
 const Contact= (props) => {
 
   return (
     <main className="contact">
-                    <div className="home__images__cloud-top">
-                    <CloudTop />
-                </div>
-                <div className="home__images__cloud">
-                  <Cloud />
-                </div>
+        <div className="cloud-top">
+            <CloudTop />
+        </div>
+        <div className="cloud">
+            <Cloud />
+        </div>
+        <div className="double-birds">
+            <DoubleBirds />
+        </div>
         <div>
             <header>
                 <div className="contact__header">
