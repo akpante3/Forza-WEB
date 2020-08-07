@@ -9,6 +9,54 @@
         background-color: #333232;
         color: white;
     }
+    &__toggle-button {
+        right: 3%;
+        top: 2%;
+        display: flex;
+        z-index: 20;
+        position: absolute;
+        input[type=checkbox]{
+            height: 0;
+            width: 0;
+            visibility: hidden;
+        }
+        
+        label {
+            cursor: pointer;
+            text-indent: -9999px;
+            width: 60px;
+            height: 30px;
+            background: grey;
+            display: block;
+            border-radius: 100px;
+            position: relative;
+        }
+        
+        label:after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 18px;
+            height: 20px;
+            background: #fff;
+            border-radius: 90px;
+            transition: 0.3s;
+        }
+        
+        input:checked + label {
+            background: #FF5F4B;
+        }
+        
+        input:checked + label:after {
+            left: calc(100% - 5px);
+            transform: translateX(-100%);
+        }
+        
+        label:active:after {
+            width: 65px;
+        }
+    }
     &__header {
        font-size: 80px;
        
@@ -36,11 +84,9 @@
         height: 100%;
         align-items: flex-end;
         &__theme {
-            position: absolute;
-            width: 50px;
-            right: 70px;
-            animation: theme 1.5s forwards;
-            cursor: pointer;
+            // position: absolute;
+            margin-left: 10px;
+            width: 25px;
         }
         &__cloud {
             animation: move 110s infinite; 
@@ -96,12 +142,20 @@
     height: 100vh;
     overflow: hidden;
     border-bottom: #333232 solid 3px;
+    &--dark-theme {
+        background-color: #333232;
+        color: white;
+    }
 }
 
 .home-footer {
     width: 100%;
     align-content: center;
     padding: 40px 40px;
+    &--dark-theme {
+        background-color: #333232;
+        color: white;
+    }
     &__lets-talk {
        max-width: 600px;
        margin: 0 auto;
@@ -213,6 +267,7 @@
         padding: 20px 30px;
     }
 }
+
 
 @keyframes direction-icon {
     0%{ 

@@ -4,7 +4,7 @@ import {
 } from "react-router-dom";
 import { useOnScreen } from '../../hooks/index';
 import SideNav from '../sideNav/SideNav';
-import { ourservicesNavList } from '../../utils/lists'
+import { aboutNavList } from '../../utils/lists'
 
 const Clients = (props) => {
   const [ref, visible] = useOnScreen({ threshold: 0.8 })
@@ -22,7 +22,7 @@ const Clients = (props) => {
 
   return (
       <div className="cleints what-we-do-container" ref={ref}>
-        <SideNav visible={visible} bg='black' list={ourservicesNavList} />
+        <SideNav visible={visible} bg='black' list={aboutNavList} />
         <div className="cleints__text">
           <div className={["cleints__text__header", visible ? "cleints__text__header--animate" : ''].join(' ')}><span>Cleints</span></div>
         </div>

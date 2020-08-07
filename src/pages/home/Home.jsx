@@ -13,7 +13,7 @@ import { useOnScreen } from '../../hooks/index';
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
 
 const Home = () => {
-    const [ ref, visible ] = useOnScreen({ threshold: 0.5 })
+    const [ bodyRef, visible ] = useOnScreen({ threshold: 0.5 })
     const [ headerRef, HeaderVisible ] = useOnScreen({ threshold: 0.80 })
     const [ switchText, setSwitchText ] = useState('Services')
     const [ isDay, setIsDay ]= useState( true )
@@ -69,18 +69,17 @@ const Home = () => {
         </div>
         <div className="home-header">
            { image() }
-           <img onClick={() => executeScroll(ref)} className="home-header__direction-icon" src={require('../../icons/downward-arrow.png')} />
+           <img onClick={() => executeScroll(bodyRef)} className="home-header__direction-icon" src={require('../../icons/downward-arrow.png')} />
         </div>
-        <div className="home-body" ref={ref}>
+        <div className={["home-body", isDay ? '' : 'home-body--dark-theme'].join(' ')} ref={bodyRef}>
           <div className={["home-text-body", visible? 'home-text-body--animate-in' : 'home-text-body--animate-out'].join(' ')}>
               We’re a marketing agency. We work with goal oriented brands and companies to create digital marketing solutions that people love. Because what works for people, works for business.
           </div>
           <div className="home__images">
-                {/* <div className="">
-                {
-                  isDay ? (<div className="home__images__theme" onClick={ () => toggleTheme() }><Sun /></div>) : (<div className="home__images__theme" onClick={ () => toggleTheme() }><Moon /></div>)
-                }
-                </div> */}
+               <div className="home__toggle-button">
+                  <input type="checkbox" id="switch" onClick={ () => toggleTheme() } /><label for="switch">Toggle</label>
+                  { isDay ? (<div className="home__images__theme"><Sun /></div>) : (<div className="home__images__theme"><Moon /></div>)}
+               </div>
                 <div className="home__images__bird-one">
                   <Bird />
                 </div>
@@ -95,7 +94,7 @@ const Home = () => {
               </div>
           </div>
         </div>
-        <div className="home-footer">
+        <div className={["home-footer", isDay ? '' : 'home-footer--dark-theme'].join(' ')}>
           <div className="home-footer__lets-talk">
             <LetsTalk />
             <div className="home-footer__lets-talk__text">

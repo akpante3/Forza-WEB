@@ -4,7 +4,7 @@ import { useOnScreen } from '../../hooks/index';
 const TeamSection = (props) => {
    const [ref, visible] = useOnScreen({ threshold: 0.8 })
    
-   const foundersList = [
+   const teamList = [
       {
         firstName: 'Chika',
         lastName: 'Nzekwe',
@@ -48,11 +48,11 @@ const TeamSection = (props) => {
 
   const teamDetails = (data) => {
     return (
-      <div className="team-section__profile">
-        <img src={data.image} />
+      <div className="team-section__profile" key={data.id}>
+        <img src={data.data.image} />
         <div className="team-section__profile__text">
-            <h2 className="team-section__profile__text__name">{data.firstName} {data.lastName}</h2>
-            <div className="team-section__profile__text__role">{data.role}</div>
+            <h2 className="team-section__profile__text__name">{data.data.name}</h2>
+            <div className="team-section__profile__text__role">{data.data.role}</div>
         </div>            
       </div>
     )
@@ -62,7 +62,7 @@ const TeamSection = (props) => {
   return (
       <div className="team-section">
         <div className="team-section__profiles">
-          { foundersList.map((data) => teamDetails(data))}
+          { props.team.length ? props.team.map((data) => teamDetails(data)) : <div> loading....</div>}
         </div>
       </div>
   );

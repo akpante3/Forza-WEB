@@ -16,8 +16,10 @@ const App = () => {
   const [ showMenu, setshowMenu ] = useState(false);
   const [ menuClass, setMenuClass ] = useState('');
   const [ navColor, setNavColor ] = useState('')
+  const [ scrollTo, setScrollTo ] = useState(true)
 
   const toggleNavColor = (color) => setNavColor(color)
+  const toggleScrollTo= (color) => setScrollTo(color)
 
   const toggleMenu = () => {
     setshowMenu(!showMenu)
@@ -29,7 +31,9 @@ const App = () => {
     <AppContext.Provider
       value={{
         navColor,
-        setNavColor: (color) => toggleNavColor(color)
+        setNavColor: (color) => toggleNavColor(color),
+        scrollTo,
+        setScrollTo: (value) => toggleScrollTo(value)
       }}
     >
       <main className="main-container">
