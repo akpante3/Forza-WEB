@@ -17,7 +17,7 @@ const Home = () => {
     const [ headerRef, HeaderVisible ] = useOnScreen({ threshold: 0.80 })
     const [ switchText, setSwitchText ] = useState('Services')
     const [ isDay, setIsDay ]= useState( true )
-    const [ coverImage, setCoverImage ] = useState('https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/62DDFA63-EB83-4214-80BC-204EFCC0BDD4.png?alt=media&token=b74b31e5-5583-4c89-848b-f5efbe9544e1')
+    const [ coverImage, setCoverImage ] = useState('https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/Screen%20Shot%202020-08-04%20at%201.03.16%20AM.png?alt=media&token=a7817bff-96b5-488e-bc21-0fd0a4d9bfca')
     const headerWords = ['Branding', 'Marketing']
     const coverImageList = ['https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/62DDFA63-EB83-4214-80BC-204EFCC0BDD4.png?alt=media&token=b74b31e5-5583-4c89-848b-f5efbe9544e1', 'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/Screen%20Shot%202020-08-04%20at%201.03.16%20AM.png?alt=media&token=a7817bff-96b5-488e-bc21-0fd0a4d9bfca']
     let [ counter, setCounter ] = useState(0)
@@ -58,7 +58,8 @@ const Home = () => {
       <main className={['home', isDay ? '' : 'home--dark-theme' ].join(' ')}>
         <div className="home-text-headers">
            <p className="home-text-headers__text home-text-headers__bold">
-{   HeaderVisible ?        (<Typing onFinishedTyping={() => AfterType()} loop={true} speed={300}>
+            {   HeaderVisible ?        
+              (<Typing onFinishedTyping={() => AfterType()} loop={true} speed={300}>
               <span>{switchText}</span>
               <Typing.Backspace count={switchText.length} />
             </Typing>) : switchText}

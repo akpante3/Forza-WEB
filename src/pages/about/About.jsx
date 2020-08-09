@@ -25,7 +25,7 @@ const About = (props) => {
 
   let { section } = useParams();
   let history = useHistory()
-  
+
   const executeScroll = (ref) => scrollToRef(ref)
   
   useEffect(() => {
@@ -74,7 +74,7 @@ const About = (props) => {
 
 
   return (
-    <div>
+    <main>
       <div ref={ whoWeAreRef }>
         <WhoWeAre  />
       </div>
@@ -90,8 +90,8 @@ const About = (props) => {
      <div ref={clientRef}>
         <Client />
      </div>
-      <Footer bg='white' previous="What we do" next="Our Works"  />
-    </div>
+      <Footer bg='white' next={{ link: "/services/our-services", name: "Our Services" }} previous={{ name: "Our Works", link: "/our-works" }}  />
+    </main>
   );
 }
 

@@ -1,6 +1,7 @@
 .footer {
     width: 100%;
     padding: 30px 70px;
+    transition:  0.8s;
     &--bg-black {
         color: #ffffff;
         background-color: #333232;
@@ -30,11 +31,20 @@
         display: flex;
         justify-content: space-evenly;
         padding: 20px 0px;
+        transition:  0s;
         &__item {
             font-size: 35px;
+            cursor: pointer;
             width: 100%;
+            font-weight: 600;
             padding: 20px;
             text-align: center;
+            transition:  0s;
+            &:hover {
+                transition:  0s;
+                color: #FF5F4B;
+                text-decoration: underline;
+            }
         }
     }
 }

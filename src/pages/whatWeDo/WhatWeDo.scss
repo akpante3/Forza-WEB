@@ -18,6 +18,23 @@
         display: flex;
         ul {
             padding: 0px;
+            list-style: none;
+            li {
+                display: flex;
+                position: relative;
+                p {
+                    margin-left: 60px;
+                    max-width: 120px;
+                }
+                .communication__text__icon{
+                    svg {
+                        position: absolute;
+                        width: 50px;
+                        height: 55px;
+                        top: 15px;
+                    }
+                }
+            }
         }
         &__details {
             max-width: 400px;
@@ -76,7 +93,7 @@
     }
 }
 
-.communition {
+.communication {
     background-color: #333232;
     &__text {
         position: absolute;

@@ -49,7 +49,9 @@ const TeamSection = (props) => {
   const teamDetails = (data) => {
     return (
       <div className="team-section__profile" key={data.id}>
+      <div className="team-section__profile__image">
         <img src={data.data.image} />
+      </div>
         <div className="team-section__profile__text">
             <h2 className="team-section__profile__text__name">{data.data.name}</h2>
             <div className="team-section__profile__text__role">{data.data.role}</div>

@@ -1,10 +1,16 @@
-import React from 'react';
+import React , {useContext} from 'react';
+import AppContext from '../../context/context';
+
 import {
   Link
 } from "react-router-dom";
+import Footer from '../../components/footer/footer';
 import './OurWorks.scss';
 
 const Contact= (props) => {
+    const { setNavColor } = useContext(AppContext);
+
+    setNavColor ('black')
    const communicationProjects = [
        {
         image: require('../../icons/images/work2.png'),
@@ -91,6 +97,7 @@ const Contact= (props) => {
                 { Market() }
             </div>
         </div>
+        <Footer bg='white' previous={{ link: "/services/our-services", name: "Our Services" }} next={{ name: "Our Team", link: "/team" }}  />
     </main>
   );
 }

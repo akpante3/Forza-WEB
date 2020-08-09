@@ -6,9 +6,13 @@ import Footer from '../../components/footer/footer';
 import AppContext from '../../context/context';
 import db from '../../services/firestore';
 
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
+
 const Team = (props) => {
   const { setNavColor } = useContext(AppContext);
   const [team, setTeam] = useState([])
+  const teamRef = React.useRef(null)
+  const executeScroll = (ref) => scrollToRef(ref)
 
   useEffect(() => { 
       setNavColor('white')
@@ -28,11 +32,12 @@ const Team = (props) => {
       <div className="team">
         <div className="team__founders">
           <Founders />
+          <img onClick={() => executeScroll(teamRef)} className="home-header__direction-icon" src={require('../../icons/downward-arrow.png')} />
         </div>
-        <div className="team__team">
+        <div className="team__team" ref={teamRef}>
              <TeamSection team={team} />
         </div>
-        <Footer previous="Our works" next="Our services" bg="white"  />
+        <Footer bg='white' previous={{ link: "/our-works", name: "Our Work" }} next={{ link: "/about/who-we-are", name: "About Us" }}  />
       </div>
   );
 }
