@@ -2,14 +2,14 @@ import * as firebase from "firebase/app";
 import "firebase/firestore";
 
 const firebaseConfig = {
-    // apiKey: "AIzaSyApbEXKTeko5YsuCQ1OMnzwl2I91aY7ak4",
-    // authDomain: "forza-42793.firebaseapp.com",
-    // databaseURL: "https://forza-42793.firebaseio.com/",
-    // projectId: "forza-42793",
-    // storageBucket: "forza-42793.appspot.com",
-    // messagingSenderId: "170754823498",
-    // appId: "1:170754823498:web:c21bc65a6c3ed720f21db3",
-    // measurementId: "G-QEJJN86ZX9"
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATA_BASE_URL,
+    projectId: process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGE_SENDER_ID,
+    appId: process.env.APP_ID,
+    measurementId: process.env.MESUREMENT_ID
 };
 
 firebase.initializeApp(firebaseConfig);
