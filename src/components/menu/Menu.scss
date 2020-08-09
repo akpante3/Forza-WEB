@@ -33,6 +33,9 @@
         cursor: pointer;
         letter-spacing: 2px;
         margin-bottom: 20px;
+        &--active {
+            color: #FF5F4B;
+        }
         @media (max-width: 700px) {
             font-size: 45px;
             margin-bottom: 10px;
