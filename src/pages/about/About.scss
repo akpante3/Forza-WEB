@@ -272,13 +272,26 @@
     &__image {
         position: absolute;
         transition: 1s;
+        margin: 0 auto;
         &--kite {
-            top: 10%;
-            left: 15%;
-            animation: kiteout 1.5s ease forwards;
+            top: 35%;
+            right: 15%;
+            svg {
+                width: 200px;
+                height: 250px;
+                margin: 0 auto;
+            }
+            
+            // animation: kiteout 1.5s ease forwards;
         }
         &--animate {
-            animation: kite 1.5s ease forwards;   
+            top: 10%;
+            right: 12%;
+            animation: kite 5s ease infinite; 
+            svg {
+                width: 500px;
+                height: 450px;
+            }  
         } 
     }
     &__list {
@@ -465,12 +478,16 @@
 
 @keyframes kite {
     0%{ 
-        top: 20%;
-        left: 15%;
+        top: 10%;
+        right: 12%;
     }
-    100%{
+    50% {
         top: 15%;
-        left: 20%;
+        right: 12%;  
+    }
+    100%{ 
+        top: 10%;
+        right: 12%;
     }
 }
 

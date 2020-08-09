@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import {
   Link
 } from "react-router-dom";
@@ -6,8 +6,15 @@ import './Contact.scss';
 import { ReactComponent as Cloud } from '../../icons/cloud.svg';
 import { ReactComponent as CloudTop } from '../../icons/cloudTop.svg';
 import { ReactComponent as DoubleBirds } from '../../icons/doubleBirds.svg';
+import AppContext from '../../context/context';
 
 const Contact= (props) => {
+    const { setNavColor } = useContext(AppContext);
+
+    useEffect(() => { 
+        setNavColor('black')
+    }, [])
+
 
   return (
     <main className="contact">
