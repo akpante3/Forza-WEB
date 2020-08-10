@@ -3,7 +3,7 @@ import AppContext from '../../context/context';
 import {
   Link
 } from "react-router-dom";
-import './footer.scss';
+import './Footer.scss';
 
 const Footer = (props) => {
     const { previous, next, bg } = props

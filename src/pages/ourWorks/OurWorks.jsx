@@ -4,7 +4,7 @@ import AppContext from '../../context/context';
 import {
   Link
 } from "react-router-dom";
-import Footer from '../../components/footer/footer';
+import Footer from '../../components/footer/Footer';
 import './OurWorks.scss';
 
 const Contact= (props) => {

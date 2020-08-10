@@ -3,14 +3,9 @@ import { ReactComponent as Buldwire } from '../../icons/buldwire.svg';
 import { ReactComponent as ForzaFuse } from '../../icons/forzaFuze.svg';
 import { ReactComponent as ForzaFuseOff } from '../../icons/forzaFuzeoff.svg';
 import { useOnScreen } from '../../hooks/index';
-import {
-    useParams, useHistory
-  } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import SideNav from '../sideNav/SideNav';
 import { aboutNavList } from '../../utils/lists'
-import {
-  Link
-} from "react-router-dom";
 
 const WhoWeAre = (props) => {
     const [ ref, visible ] = useOnScreen({ threshold: 0.8 })

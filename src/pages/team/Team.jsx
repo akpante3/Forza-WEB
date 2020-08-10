@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import './Team.scss'
 import Founders from '../../components/team/Founders';
 import TeamSection from '../../components/team/TeamSection';
-import Footer from '../../components/footer/footer';
+import Footer from '../../components/footer/Footer';
 import AppContext from '../../context/context';
 import db from '../../services/firestore';
 
@@ -12,11 +12,15 @@ const Team = (props) => {
   const { setNavColor } = useContext(AppContext);
   const [team, setTeam] = useState([])
   const teamRef = React.useRef(null)
+  const topteamRef = React.useRef(null)
   const executeScroll = (ref) => scrollToRef(ref)
 
   useEffect(() => { 
       setNavColor('white')
       fetchTeam()
+      setTimeout(() => {
+        executeScroll(topteamRef)
+      }, 500);
   }, [])
    
   const fetchTeam = async () => {
@@ -30,7 +34,7 @@ const Team = (props) => {
 
   return (
       <div className="team">
-        <div className="team__founders">
+        <div className="team__founders" ref={topteamRef}>
           <Founders />
           <img onClick={() => executeScroll(teamRef)} className="home-header__direction-icon" src={require('../../icons/downward-arrow.png')} />
         </div>

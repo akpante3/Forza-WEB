@@ -164,7 +164,7 @@
            margin-top: 30px;
            &__link {
             text-align: center;
-               p {
+               a {
                 color: #FF5F4B;
                 text-decoration: underline;
                 font-weight: 800;
@@ -179,13 +179,11 @@
     }
 }
 .home-text-headers {
-    border-left: #FF5F4B solid 1px;
     padding-left: 10px;
     max-width: 500px;
     margin-left: 70px;
-    height: 600px;
     position: absolute;
-    top: 60vh;
+    top: 55vh;
     z-index: 5;
     @media (max-width: 1080px) {
         height: 700px;
@@ -207,12 +205,13 @@
     &__text {
         font-size: 70px;
         line-height: 70px;
+        text-shadow: 1px 1px rgba(80, 79, 79, 0.4);
     }
     &__bold {
         font-weight: 800;
         color: #FF5F4B;
         display: block;
-        height: 70px;
+        min-height: 70px;
     }
     &__medium {
         font-weight: 600;
@@ -229,11 +228,13 @@
     position: relative;
     width: 100%;
     height: 100vh;
+    overflow: hidden;
     &__cover-image {
         width: 100%;
         height: 100vh;
         object-fit: cover;
-        transition: 0s;
+        transition: 3s;
+        animation: scale 15s ease infinite;
     }
     &__direction-icon {
        position: absolute;
@@ -246,12 +247,31 @@
 }
 .home-text-body {
     max-width: 500px;
-    border-top: #FF5F4B solid 1px;
-    padding: 30px 50px;
+    padding: 30px;
     position: absolute;
     top: 20vh;
     z-index: 5;
-    transition: 2s;
+    transition: 1s;
+    &__link {
+        margin-top: 30px;
+        a {
+            color: #FF5F4B;
+            text-decoration: underline;
+            font-weight: 600;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    }
+    h2 {
+        font-size: 70px;
+        line-height: 69px;
+        font-weight: 700;
+        margin: 0px;
+    }
+    p {
+        font-size: 18px;
+        line-height: 27px;
+    }
     &--animate-in {
         margin-left: 35px;
     }
@@ -268,6 +288,18 @@
     }
 }
 
+@keyframes scale {
+    0%{ 
+        transform: scale(1.0)
+    }
+
+    50%{ 
+        transform: scale(1.05)
+    }
+    100%{
+        transform: scale(1.0)
+    }
+}
 
 @keyframes move {
     0%{ 
