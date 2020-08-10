@@ -9,7 +9,7 @@ import DesginAndCreative from '../../components/whatwedo/DesignAndCreative';
 import Communication from '../../components/whatwedo/Communication';
 import MarketStrategy from '../../components/whatwedo/MarketStrategy';
 import Client from '../../components/about/Clients';
-import Footer from '../../components/footer/Footer'
+import Footer from '../../components/footer/footer'
 import { useOnScreen } from '../../hooks/index';
 import {
   Link
