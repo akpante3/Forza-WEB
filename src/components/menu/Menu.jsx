@@ -11,7 +11,7 @@ const Menu = (props) => {
     <div className={['menu','menu--bg-white', `${props.class}`].join(' ')}>
        <div className="menu__items">
             <div className={["menu__item", location.pathname === '/' ? "menu__item--active" : ''].join(' ')} onClick={props.toggleMenu}><Link to="/">Home</Link></div>
-            <div className={["menu__item", location.pathname.includes('/about') ? "menu__item--active" : ''].join(' ')} onClick={props.toggleMenu}><Link to="/about/who-we-are">About Us</Link></div>
+            <div className={["menu__item", location.pathname.includes('/about/') ? "menu__item--active" : ''].join(' ')} onClick={props.toggleMenu}><Link to="/about/who-we-are">About Us</Link></div>
             <div className={["menu__item", location.pathname.includes('/services/') ? "menu__item--active" : ''].join(' ')} onClick={props.toggleMenu}><Link to="/services/our-services">Our Services</Link></div>
             <div className={["menu__item", location.pathname === '/our-work' ? "menu__item--active" : ''].join(' ')} onClick={props.toggleMenu}><Link to="/our-works">Our Work</Link></div>
             <div className={["menu__item", location.pathname === '/team' ? "menu__item--active" : ''].join(' ')} onClick={props.toggleMenu}><Link to="/team">The Team</Link></div>
