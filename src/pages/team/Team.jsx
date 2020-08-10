@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import './Team.scss'
 import Founders from '../../components/team/Founders';
 import TeamSection from '../../components/team/TeamSection';
-import Footer from '../../components/footer/footer';
+import Footer from '../../components/app-footer/Footer';
 import AppContext from '../../context/context';
 import db from '../../services/firestore';
 

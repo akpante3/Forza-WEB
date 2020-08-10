@@ -1,6 +1,6 @@
 import React from 'react';
 import { useOnScreen } from '../../hooks/index';
-import Footer from '../../components/footer/footer'
+import Footer from '../../components/app-footer/Footer'
 import './SingleProfile.scss';
 
 

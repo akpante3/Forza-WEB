@@ -6,7 +6,7 @@ import WhoWeAre from '../../components/about/WhoWeAre';
 import Philosophy from '../../components/about/Philosophy';
 import Thinking from '../../components/about/Thinking';
 import WorkFlow from '../../components/about/WorkFlow';
-import Footer from '../../components/footer/footer';
+import Footer from '../../components/app-footer/Footer';
 import Client from '../../components/about/Clients';
 import AppContext from '../../context/context';
 import { useOnScreen } from '../../hooks/index';
