@@ -49,6 +49,8 @@ const WhatWeDo = (props) => {
           executeScroll(communicationRef)  
         } else if (section === 'market-strategy') {
           executeScroll(marketStrategyRef)
+        } else {
+          history.push('/404')
         }
       }
     }, 0.5)

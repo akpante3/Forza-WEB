@@ -41,7 +41,9 @@ const About = (props) => {
           executeScroll(workFlowRef)  
         } else if (section === 'clients') {
           executeScroll(clientRef) 
-        }
+        } else {
+          history.push('/404')
+        } 
       }
     }, 0.1)
   }, [section]);

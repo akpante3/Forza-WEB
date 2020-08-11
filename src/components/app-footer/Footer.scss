@@ -2,6 +2,9 @@
     width: 100%;
     padding: 30px 70px;
     transition:  0.8s;
+    @media (max-width: 800px) { 
+        padding: 10px 10px;
+    }
     &--bg-black {
         color: #ffffff;
         background-color: #333232;
@@ -40,6 +43,9 @@
             padding: 20px;
             text-align: center;
             transition:  0s;
+            @media (max-width: 800px) { 
+                font-size: 25px;
+            }
             &:hover {
                 transition:  0s;
                 color: #FF5F4B;

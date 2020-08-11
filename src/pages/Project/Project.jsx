@@ -1,55 +1,66 @@
-import React, { useEffect, useContext } from 'react';
-import {
-  Link
-} from "react-router-dom";
-import './Project.scss';
+import React, { useEffect, useContext, useState } from 'react';
+import { useParams } from "react-router-dom";
+import db from '../../services/firestore';
 import AwesomeSlider from 'react-awesome-slider';
 import AppContext from '../../context/context';
+import './Project.scss';
 import 'react-awesome-slider/dist/custom-animations/scale-out-animation.css';
 import 'react-awesome-slider/dist/styles.css';
 
 const Project= (props) => {
-const { setNavColor } = useContext(AppContext);
+    const { setNavColor } = useContext(AppContext);
+    const [ project, setProject ] = useState('')
 
-useEffect(() => { 
-    // user()
-    setNavColor('black')
-}, [])
+    let { id } = useParams();
 
-  return (
-    <main className="project">
-        <div className="project__header">
-          <img src={require('../../icons/images/projectheader.png')} />
-        </div>
-        <div className="project__text">
-            <h1 className="project__text__header">Creating Safety in an Open world.</h1>
-            <div className="project__text__body">
-                <div className="project__text__body__decription">
-                    <p>
-                        We were tasked to coming up with a new brand identity that corresponds with the new ideology of the company which is centred around “safety in an open world”. The company has just evolved to a GROUP of companies. We carried out the following tasks for Halogen group and it’s 6 New Operating companies.<br /><br />
-                        After quality research, we decided to work on building a comfortable brand that leveraged on their Experience, Response and Technology. Beyond their brand strategy, we designed their uniforms, branded their vehicles and other visual elements for their brand.
-                    </p>
-                </div>
-                <div className="project__text__body__list">
-                    <ul>
-                        <li>Brand analysis & Research</li>
-                        <li>Brand story</li>
-                        <li>Brand Identity and Visual language system</li>
-		                <li>Corpotae Identity Standards Manual</li>
-	                    <li>Brand Strategy brochure</li>
-                    </ul>
+    useEffect(() => { 
+        setNavColor('black')
+        fetchProject()
+    }, [])
+
+
+    const fetchProject = () => {
+        console.log(id)
+        var docRef = db.collection('projects').doc(id);
+
+        docRef.get().then(function(doc) {
+            if (doc.exists) {
+                console.log("Document data:", doc.data());
+                setProject(doc.data())
+            } else {
+                console.log("No such document!");
+            }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
+        });
+    }
+
+    return (
+        <main className="project">
+{ project ?  (<div>
+            <div className="project__header">
+                <img src={ project.descriptionHeaderImage } />
+            </div>
+            <div className="project__text">
+                <h1 className="project__text__header">{project.descriptionHeaderText}</h1>
+                <div className="project__text__body">
+                    <div className="project__text__body__decription" dangerouslySetInnerHTML={{ __html: project.description }} />
+                    <div className="project__text__body__list">
+                        <ul>
+                            { project.descriptionTextList.map((data) => <li>{ data }</li>)}
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div className="project__images">
-        <AwesomeSlider  mobileTouch={true} >
-            <div data-src={require('../../icons/images/imageslide1.png')} />
-            <div data-src={require('../../icons/images/imageslide2.png')} />
-            <div data-src={require('../../icons/images/imageslide3.png')}/>
-        </AwesomeSlider>
-        </div>
-    </main>
-  );
+            <div className="project__images">
+            <AwesomeSlider  mobileTouch={true} >
+                { project.descriptionImageList.map((data) => <div data-src={data} />) }
+            </AwesomeSlider>
+            </div>
+        </div>) : 'loading!!!!....'}
+
+        </main>
+    );
 }
 
 export default Project;
