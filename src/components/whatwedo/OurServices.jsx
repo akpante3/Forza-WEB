@@ -1,7 +1,4 @@
 import React from 'react';
-import {
-  Link
-} from "react-router-dom";
 import { useOnScreen } from '../../hooks/index';
 import { ourservicesNavList } from '../../utils/lists';
 import SideNav from '../sideNav/SideNav';

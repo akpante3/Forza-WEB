@@ -28,10 +28,10 @@ const Contact= (props) => {
 
     const Communications = () => {
         return (
-            work.map((data) => (
-                <div className="our-works__item">
+            work.map((data, index) => (
+                <div className="our-works__item" key={index}>
                     <div className="our-works__item__image">
-                    <img  onClick={() => history.push(`/our-works/projects/${data.id}`)} src={data.data.image} alt="" />
+                    <img  onClick={() => history.push(`/our-work/projects/${data.id}`)} src={data.data.image} alt="" />
                     </div>
                     <div className="our-works__item__description">
                         <h2>{ data.data.name }</h2>

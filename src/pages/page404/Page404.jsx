@@ -10,7 +10,7 @@ const Page404= (props) => {
       <div className="page-404__wrapper">
         <h1>4 <div className="page-404__power-icon" ><PowerIcon /></div> 4</h1>
         <p>Page was not found</p>
-        <button><Link to='/' >Home Page</Link></button>
+        <button className="btn"><Link to='/' >Home Page</Link></button>
       </div>
     </main>
   );

@@ -1,7 +1,4 @@
 import React from 'react';
-import {
-  Link
-} from "react-router-dom";
 import { useOnScreen } from '../../hooks/index';
 import SideNav from '../sideNav/SideNav';
 import { ourservicesNavList } from '../../utils/lists'
@@ -19,7 +16,8 @@ const BrandIdentityDev = (props) => {
                    <p className="what-we-do-container__text__details__body">Good branding should spark an emotional connection within a brand’s target audience. It is a careful marriage between the brand’s positioning statement and the visual elements of that brand. We immerse ourselves in rigorous strategy that helps us craft dynamic branding elements for our customers, delivering a long standing identity that sets you apart.</p>
                 </div>                  
             </div>
-            { visible ? (<img className="what-we-do__image" src={ require('../../icons/images/catImageShadow.png') } />) : (<img className="what-we-do__image" src={require('../../icons/images/catimage.png')} />) }
+            <img className="what-we-do__image" src={require('../../icons/images/catimage.png')} />
+            { visible ? (<img className="what-we-do__image what-we-do__image--shadow  animate-appear" src={ require('../../icons/images/catImageShadow.png') } />) : '' }
            
       </div>
   );

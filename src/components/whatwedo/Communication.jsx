@@ -1,7 +1,4 @@
 import React from 'react';
-import {
-  Link
-} from "react-router-dom";
 import { useOnScreen } from '../../hooks/index';
 import SideNav from '../sideNav/SideNav';
 import { ReactComponent as Thought1 } from '../../icons/thought/1.svg';
@@ -33,13 +30,15 @@ const Communication= (props) => {
                     <div className="list__number"><span className={['list__number__figures', 'list__number__figures--three', visible ? 'list__number__figures--animate-in' : 'list__number__figures--animate-out' ].join(' ')}>3</span></div>
                     <div className="what-we-do-container__text__details">
                     <div className="what-we-do-container__text__details__header">Communications</div>
-                    <p className="what-we-do-container__text__details__body">Today’s world is noisy, fast-paced and busier than ever before, Consumers have shorter than ever attention spans to give your brand a chance to register in their minds. Our prerogative is to convert your brand into an experience using a blended approach to communicate your brand’s core promise. We position brands firmly in the minds of their target audience</p>
+                    <p className="what-we-do-container__text__details__body">Today’s world is noisy, fast-paced and busier than ever before, Consumers have shorter than ever attention spans to give your brand a chance to register in their minds. Our prerogative is to convert your brand into an experience using a blended approach to communicate your brand’s core promise.</p>
                     <ul className="what-we-do-container__text__details__body"> 
                         <li>
                             <div className="communication__text__icon">
                              <DigitalMarketing />
                             </div>
-                            <p>Digital Marketing</p>
+                            <div className={[visible ? 'animate-list-item--on' : 'animate-list-item'].join(' ')}>
+                                <p >Digital Marketing</p>
+                            </div>
                         </li>
                         <li><div className="communication__text__icon"><PublicRelations /></div> <p>Public Relations</p></li>
                         <li><div className="communication__text__icon"><SocialMedia /></div> <p>Social Media Management</p>  </li>                      </ul>

@@ -9,7 +9,6 @@ import { aboutNavList } from '../../utils/lists'
 
 const WhoWeAre = (props) => {
     const [ ref, visible ] = useOnScreen({ threshold: 0.8 })
-    let history = useHistory()
     
     // useEffect(() => { 
     //     if(visible) {

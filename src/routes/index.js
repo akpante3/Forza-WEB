@@ -21,8 +21,8 @@ import {
 const Routes = () => ( 
   <Switch>
       {/* <Route path='/' component={page} />  */}
-      <Route name="our-works" exact  path='/our-works' component={OurWorks} />
-      <Route name="our-works-projects" exact  path='/our-works/projects/:id' component={Project} />
+      <Route name="our-works" exact  path='/our-work' component={OurWorks} />
+      <Route name="our-works-projects" exact  path='/our-work/projects/:id' component={Project} />
       <Route name="contact" exact  path='/contact' component={Contact} />
       <Route name="team" exact path='/team' component={Team} />
       <Route name="team" exact path='/team/:id' component={SingleProfile} />

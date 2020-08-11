@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { useOnScreen } from '../../hooks/index';
+// import { useOnScreen } from '../../hooks/index';
 import { useParams } from "react-router-dom";
 import AppContext from '../../context/context';
 import db from '../../services/firestore';
@@ -8,7 +8,7 @@ import './SingleProfile.scss';
 
 
 const WorkFlow = (props) => {
-    const [ref, visible] = useOnScreen({ threshold: 0.7 })
+    // const [ref, visible] = useOnScreen({ threshold: 0.7 })
     const { setNavColor } = useContext(AppContext);
     const [ userProfile, setUserProfile ] = useState('')
     const [footerData, setFooterData] = useState('')

@@ -103,7 +103,7 @@ const Contact= (props) => {
                     <input onChange={e => setEmail(e.target.value)}  id="itext-13" placeholder="Email" type="email" required/>
                     <input onChange={e => setPhoneNumber(e.target.value)}  id="itext-13" placeholder="Phone Number" type="tel" required/>
                 </div>
-                <button type="submit">
+                <button type="submit" className="btn">
                     SEND
                 </button>
                 <p className="contact__number">

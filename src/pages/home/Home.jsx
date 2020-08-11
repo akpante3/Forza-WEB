@@ -23,13 +23,12 @@ const Home = () => {
     const [ isDay, setIsDay ]= useState( true )
     const headerWords = ['Branding', 'Content', 'Design', 'Market Intelligence']
     const coverImageList = [
-      ( <div className={[switchText === 'Branding' ? 'home-header__cover-image--animate' : 'dont-display', 'home-header__cover-image' ].join(' ')}><img className={['home-header__cover-image' ].join(' ')} src='https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/b-image-3.png?alt=media&token=0f4650e6-a861-4dcf-a7fc-f8c69ee49ab9' /></div>),
-      (<div className={[switchText === 'Content' ? 'home-header__cover-image--animate' : 'dont-display', 'home-header__cover-image' ].join(' ')}><img className={['home-header__cover-image' ].join(' ')} src='https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/bg-image-2.png?alt=media&token=187dec00-1902-4f39-b394-c13e1cbdbfa5' /></div>),
-      (<div className={[switchText === 'Design' ? 'home-header__cover-image--animate' : 'dont-display', 'home-header__cover-image' ].join(' ')}><img className={['home-header__cover-image' ].join(' ')}  src='https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/bg-image.png?alt=media&token=875a2204-5623-4551-a222-edd2ee83496d' /></div>),
-      (<div className={[switchText === 'Market Intelligence' ? 'home-header__cover-image--animate' : 'dont-display', 'home-header__cover-image' ].join(' ')}><img className={['home-header__cover-image' ].join(' ')}  src='https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/bg-image-4.png?alt=media&token=9626ed91-e15e-41e5-bda9-aba153a2d786' /></div>), 
+      ( <div className={[switchText === 'Branding' ? 'animate-appear' : 'dont-display', 'home-header__cover-image' ].join(' ')}><img className={['home-header__cover-image' ].join(' ')} src='https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/b-image-3.png?alt=media&token=0f4650e6-a861-4dcf-a7fc-f8c69ee49ab9'  alt="image"/></div>),
+      (<div className={[switchText === 'Content' ? 'animate-appear' : 'dont-display', 'home-header__cover-image' ].join(' ')}><img className={['home-header__cover-image' ].join(' ')} src='https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/bg-image-2.png?alt=media&token=187dec00-1902-4f39-b394-c13e1cbdbfa5'  alt="image"/></div>),
+      (<div className={[switchText === 'Design' ? 'animate-appear' : 'dont-display', 'home-header__cover-image' ].join(' ')}><img className={['home-header__cover-image' ].join(' ')}  src='https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/bg-image.png?alt=media&token=875a2204-5623-4551-a222-edd2ee83496d' alt="image" /></div>),
+      (<div className={[switchText === 'Market Intelligence' ? 'animate-appear' : 'dont-display', 'home-header__cover-image' ].join(' ')}><img className={['home-header__cover-image' ].join(' ')}  src='https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/bg-image-4.png?alt=media&token=9626ed91-e15e-41e5-bda9-aba153a2d786'  alt="image"/></div>), 
     ]
-    let images = []
-    let [reserve, setReserve] = useState();
+ 
     let [ counter, setCounter ] = useState(0)
     const executeScroll = (ref) => scrollToRef(ref)
     
@@ -50,7 +49,6 @@ const Home = () => {
     }
 
     const AfterType = () => {
-       console.log(reserve, counter)
        if (counter === headerWords.length - 1) {
           setSwitchText(headerWords[0])
           setCounter(0)
@@ -70,12 +68,12 @@ const Home = () => {
             {   HeaderVisible ?        
               (<Typing onFinishedTyping={() => AfterType()} loop={true} speed={200} startDelay={50}>
               <span>{switchText}</span>
-              <Typing.Backspace count={switchText.length} delay={4000} />
+              <Typing.Backspace count={switchText.length} delay={5000} />
             </Typing>) : switchText}
             </p>
            <p className="home-text-headers__text home-text-headers__medium">that</p>
            <p className="home-text-headers__text home-text-headers__medium">works</p>
-           <p className="home-text-headers__link">GET TO KNOW US</p>
+           <p className="home-text-headers__link"><Link to="/our-work">VIEW OUR WORK</Link></p>
         </div>
         <div className="home-header" ref={headerRef}>
             { coverImageList[counter] }
@@ -88,7 +86,7 @@ const Home = () => {
               We’re a marketing agency. We work with goal oriented brands and companies to create digital marketing solutions that people love. Because what works for people, works for business.
             </p>
             <div className="home-text-body__link">
-              <Link> Get to know us</Link>
+              <Link to="/about/who-we-are"> Get to know us</Link>
             </div>
           </div>
           <div className="home__images">

@@ -180,7 +180,7 @@
 }
 .home-text-headers {
     padding-left: 10px;
-    max-width: 500px;
+    max-width: 80%;
     margin-left: 70px;
     position: absolute;
     top: 55vh;
@@ -192,11 +192,14 @@
         margin-left: 20px;
         height: 600px;
         .home-text-headers__text {
-            font-size: 60px;
-            line-height: 55px;
+            font-size: 50px;
+            line-height: 45px;
         }
         .home-text-headers__link {
             font-size: 12px;          
+        }
+        .home-text-headers__bold {
+            min-height: 50px;        
         }
     }
     p {

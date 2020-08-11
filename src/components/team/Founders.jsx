@@ -45,9 +45,9 @@ const Founders = (props) => {
 
 
 
-  const foundersDetails = (data) => {
+  const foundersDetails = (data, index) => {
     return (
-    <div className="founders__image">
+    <div className="founders__image" key={index}>
       <div className="founders__image__text">
         <div className="founders__image__text__name"><h1>{ data.firstName }</h1><h1>{ data.lastName }</h1></div>
         <div className="founders__image__text__role">{ data.role }</div>
@@ -76,7 +76,7 @@ const Founders = (props) => {
             </p>
          </div>
          <div className="founders__images">
-           { foundersList.map((data) => foundersDetails(data)) }
+           { foundersList.map((data, index) => foundersDetails(data, index)) }
          </div>
       </div>
   );

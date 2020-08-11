@@ -22,8 +22,8 @@ const Nav = (props) => {
         setNavName('Our Team')
       } else if (location.pathname === '/contact') { 
         setNavName('Contact')
-      } else if (location.pathname.includes('/our-works')) { 
-        setNavName('Our Works')
+      } else if (location.pathname.includes('/our-work')) { 
+        setNavName('Our Work')
       } else if (location.pathname.includes('/services')) {
         setNavName('What we do')
       }

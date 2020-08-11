@@ -23,11 +23,15 @@
             flex-wrap: wrap;
             &__decription {
                 max-width: 600px;
-                line-height: 22px;
+              p {
+                font-size: 18px;
+                line-height: 27px;
+              }
             }
             &__list {
                 font-weight: 700;
-                line-height: 22px;
+                font-size: 18px;
+                line-height: 27px;
             }
         }
     }
