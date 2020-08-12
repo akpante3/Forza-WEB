@@ -81,7 +81,7 @@ const Home = () => {
         </div>
         <div className={["home-body", isDay ? '' : 'home-body--dark-theme'].join(' ')} ref={bodyRef}>
           <div className={["home-text-body", visible? 'home-text-body--animate-in' : 'home-text-body--animate-out'].join(' ')}>
-             <h2>The <span style={{ color:'#FF5F4B' }}>p<div style={{ width: '45px', display: 'inline-block'}}><PowerIcon /></div>wer</span> to create</h2>           
+             <h2>The <span style={{ color:'#FF5F4B' }}>p<div className="power-icon"><PowerIcon /></div>wer</span> to create</h2>           
             <p>
               We’re a marketing agency. We work with goal oriented brands and companies to create digital marketing solutions that people love. Because what works for people, works for business.
             </p>

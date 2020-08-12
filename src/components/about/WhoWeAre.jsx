@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import SideNav from '../sideNav/SideNav';
 import { useOnScreen } from '../../hooks/index';
 import { aboutNavList } from '../../utils/lists';
@@ -12,9 +12,10 @@ const WhoWeAre = (props) => {
   const [ showPlayButton, setShowPlayButton ] = useState(true)
   const { setNavColor } = useContext(AppContext);
 
+  useEffect(() => {
+    setNavColor('white')
+  }, [])
 
-  setNavColor('white')
-  
   const playVideo = () => {
     setPlay(!play)
     setShowPlayButton(false)

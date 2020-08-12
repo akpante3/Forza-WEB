@@ -14,13 +14,17 @@ import './About.scss'
 
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
-
+// {
+//   top: 100,
+//   left: 100,
+//   behavior: 'smooth'
+// }
 const About = (props) => {
-  const [thinkingRef, thinkingRefVisible] = useOnScreen({ threshold: 0.9 })
-  const [philosophyRef, philosophyRefVisible] = useOnScreen({ threshold: 0.9 })
-  const [whoWeAreRef, whoWeAreRefVisible] = useOnScreen({ threshold: 0.9 })
-  const [workFlowRef, workFlowRefVisible] = useOnScreen({ threshold: 0.9 })
-  const [ clientRef, clientRefVisible ] = useOnScreen({ threshold: 0.9 })
+  const [thinkingRef, thinkingRefVisible] = useOnScreen({ threshold: 0.3 })
+  const [philosophyRef, philosophyRefVisible] = useOnScreen({ threshold: 0.3 })
+  const [whoWeAreRef, whoWeAreRefVisible] = useOnScreen({ threshold: 0.3 })
+  const [workFlowRef, workFlowRefVisible] = useOnScreen({ threshold: 0.3 })
+  const [ clientRef, clientRefVisible ] = useOnScreen({ threshold: 0.3 })
   const { scrollTo, setScrollTo } = useContext(AppContext);
 
   let { section } = useParams();
@@ -28,44 +32,54 @@ const About = (props) => {
 
   const executeScroll = (ref) => scrollToRef(ref)
   
+  const disableScroll =  () => {
+    setTimeout(() => {
+      setScrollTo(false)
+    }, 500)
+  }
+
   useEffect(() => {
     setTimeout(() => {
-      if (scrollTo) {
         if( section === 'thinking') {
-          executeScroll(thinkingRef)
+          executeScroll(thinkingRef)   
         } else if (section === 'philosophy') {
-          executeScroll(philosophyRef)        
+          executeScroll(philosophyRef)      
         } else if (section === 'who-we-are') {
-          executeScroll(whoWeAreRef)  
+          executeScroll(whoWeAreRef)
         } else if (section === 'workflow') {
-          executeScroll(workFlowRef)  
+          executeScroll(workFlowRef)
         } else if (section === 'clients') {
           executeScroll(clientRef) 
         } else {
           history.push('/404')
-        } 
-      }
+        }
+        disableScroll() 
     }, 0.1)
   }, [section]);
 
+
+  
   // change route as you scroll down the page
   useEffect(() => {
+    console.log(scrollTo)
+    if (!scrollTo) {
       if(clientRefVisible) {
-        setScrollTo(false)
         history.push('/about/clients')
+        // setScrollTo(false)
       } else if (workFlowRefVisible) {
-        setScrollTo(false)
         history.push('/about/workflow')
+        // setScrollTo(false)
       } else if (whoWeAreRefVisible) {
-        setScrollTo(false)
         history.push('/about/who-we-are')
+        // setScrollTo(false)
       } else if (philosophyRefVisible) {
-        setScrollTo(false)
         history.push('/about/philosophy')
+        // setScrollTo(false)
       } else if (thinkingRefVisible) {
-        setScrollTo(false)
         history.push('/about/thinking')
+        // setScrollTo(false)
       }
+    }
   }, [
     clientRefVisible, 
     workFlowRefVisible, 

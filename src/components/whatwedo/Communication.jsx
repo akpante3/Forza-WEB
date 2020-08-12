@@ -23,7 +23,7 @@ const Communication= (props) => {
                             <Thought2 className="communication__thought__3" />
                             <Thought1 className="communication__thought__4" />
                         </div>
-                        { visible ? (<img style={ {height: '100vh', width: '100%'}} src={require('../../icons/images/image-4-on.png')} />) : (<img style={ {height: '100vh', width: '100%'}} src={require('../../icons/images/image-4.png')} />)}
+                        { visible ? (<img className="communication__image" src={require('../../icons/images/image-4-on.png')} />) : (<img className="communication__image" src={require('../../icons/images/image-4.png')} />)}
                     </div>
                 </div>
                 <div className="what-we-do-container__text communication__text">

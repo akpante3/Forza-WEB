@@ -1,4 +1,5 @@
 .what-we-do {
+    width: 100%;
     &__image {
         position: absolute;
         right: 40px;
@@ -8,21 +9,41 @@
             z-index: 5;
             animation: appear 4s ease forwards;   
         }
-        @media (max-width: 1300px) { 
+        @media (min-width: 1300px) { 
             right: 30px;
             width: 40%;
         }
+        @media (max-width: 850px) { 
+            right: 15%;
+            width: 70%;
+            height: 73vh;
+        }
+        @media (max-width: 450px) { 
+            right: 10%;
+            width: 80%;
+            height: 59vh;
+        }
     }
 }
+
 .what-we-do-container {
     width: 100%;
     height: 100vh;
-    position: relative; 
+    position: relative;
+    @media (max-width: 850px) { 
+        height: 125vh;
+    } 
+    @media (max-width: 450px) { 
+        height: 115vh;
+    }
     &__text {
         display: flex;
         ul {
             padding: 0px;
             list-style: none;
+            // @media (max-width: 450px) { 
+            //   display: flex;
+            // }
             li {
                 display: flex;
                 position: relative;
@@ -30,6 +51,10 @@
                 p {
                     margin-left: 60px;
                     max-width: 120px;
+                    // @media (max-width: 450px) { 
+                    //     margin-left: 16px;
+                    //     max-width: 94px;
+                    // }
                 }
                 .communication__text__icon{
                     z-index: 5;
@@ -38,6 +63,11 @@
                         width: 50px;
                         height: 55px;
                         top: 15px;
+                        // @media (max-width: 450px) { 
+                        //     width: 15px;
+                        //     height: 20px;
+                        //     top: 15px;
+                        // }
                     }
                 }
             }
@@ -48,29 +78,59 @@
                 font-size: 30px;
                 font-weight: 700;
                 padding-top: 10px;
+                @media (max-width: 850px) {
+                    font-size: 25px;
+                }
+                @media (max-width: 450px) {
+                    font-size: 20px;
+                }
             }
             &__body {
                 font-size: 18px;
                 line-height: 27px;
+                @media (max-width: 800px) { 
+                    font-size: 16px;
+                    line-height: 26px; 
+                }
+                @media (max-width: 450px) { 
+                    font-size: 14px;
+                    line-height: 24px; 
+                }
+
             }
         }
     }
 }
 
+
 .our-services {
     &__text {
         position: absolute;
-        font-family: 'Nexa bold';
+        font-weight: 600;
         display: flex;
         top: 50%;
         left: 70px;
+        @media (max-width: 850px) {
+            top: 70%;
+            width: 70%;
+            left: 15%;
+        }
+        @media (max-width: 450px) {
+            top: 70%;
+            width: 80%;
+            left: 10%;
+        }
         &__header {
             margin: 0px;
         }
         &__body {
-            font-size: 23px;
+            font-size: 18px;
+            font-weight: 600;
             max-width: 330px;
             margin: 0px 0px 0px 20px;
+            @media (max-width: 450px) {
+                font-size: 14px;
+            }
         }
     }
     &__line {
@@ -89,13 +149,30 @@
 }
 .brand-identity-dev {
     width: 100%;
-    height: 100vh;
+    // height: 100vh;
     background-color: #333232;
     &__text {
         position: absolute;
         color: #ffffff;
         top: 16%;
         right: 45%;
+        @media (max-width: 850px) {
+            bottom: 5%;
+            top: 65%;
+            left: 100px;
+            height: 55vh;
+            right: 5%;
+        }
+        @media (max-width: 450px) {
+            bottom: 5%;
+            top: 55%;
+            width: 90%;
+            right: 5%;
+            left: 5%;
+            height: 55vh;
+            overflow: scroll;
+            margin-bottom: 50px;
+        }
     }
 }
 
@@ -106,9 +183,37 @@
         color: #ffffff;
         top: 16%;
         right: 45%;
+        @media (max-width: 850px) {
+            bottom: 5%;
+            top: 58%;
+            left: 100px;
+            height: 55vh;
+            right: 5%;
+        }
+        @media (max-width: 450px) {
+            bottom: 5%;
+            top: 58%;
+            width: 90%;
+            right: 5%;
+            left: 0px;
+            height: 40vh;
+            overflow: scroll;
+        }
     }
     &__image-wrapper {
         position: relative;
+    }
+    &__image {
+        height: 100vh;
+        width: 100%;
+        @media (max-width: 850px) {
+            height: 70vh;
+            width: 100%;
+        }
+        @media (max-width: 450px) {
+            height: 55vh;
+            width: 100%;
+        }
     }
     &__thought {
         position: absolute;
@@ -120,6 +225,15 @@
         right: 35%;
         top: 3%;
         z-index: 5;
+        @media (max-width: 800px) {
+            top: -2%;
+            height: 250px;
+        }
+        @media (max-width: 450px) {
+            width: 30px;
+            top: -4%;
+            height: 200px;
+        }
 
         &__1{
             animation: appear 2.5s ease forwards; 
@@ -152,7 +266,36 @@
     &__text {
         position: absolute;
         top: 16%;
-        right: 45%;   
+        right: 45%;
+        @media (max-width: 800px) {
+            bottom: 5%;
+            top: 60%;
+            left: 100px;
+            height: 55vh;
+            right: 5%;
+        } 
+        @media (max-width: 450px) {
+            bottom: 5%;
+            top: 58%;
+            left: 5%;
+            width: 90%;
+            right: 5%;
+            height: 40vh;
+            overflow: scroll;
+        }  
+    }
+    &__image {
+        height: 100vh;
+        width: 100%;
+        @media (max-width: 800px) {
+            height: 70vh;
+            width: 100%;
+        }
+
+        @media (max-width: 450px) {
+            height: 55vh;
+            width: 100%;
+        }
     }
     &__boat-image {
         position: absolute;
@@ -165,6 +308,14 @@
             margin-left: 47%;
             margin-bottom: 12px;
             animation: appear 2s ease forwards; 
+            @media (max-width: 800px) {
+                // height: 70vh;
+                // width: 100%;
+            }
+            @media (max-width: 450px) {
+                margin-left: 50%; 
+                width: 60px;
+            } 
         }
         &__path2 {
             margin-left: 38%;
@@ -175,11 +326,24 @@
             margin-left: 36%;
             margin-bottom: 15px;  
             animation: appear 1s ease forwards;
+            // @media (max-width: 800px) {
+            //     // height: 70vh;
+            //     // width: 100%;
+            // }
+            // @media (max-width: 450px) {
+            //     margin-left: 68%; 
+            //     width: 60px;
+            // }  
         }
         &__boat {
             margin-left: 59%; 
             margin-bottom: 10px;
-            animation: appear 2.5s ease forwards;          
+            width: 110px;
+            animation: appear 2.5s ease forwards;
+            @media (max-width: 450px) {
+                margin-left: 68%; 
+                width: 60px;
+            }   
         }
     }
 }
@@ -188,6 +352,19 @@
         position: absolute;
         top: 16%;
         right: 45%;
+        @media (max-width: 800px) {
+            bottom: 5%;
+            top: 65%;
+            left: 100px;
+            height: 55vh;
+            right: 5%;
+        }
+        @media (max-width: 450px) {
+            top: 60%;
+            width: 90%;
+            right: 5%;
+            left: 5%;
+        }
     }
 }
 

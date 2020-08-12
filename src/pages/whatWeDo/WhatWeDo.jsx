@@ -100,7 +100,7 @@ const WhatWeDo = (props) => {
         <div ref={marketStrategyRef}>
           <MarketStrategy />
         </div>
-        <Footer bg='white' previous={{ link: "/about/who-we-are", name: "About Us" }} next={{ name: "Our Works", link: "/our-works" }} />
+        <Footer bg='white' previous={{ link: "/about/who-we-are", name: "About Us" }} next={{ name: "Our Work", link: "/our-work" }} />
       </main>
   );
 }

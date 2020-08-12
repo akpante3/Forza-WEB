@@ -18,13 +18,13 @@ const MarketStrategy = (props) => {
                 <div style={ {position: 'relative', width: '100%'}}>
                     <div className="market-strategy__boat">
                         <div className={[ visible ? 'market-strategy__boat-image' : 'dont-display' ].join(' ')}>
-                            <img className="market-strategy__boat-image__boat" style={ { width: '110px'}} src={require('../../icons/boat/boat.png')} />
+                            <img className="market-strategy__boat-image__boat"  src={require('../../icons/boat/boat.png')} />
                             <Path3 className="market-strategy__boat-image__path3" />
                             <Path2 className="market-strategy__boat-image__path2"/>
                             <Path1 className="market-strategy__boat-image__path1"/>
                         </div>
                     </div>
-                    { visible ? (<img style={ {height: '100vh', width: '100%'}} src={require('../../icons/images/boatimage.png')} />) : (<img style={ {height: '100vh', width: '100%'}} src={require('../../icons/images/boatimage.png')} />)}
+                    { visible ? (<img className="market-strategy__image" src={require('../../icons/images/boatimage.png')} />) : (<img className="market-strategy__image" src={require('../../icons/images/boatimage.png')} />)}
                 </div>
             </div>
             <div className="what-we-do-container__text market-strategy__text">

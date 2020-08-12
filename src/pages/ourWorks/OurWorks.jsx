@@ -26,7 +26,7 @@ const Contact= (props) => {
         setWork(ourWork)
     }
 
-    const Communications = () => {
+    const Work = () => {
         return (
             work.map((data, index) => (
                 <div className="our-works__item" key={index}>
@@ -45,12 +45,14 @@ const Contact= (props) => {
 
   return (
     <main className="our-works">
-        { work.length ?  (<div>
-            {/* <header>Communications</header> */}
-            <div className="our-works__projects">
-                { Communications() }
-            </div>
-        </div>) : 'loading...'}
+        <div className="our-works__wrapper">
+            { work.length ?  (<div>
+                <header>Our work</header>
+                <div className="our-works__projects">
+                    { Work() }
+                </div>
+            </div>) : 'loading...'}
+        </div>
         <Footer bg='white' previous={{ link: "/services/our-services", name: "Our Services" }} next={{ name: "Our Team", link: "/team" }}  />
     </main>
   );

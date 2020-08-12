@@ -13,12 +13,12 @@ html, body {
 }
 .main-container {
   position: relative;
-  max-width: 1800px;
+  max-width: 2000px;
   margin: 0 auto;
   &__nav {
-    position: absolute;
+    position: fixed;
     width: 100%;
-    max-width: 1800px;
+    max-width: 2000px;
     z-index: 1500;
   }
 }
@@ -47,6 +47,16 @@ html, body {
         line-height: 22px;
       }
   }
+  // border-right: 2px solid #FF5F4B;
+// font-weight: 500;
+// color: white;
+// font-size: 62px;
+// width: 120px;
+// height: 60px;
+// overflow: hidden;
+// position: relative;
+// margin-right: 15px;
+// font-family: 'Nexa Bold';
   &__number {
       border-right: 2px solid #FF5F4B;
       font-weight: 500;
@@ -58,6 +68,12 @@ html, body {
       position: relative;
       margin-right: 20px;
       font-family: 'Nexa Bold';
+      @media (max-width: 450px) {
+        height: 65px;
+        font-size: 62px;
+        width: 120px;
+        margin-right: 10px;
+      }
       &__figures {
           position: absolute;
           top: 15%;
