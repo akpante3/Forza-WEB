@@ -13,7 +13,7 @@ const Team = (props) => {
   const { setNavColor } = useContext(AppContext);
   const [team, setTeam] = useState([])
   const teamRef = React.useRef(null)
-  const [topteamRef, topteamRefVisible] = useOnScreen({ threshold: 0.4 })
+  const [topteamRef, topteamRefVisible] = useOnScreen({ threshold: 0.7 })
   const executeScroll = (ref) => scrollToRef(ref)
 
   useEffect(() => { 

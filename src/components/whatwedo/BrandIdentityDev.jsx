@@ -8,7 +8,8 @@ const BrandIdentityDev = (props) => {
 
   return (
       <div className="brand-identity-dev what-we-do-container" ref={ref}>
-            <SideNav visible={visible} bg='white' list={ourservicesNavList} />
+      {/* <div style={{width:'100%', maxWidth: '1800px', position: 'relative', margin: '0 auto'}}> */}
+        <SideNav visible={visible} bg='white' list={ourservicesNavList} />
             <div className="what-we-do-container__text brand-identity-dev__text">
                 <div className="list__number"><span className={['list__number__figures', 'list__number__figures--one', visible ? 'list__number__figures--animate-in' : 'list__number__figures--animate-out' ].join(' ')}>1</span></div>
                 <div className="what-we-do-container__text__details">
@@ -18,7 +19,7 @@ const BrandIdentityDev = (props) => {
             </div>
             <img className="what-we-do__image" src={require('../../icons/images/catimage.png')} />
             { visible ? (<img className="what-we-do__image what-we-do__image--shadow  animate-appear" src={ require('../../icons/images/catImageShadow.png') } />) : '' }
-           
+      {/* </div> */}
       </div>
   );
 }

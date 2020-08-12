@@ -17,7 +17,7 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 const Home = () => {
     const { setNavColor } = useContext(AppContext);
-    const [ bodyRef, visible ] = useOnScreen({ threshold: 0.5 })
+    const [ bodyRef, bodyRefVisible ] = useOnScreen({ threshold: 0.7 })
     const [ headerRef, HeaderVisible ] = useOnScreen({ threshold: 0.8 })
     const [ switchText, setSwitchText ] = useState('Branding')
     const [ isDay, setIsDay ]= useState( true )
@@ -41,8 +41,10 @@ const Home = () => {
     useEffect(() => { 
       if(HeaderVisible) {
         executeScroll(headerRef);
+      } else if(bodyRefVisible) {
+        executeScroll(bodyRefVisible)
       }
-    }, [ HeaderVisible ])
+    }, [ HeaderVisible, bodyRefVisible ])
 
     const toggleTheme = () => {
       setIsDay(!isDay)
@@ -80,7 +82,7 @@ const Home = () => {
            <img onClick={() => executeScroll(bodyRef)} className="home-header__direction-icon" src={require('../../icons/downward-arrow.png')} />
         </div>
         <div className={["home-body", isDay ? '' : 'home-body--dark-theme'].join(' ')} ref={bodyRef}>
-          <div className={["home-text-body", visible? 'home-text-body--animate-in' : 'home-text-body--animate-out'].join(' ')}>
+          <div className={["home-text-body", bodyRefVisible ? 'home-text-body--animate-in' : 'home-text-body--animate-out'].join(' ')}>
              <h2>The <span style={{ color:'#FF5F4B' }}>p<div className="power-icon"><PowerIcon /></div>wer</span> to create</h2>           
             <p>
               We’re a marketing agency. We work with goal oriented brands and companies to create digital marketing solutions that people love. Because what works for people, works for business.
