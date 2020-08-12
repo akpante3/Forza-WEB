@@ -80,12 +80,15 @@
     }
     form {
         width: 100%;
+        @media (max-width: 850px) {
+            width: 90%;
+        }
         textarea {
             max-width: 1000px;
             font-size: 16px;
             scroll-behavior: smooth;
             font-family: 'Montserrat', sans-serif;
-            width: 90%;
+            width: 100%;
             border: solid #979797 1px;
             padding: 20px 10px;
             height: 200px;
