@@ -18,7 +18,7 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 const Home = () => {
     const { setNavColor } = useContext(AppContext);
     const [ bodyRef, visible ] = useOnScreen({ threshold: 0.5 })
-    const [ headerRef, HeaderVisible ] = useOnScreen({ threshold: 0.80 })
+    const [ headerRef, HeaderVisible ] = useOnScreen({ threshold: 0.8 })
     const [ switchText, setSwitchText ] = useState('Branding')
     const [ isDay, setIsDay ]= useState( true )
     const headerWords = ['Branding', 'Content', 'Design', 'Market Intelligence']

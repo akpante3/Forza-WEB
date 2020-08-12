@@ -34,11 +34,16 @@ const WhatWeDo = (props) => {
 
   let { section } = useParams();
   let history = useHistory()
+  
+  const disableScroll =  () => {
 
+    setTimeout(() => {
+      setScrollTo(false)
+    }, 800)
+  }
     // const { previous, next, bg } = props
   useEffect(() => {
     setTimeout(() => {
-      if (scrollTo) { 
         if( section === 'our-services') {
           executeScroll(servicesRef)
         } else if (section === 'brand-identity-development') {
@@ -52,28 +57,31 @@ const WhatWeDo = (props) => {
         } else {
           history.push('/404')
         }
-      }
+      disableScroll() 
     }, 0.5)
   }, [section]);
 
 
     // change route as you scroll down the page
     useEffect(() => {
-      if(servicesRefVisible) {
-        setScrollTo(false)
-        history.push('/services/our-services')
-      } else if (brandIdentityDevRefVisible) {
-        setScrollTo(false)
-        history.push('/services/brand-identity-development')
-      } else if (desginAndCreativeRefVisible) {
-        setScrollTo(false)
-        history.push('/services/design-and-creation')
-      } else if (communicationRefVisible) {
-        setScrollTo(false)
-        history.push('/services/communication')
-      } else if (marketStrategyRefVisible) {
-        setScrollTo(false)
-        history.push('/services/market-strategy')
+      console.log(scrollTo)
+      if (!scrollTo) {
+          if(servicesRefVisible) {
+            // setScrollTo(false)
+            history.push('/services/our-services')
+          } else if (brandIdentityDevRefVisible) {
+            // setScrollTo(false)
+            history.push('/services/brand-identity-development')
+          } else if (desginAndCreativeRefVisible) {
+            // setScrollTo(false)
+            history.push('/services/design-and-creation')
+          } else if (communicationRefVisible) {
+            // setScrollTo(false)
+            history.push('/services/communication')
+          } else if (marketStrategyRefVisible) {
+            // setScrollTo(false)
+            history.push('/services/market-strategy')
+          }
       }
   }, [
     servicesRefVisible, 

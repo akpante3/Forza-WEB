@@ -35,7 +35,7 @@ const About = (props) => {
   const disableScroll =  () => {
     setTimeout(() => {
       setScrollTo(false)
-    }, 500)
+    }, 800)
   }
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const About = (props) => {
           history.push('/404')
         }
         disableScroll() 
-    }, 0.1)
+    }, 0.5)
   }, [section]);
 
 
