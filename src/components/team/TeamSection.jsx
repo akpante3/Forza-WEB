@@ -1,5 +1,6 @@
 import React from 'react';
 import { useOnScreen } from '../../hooks/index';
+import Spinner from '../spinner/Spinner';
 
 const TeamSection = (props) => {
 
@@ -21,7 +22,7 @@ const TeamSection = (props) => {
   return (
       <div className="team-section">
         <div className="team-section__profiles">
-          { props.team.length ? props.team.map((data) => teamDetails(data)) : <div> loading....</div>}
+          { props.team.length ? props.team.map((data) => teamDetails(data)) : <Spinner />}
         </div>
       </div>
   );

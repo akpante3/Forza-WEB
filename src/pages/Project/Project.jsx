@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import db from '../../services/firestore';
 import AwesomeSlider from 'react-awesome-slider';
 import AppContext from '../../context/context';
+import Spinner from '../../components/spinner/Spinner';
 import './Project.scss';
 import 'react-awesome-slider/dist/custom-animations/scale-out-animation.css';
 import 'react-awesome-slider/dist/styles.css';
@@ -57,7 +58,7 @@ const Project= (props) => {
                 { project.descriptionImageList.map((data, index) => <div key={index} data-src={data} />) }
             </AwesomeSlider>
             </div>
-        </div>) : 'loading!!!!....'}
+        </div>) : <Spinner />}
 
         </main>
     );

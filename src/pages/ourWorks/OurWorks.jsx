@@ -3,6 +3,7 @@ import AppContext from '../../context/context';
 import { useHistory } from "react-router-dom";
 import db from '../../services/firestore';
 import Footer from '../../components/app-footer/Footer';
+import Spinner from '../../components/spinner/Spinner';
 import './OurWorks.scss';
 
 const Contact= (props) => {
@@ -50,7 +51,7 @@ const Contact= (props) => {
                 <div className="our-works__projects">
                     { Work() }
                 </div>
-            </div>) : 'loading...'}
+            </div>) : <Spinner />}
         </div>
         <Footer bg='white' previous={{ link: "/services/our-services", name: "Our Services" }} next={{ name: "Our Team", link: "/team" }}  />
     </main>

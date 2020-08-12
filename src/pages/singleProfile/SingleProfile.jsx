@@ -3,7 +3,8 @@ import { useOnScreen } from '../../hooks/index';
 import { useParams } from "react-router-dom";
 import AppContext from '../../context/context';
 import db from '../../services/firestore';
-import Footer from '../../components/app-footer/Footer'
+import Footer from '../../components/app-footer/Footer';
+import Spinner from '../../components/spinner/Spinner';
 import './SingleProfile.scss';
 
 
@@ -117,7 +118,7 @@ const WorkFlow = (props) => {
                     next={footerData.next}
                     previous={footerData.previous} 
                 />
-            </div>) : 'loading...'}
+            </div>) : <Spinner />}
         </main>
     );
 }
