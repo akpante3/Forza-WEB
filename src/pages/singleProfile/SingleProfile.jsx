@@ -5,6 +5,7 @@ import AppContext from '../../context/context';
 import db from '../../services/firestore';
 import Footer from '../../components/app-footer/Footer';
 import Spinner from '../../components/spinner/Spinner';
+import Typing from 'react-typing-animation';
 import './SingleProfile.scss';
 
 
@@ -41,7 +42,7 @@ const WorkFlow = (props) => {
 
     const fetchPartner = () => {
         var docRef = db.collection('partners').doc(id);
-
+        setUserProfile('')
         docRef.get().then(function(doc) {
             if (doc.exists) {
                 setFooter(doc.data().name)
@@ -75,9 +76,9 @@ const WorkFlow = (props) => {
    useEffect(() => {
         fetchPartner()
         setNavColor('black')
-        setTimeout(() => {
+        if (userProfile && userProfile.name) {
             scrollToRef(ref)
-        }, 500);
+        }
     }, [id]);
 
     useEffect(() => {
@@ -91,9 +92,16 @@ const WorkFlow = (props) => {
                     <div className="single-profile__header">
                         <div className="single-profile__header__text">
                             <div className="single-profile__header__text__wrapper">
+                            <div style={{display: 'flex'}}>
                                 <p className="single-profile__header__text__name">{userProfile.name}</p>
+                                <div className={['single-profile__line', visible ? 'single-profile__line--on' : 'single-profile__line--off'].join(' ')}></div>
+                            </div>
                                 <p className="single-profile__header__text__quote">
-                                { userProfile.quote }
+                                 {/* { userProfile.quote ?   (<Typing speed={30}>
+                                    <span>{ userProfile.quote }</span>
+                                </Typing>) : ''} */}
+                                { userProfile.quote ? (<span className="animate-appear">{ userProfile.quote }</span>) : ''}
+
                                 </p>
                             </div>
                         </div>

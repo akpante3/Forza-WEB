@@ -64,6 +64,19 @@
             }
         }
     }
+    &__line {
+        height: 1px;
+        background-color: black;
+        margin-left: 20px;
+        margin-top: 34px;
+        transition: 2s;
+        &--on {
+            width: 150px;
+        }
+        &--off {
+            width: 20px;
+        }
+    }
     &__body {
         display: flex;
         flex-wrap: wrap;
