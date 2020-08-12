@@ -38,7 +38,8 @@ const Nav = (props) => {
   return (
     <nav className="nav">
         <div className="nav__logo">
-          { match.isExact ? <Logo /> : <div className="nav-icon"><NavIcon /><span className={["nav-icon__name", navColor === 'white' ? 'nav-icon__name--white' : ''].join(' ')}>{ navName }</span></div> }
+          { match.isExact ? <Logo /> : <div className="nav-icon" onClick={() => 
+          history.push('/') }><NavIcon /><span className={["nav-icon__name", navColor === 'white' ? 'nav-icon__name--white' : ''].join(' ')}>{ navName }</span></div> }
         </div>
         <div style={{display: 'flex'}}>
         { match.isExact ? '' : 

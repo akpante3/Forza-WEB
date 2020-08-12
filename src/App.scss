@@ -11,6 +11,10 @@ html, body {
   box-sizing: border-box;
   transition: 0.7s;
 }
+a {
+  color: #FF5F4B;
+  text-decoration: underline;
+}
 .main-container {
   position: relative;
   max-width: 2000px;

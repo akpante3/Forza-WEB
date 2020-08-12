@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useOnScreen } from '../../hooks/index';
 import { ourservicesNavList } from '../../utils/lists';
+import { Link } from "react-router-dom";
 import SideNav from '../sideNav/SideNav';
 
 const DesignAndCreative = (props) => {
@@ -31,7 +32,7 @@ const DesignAndCreative = (props) => {
             <div className="list__number"><span className={['list__number__figures', 'list__number__figures--two', visible ? 'list__number__figures--animate-in' : 'list__number__figures--animate-out' ].join(' ')}>2</span></div>
                 <div className="what-we-do-container__text__details">
                    <div className="what-we-do-container__text__details__header">Design & Creative</div>
-                   <p className="what-we-do-container__text__details__body">We create premium digital design work for web, mobile and experiential channels. Design is at the core of what we do and we put our passion and pride into it. Check our design portfolio here</p>
+                   <p className="what-we-do-container__text__details__body">We create premium digital design work for web, mobile and experiential channels. Design is at the core of what we do and we put our passion and pride into it. Check our design portfolio <span style={{  color: '#FF5F4B', textDecoration: 'underline', cursor: 'pointer'}}><Link to='/our-work'>here</Link></span></p>
                 </div>                  
             </div>
       </div>
