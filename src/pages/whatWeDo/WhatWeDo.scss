@@ -159,15 +159,17 @@
         @media (max-width: 850px) {
             bottom: 5%;
             top: 65%;
-            left: 100px;
             height: 55vh;
-            right: 5%;
+            width: 70%;
+            left: 0; 
+            right: 0; 
+            margin-left: auto; 
+            margin-right: auto;
         }
         @media (max-width: 450px) {
             bottom: 5%;
             top: 55%;
             width: 90%;
-            left: 5%;
             height: 55vh;
             overflow: scroll;
             margin-bottom: 50px;
@@ -185,15 +187,17 @@
         @media (max-width: 850px) {
             bottom: 5%;
             top: 58%;
-            left: 100px;
             height: 55vh;
-            right: 5%;
+            width: 70%;
+            left: 0; 
+            right: 0; 
+            margin-left: auto; 
+            margin-right: auto;
         }
         @media (max-width: 450px) {
             bottom: 5%;
             top: 58%;
             width: 90%;
-            left: 5%;
             height: 40vh;
             overflow: scroll;
         }
@@ -268,17 +272,24 @@
         @media (max-width: 800px) {
             bottom: 5%;
             top: 60%;
-            left: 100px;
+            // left: 100px;
             height: 55vh;
-            right: 5%;
+            width: 70%;
+            left: 0; 
+            right: 0; 
+            margin-left: auto; 
+            margin-right: auto;
         } 
         @media (max-width: 450px) {
             bottom: 5%;
             top: 58%;
-            left: 5%;
             width: 90%;
             height: 40vh;
             overflow: scroll;
+            left: 0; 
+            right: 0; 
+            margin-left: auto; 
+            margin-right: auto;
         }  
     }
     &__image {
@@ -352,14 +363,16 @@
         @media (max-width: 800px) {
             bottom: 5%;
             top: 65%;
-            left: 100px;
             height: 55vh;
-            right: 5%;
+            width: 70%;
+            left: 0; 
+            right: 0; 
+            margin-left: auto; 
+            margin-right: auto;
         }
         @media (max-width: 450px) {
             top: 60%;
             width: 90%;
-            left: 5%;
         }
     }
 }
