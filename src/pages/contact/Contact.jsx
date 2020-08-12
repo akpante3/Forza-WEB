@@ -45,6 +45,8 @@ const Contact= (props) => {
             ...data
         }).then(function() {
             alert("Quote was sent successfully!");
+        }).catch(function() {
+            alert("Error Quote was not sent");            
         });
    }
 
