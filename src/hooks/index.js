@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
 
 export const useOnScreen = (options) => {
     const ref = React.useRef();
@@ -23,3 +24,4 @@ export const useOnScreen = (options) => {
   
     return [ref, visible]
   }
+

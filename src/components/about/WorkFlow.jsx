@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useOnScreen } from '../../hooks/index';
 import SideNav from '../sideNav/SideNav';
 import { aboutNavList } from '../../utils/lists'
 import { ReactComponent as Kite } from '../../icons/kite.svg';
+import AppContext from '../../context/context';
 
 const WorkFlow = (props) => {
     const [ref, visible] = useOnScreen({ threshold: 0.7 })
+    const { setNavColor } = useContext(AppContext);
+
+    useEffect(() => {
+        setNavColor('white')
+    }, [visible])
+
 
     return (
         <div className="workflow" ref={ ref }>

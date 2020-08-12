@@ -17,7 +17,6 @@ const Team = (props) => {
   const executeScroll = (ref) => scrollToRef(ref)
 
   useEffect(() => { 
-      setNavColor('white')
       fetchTeam()
       setTimeout(() => {
         executeScroll(topteamRef)
@@ -26,7 +25,10 @@ const Team = (props) => {
 
   useEffect(() => {
      if (topteamRefVisible) {
-      executeScroll(topteamRef)
+       executeScroll(topteamRef)
+       setNavColor('white')
+     } else {
+      setNavColor('black')
      }
   }, [topteamRefVisible])
    

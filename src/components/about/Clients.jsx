@@ -1,10 +1,16 @@
-import React from 'react';
-import { useOnScreen } from '../../hooks/index';
+import React, { useEffect, useContext }  from 'react';
+import { useOnScreen} from '../../hooks/index';
 import SideNav from '../sideNav/SideNav';
+import AppContext from '../../context/context';
 import { aboutNavList } from '../../utils/lists'
 
 const Clients = (props) => {
   const [ref, visible] = useOnScreen({ threshold: 0.8 })
+  const { setNavColor } = useContext(AppContext);
+
+  useEffect(() => {
+    setNavColor('black')
+  }, [visible])
   const images = [
     'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/client6.png?alt=media&token=d42fe7e2-56d8-4e63-b383-6b8e69f819e3',
     'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/client7.png?alt=media&token=e5e8efca-68bb-42a0-bf30-d7196e4a60e0',

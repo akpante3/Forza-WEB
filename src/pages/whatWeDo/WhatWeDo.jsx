@@ -8,12 +8,9 @@ import BrandIdentityDev from '../../components/whatwedo/BrandIdentityDev';
 import DesginAndCreative from '../../components/whatwedo/DesignAndCreative';
 import Communication from '../../components/whatwedo/Communication';
 import MarketStrategy from '../../components/whatwedo/MarketStrategy';
-import Client from '../../components/about/Clients';
+import { Link } from "react-router-dom";
 import Footer from '../../components/app-footer/Footer'
 import { useOnScreen } from '../../hooks/index';
-import {
-  Link
-} from "react-router-dom";
 import './WhatWeDo.scss';
 
 
@@ -28,15 +25,18 @@ const WhatWeDo = (props) => {
   const [communicationRef, communicationRefVisible] = useOnScreen({ threshold: 0.5 })
   const [marketStrategyRef, marketStrategyRefVisible] = useOnScreen({ threshold: 0.5 })
 
-  const { scrollTo, setScrollTo } = useContext(AppContext);
+  const { scrollTo, setScrollTo, setNavColor  } = useContext(AppContext);
 
   const executeScroll = (ref) => scrollToRef(ref)
 
   let { section } = useParams();
   let history = useHistory()
   
-  const disableScroll =  () => {
+  useEffect(() => {
+    setNavColor('black')
+  }); 
 
+  const disableScroll =  () => {
     setTimeout(() => {
       setScrollTo(false)
     }, 800)
@@ -64,7 +64,6 @@ const WhatWeDo = (props) => {
 
     // change route as you scroll down the page
     useEffect(() => {
-      console.log(scrollTo)
       if (!scrollTo) {
           if(servicesRefVisible) {
             // setScrollTo(false)

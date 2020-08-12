@@ -10,10 +10,9 @@ const Contact= (props) => {
     const [ work, setWork ] = useState('')
     let history = useHistory()
 
-    setNavColor ('black')
-
 
     useEffect(() => {
+    setNavColor ('black')
       fetchWorks()
     }, [])
 

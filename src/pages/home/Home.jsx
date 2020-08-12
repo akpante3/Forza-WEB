@@ -17,7 +17,7 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 const Home = () => {
     const { setNavColor } = useContext(AppContext);
-    const [ bodyRef, bodyRefVisible ] = useOnScreen({ threshold: 0.7 })
+    const [ bodyRef, bodyRefVisible ] = useOnScreen({ threshold: 0.8 })
     const [ headerRef, HeaderVisible ] = useOnScreen({ threshold: 0.8 })
     const [ switchText, setSwitchText ] = useState('Branding')
     const [ isDay, setIsDay ]= useState( true )
@@ -38,12 +38,12 @@ const Home = () => {
     }); 
 
     //#endregion
-    useEffect(() => { 
-      if(HeaderVisible) {
-        executeScroll(headerRef);
-      } else if(bodyRefVisible) {
-        executeScroll(bodyRefVisible)
-      }
+    useEffect(() => {
+        if(HeaderVisible) {
+          executeScroll(headerRef);
+        } else if(bodyRefVisible) {
+          executeScroll(bodyRef)
+        }
     }, [ HeaderVisible, bodyRefVisible ])
 
     const toggleTheme = () => {
