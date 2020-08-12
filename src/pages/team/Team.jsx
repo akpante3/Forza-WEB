@@ -41,7 +41,7 @@ const Team = (props) => {
         <div className="team__team" ref={teamRef}>
              <TeamSection team={team} />
         </div>
-        <Footer bg='white' previous={{ link: "/our-works", name: "Our Work" }} next={{ link: "/about/who-we-are", name: "About Us" }}  />
+        <Footer bg='white' previous={{ link: "/our-work", name: "Our Work" }} next={{ link: "/about/who-we-are", name: "About Us" }}  />
       </div>
   );
 }

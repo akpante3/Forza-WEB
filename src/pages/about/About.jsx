@@ -106,7 +106,7 @@ const About = (props) => {
      <div ref={clientRef}>
         <Client />
      </div>
-      <Footer bg='white' next={{ link: "/services/our-services", name: "Our Services" }} previous={{ name: "Our Works", link: "/our-works" }}  />
+      <Footer bg='white' next={{ link: "/services/our-services", name: "Our Services" }} previous={{ name: "Our Work", link: "/our-work" }}  />
     </main>
   );
 }
