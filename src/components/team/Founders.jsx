@@ -3,7 +3,7 @@ import { useOnScreen } from '../../hooks/index';
 import { useHistory } from "react-router-dom";
 
 const Founders = (props) => {
-    const [ ref, visible ] = useOnScreen({ threshold: 0.8 })
+    const [ ref, visible ] = useOnScreen({ threshold: 0.1 })
     let history = useHistory()
 
 
