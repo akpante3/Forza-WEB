@@ -20,7 +20,7 @@ a {
   max-width: 2000px;
   margin: 0 auto;
   &__nav {
-    position: fixed;
+    position: absolute;
     width: 100%;
     max-width: 2000px;
     z-index: 1500;
