@@ -12,12 +12,10 @@ const WhoWeAre = (props) => {
   const [ showPlayButton, setShowPlayButton ] = useState(true)
   const { setNavColor } = useContext(AppContext);
 
-  useEffect(() => {
-    setNavColor('white')
-  }, [])
 
   useEffect(() => {
     if(!visible) handlePause()
+    if(visible) setNavColor('white')
   }, [visible])
 
 
@@ -26,6 +24,7 @@ const WhoWeAre = (props) => {
     setPlay(!play)
     setShowPlayButton(false)
   }
+
   const handlePause = () => {
     setShowPlayButton(true)
     setPlay(false)
