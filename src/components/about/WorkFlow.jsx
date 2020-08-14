@@ -22,7 +22,8 @@ const WorkFlow = (props) => {
         if(visible) {
             setAnimate(true)
         }
-      }, [visible])
+    }, [visible])
+    
 
 
     return (

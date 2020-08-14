@@ -1,4 +1,4 @@
-import React, { useEffect, useContext }  from 'react';
+import React, { useEffect, useContext, useState }  from 'react';
 import { useOnScreen} from '../../hooks/index';
 import SideNav from '../sideNav/SideNav';
 import AppContext from '../../context/context';
@@ -8,6 +8,7 @@ import { useLocation } from "react-router-dom";
 const Clients = (props) => {
   const [ref, visible] = useOnScreen({ threshold: 0.8 })
   const { setNavColor } = useContext(AppContext);
+  const [ animate, setAnimate ] = useState(false)
   let location = useLocation()
 
   useEffect(() => {
@@ -15,6 +16,12 @@ const Clients = (props) => {
       setNavColor('black')
     }
   }, [location])
+
+  useEffect(() => {
+    if(visible) {
+        setAnimate(true)
+    }
+}, [visible])
 
   const images = [
     'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/client6.png?alt=media&token=d42fe7e2-56d8-4e63-b383-6b8e69f819e3',
@@ -37,9 +44,9 @@ const Clients = (props) => {
 
   return (
       <div className="cleints what-we-do-container" ref={ref}>
-        <SideNav visible={visible} bg='black' list={aboutNavList} />
+        <SideNav visible={animate} bg='black' list={aboutNavList} />
         <div className="cleints__text">
-          <div className={["cleints__text__header", visible ? "cleints__text__header--animate" : ''].join(' ')}><span>Cleints</span></div>
+          <div className={["cleints__text__header", animate ? "cleints__text__header--animate" : ''].join(' ')}><span>Cleints</span></div>
         </div>
         <div className="cleints__images">
             { Logos() }

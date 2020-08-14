@@ -25,6 +25,7 @@ const Thinking = (props) => {
             setAnimate(true)
         }
     }, [visible])
+    
 
     return (
         <div className="thinking snap-scroll" ref={ref} list={aboutNavList}>
