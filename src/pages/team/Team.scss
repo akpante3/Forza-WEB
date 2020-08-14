@@ -57,7 +57,7 @@
                 position: absolute;
             }
             &--animate {
-                animation: textHeader 1.5s ease forwards;
+                animation: textHeader 0.8s ease forwards;
             }
             @media(max-width:850px) {
                 font-size: 35px;
@@ -68,7 +68,7 @@
                 overflow: hidden;
                 transition: 1s;
                 &--animate {
-                    animation: textHeaderSmallScreen 1.5s ease forwards;
+                    animation: textHeaderSmallScreen 0.8s ease forwards;
                 }
                 // span {
                 //     top: -5%;

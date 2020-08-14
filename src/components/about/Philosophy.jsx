@@ -1,4 +1,5 @@
 import React, { useEffect, useContext }from 'react';
+import { useLocation } from "react-router-dom";
 import { ReactComponent as ForzaFuse } from '../../icons/forzaFuze.svg';
 import { ReactComponent as ForzaFuseOff } from '../../icons/forzaFuzeoff.svg';
 import { useOnScreen } from '../../hooks/index';
@@ -9,12 +10,18 @@ import { aboutNavList } from '../../utils/lists'
 const WhoWeAre = (props) => {
     const [ ref, visible ] = useOnScreen({ threshold: 0.8 })
     const { setNavColor } = useContext(AppContext);
-    
-    useEffect(() => { 
-        setNavColor('white')
-    }, [visible])
+    let location = useLocation()
+
+    useEffect(() => {
+      if(location.pathname.includes('/about/clients')) {
+        setNavColor('black')
+      }
+    }, [location])
+
+
+
     return (
-        <div className="philosophy" ref={ref}>
+        <div className="philosophy snap-scroll" ref={ref}>
         <SideNav visible={ visible } bg='white' list={ aboutNavList } />
         <div>
             <div className="philosophy__text">

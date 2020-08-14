@@ -10,6 +10,7 @@ html, body {
 * {
   box-sizing: border-box;
   transition: 0.7s;
+  scroll-behavior: smooth;
 }
 a {
   color: #FF5F4B;
@@ -148,6 +149,38 @@ a {
 .animate-appear {
   animation: animateappear 2s ease forwards;  
 }
+
+.snap-scroll {
+  scroll-snap-stop: normal;
+}
+.page-container {
+  // transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in;
+  transition: 0.3s;
+  overflow: scroll;
+  &--show {
+    transition-timing-function: ease-in;
+    //  opacity: 1;
+     height: inherit;
+    //  position: fixed;
+
+    //  position: fixed;
+  }
+
+  &--hide {
+    transition-timing-function: ease-in;
+    // opacity: 0;
+    height: 0px;
+    // position: relative;
+    // height: 50vh;
+  }
+}
+.main {
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow: hidden; 
+}
+
 
 @keyframes birds-flight {
   0% { 

@@ -113,7 +113,7 @@
                 top: -4%;
             }
             &--animate {
-                animation: textHeader 1.5s ease forwards;
+                animation: textHeader 0.8s ease forwards;
             }
             @media (max-width: 300px) {
                span {
@@ -152,7 +152,7 @@
                 overflow: hidden;
                 transition: 1s;
                 &--animate {
-                    animation: textHeaderSmallScreen 1.5s ease forwards;
+                    animation: textHeaderSmallScreen 0.8s ease forwards;
                 }
                 span {
                     top: -5%;
@@ -194,7 +194,7 @@
                 top: -4%;
             }
             &--animate {
-                animation: textHeader 2s ease forwards;
+                animation: textHeader 0.8s ease forwards;
             }
         }
         &__body {
@@ -246,7 +246,7 @@
                 overflow: hidden;
                 transition: 1s;
                 &--animate {
-                    animation: textHeaderSmallScreen 1.5s ease forwards;
+                    animation: textHeaderSmallScreen 0.8s ease forwards;
                 }
             }
             &__body {
@@ -386,7 +386,7 @@
                 position: absolute;
             }
             &--animate {
-                animation: textHeader 2s ease forwards;
+                animation: textHeader 0.8s ease forwards;
             }
         }
         &__body {
@@ -451,7 +451,7 @@
                 overflow: hidden;
                 transition: 1s;
                 &--animate {
-                    animation: textHeaderSmallScreen 1.5s ease forwards;
+                    animation: textHeaderSmallScreen 0.8s ease forwards;
                 }
             }
             &__body {
@@ -526,7 +526,7 @@
                 position: absolute;
             }
             &--animate {
-                animation: textHeader 2s ease forwards;
+                animation: textHeader 0.8s ease forwards;
             }
 
         }
@@ -560,7 +560,7 @@
                     left: 10%;
                 }
                 &--animate {
-                    animation: textHeaderSmallScreen 2s ease forwards;
+                    animation: textHeaderSmallScreen 0.8s ease forwards;
                 }
             }
         } 

@@ -20,11 +20,13 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 //   behavior: 'smooth'
 // }
 const About = (props) => {
-  const [thinkingRef, thinkingRefVisible] = useOnScreen({ threshold: 0.3 })
-  const [philosophyRef, philosophyRefVisible] = useOnScreen({ threshold: 0.3 })
-  const [whoWeAreRef, whoWeAreRefVisible] = useOnScreen({ threshold: 0.3 })
-  const [workFlowRef, workFlowRefVisible] = useOnScreen({ threshold: 0.3 })
-  const [ clientRef, clientRefVisible ] = useOnScreen({ threshold: 0.3 })
+  const [thinkingRef] = useOnScreen({ threshold: 0.8 })
+  // , thinkingRefVisible philosophyRefVisible , whoWeAreRefVisible, workFlowRefVisible , clientRefVisible  SetpresentPage
+  const [philosophyRef] = useOnScreen({ threshold: 0.8 })
+  const [whoWeAreRef] = useOnScreen({ threshold: 0.8 })
+  const [footerRef] = useOnScreen({ threshold: 0.8 })
+  const [ clientRef, clientRefVisible ] = useOnScreen({ threshold: 1.0 })
+  const [presentPage] = useState(' ')
   const { scrollTo, setScrollTo } = useContext(AppContext);
 
   let { section } = useParams();
@@ -38,75 +40,83 @@ const About = (props) => {
     }, 800)
   }
 
+  
+  const pushToSection = (data) => {
+    // if (!scrollTo) {
+      console.log(data, 'this is data')
+
+    }    
+
+
   useEffect(() => {
-    setTimeout(() => {
-        if( section === 'thinking') {
-          executeScroll(thinkingRef)   
-        } else if (section === 'philosophy') {
-          executeScroll(philosophyRef)      
-        } else if (section === 'who-we-are') {
-          executeScroll(whoWeAreRef)
-        } else if (section === 'workflow') {
-          executeScroll(workFlowRef)
-        } else if (section === 'clients') {
-          executeScroll(clientRef) 
-        } else {
-          history.push('/404')
-        }
-        disableScroll() 
-    }, 0.5)
+
   }, [section]);
 
 
-  
-  // change route as you scroll down the page
-  useEffect(() => {
-    console.log(scrollTo)
-    if (!scrollTo) {
-      if(clientRefVisible) {
-        history.push('/about/clients')
-        // setScrollTo(false)
-      } else if (workFlowRefVisible) {
-        history.push('/about/workflow')
-        // setScrollTo(false)
-      } else if (whoWeAreRefVisible) {
-        history.push('/about/who-we-are')
-        // setScrollTo(false)
-      } else if (philosophyRefVisible) {
-        history.push('/about/philosophy')
-        // setScrollTo(false)
-      } else if (thinkingRefVisible) {
-        history.push('/about/thinking')
-        // setScrollTo(false)
-      }
-    }
-  }, [
-    clientRefVisible, 
-    workFlowRefVisible, 
-    whoWeAreRefVisible, 
-    philosophyRefVisible, 
-    thinkingRefVisible
-  ]);
-
 
   return (
-    <main>
-      <div ref={ whoWeAreRef }>
+    <main className="main">
+      {/* <div className="snap-scroll" ref={ whoWeAreRef }> */}
+      <div className={['page-container', 'snap-scroll', section === 'who-we-are' ? 'page-container--show' : 'page-container--hide' ].join(' ')} onWheel={ event => {
+            if (event.nativeEvent.wheelDelta > 0) {
+              return
+            } else { 
+              history.push('/about/philosophy')  
+            }
+    }} ref={ whoWeAreRef }>
         <WhoWeAre  />
       </div>
-      <div ref={ philosophyRef }>
+
+    <div className={['page-container', 'snap-scroll', section === 'philosophy' ? 'page-container--show' : 'page-container--hide' ].join(' ')} ref={ philosophyRef } onWheel={ event => {
+          if (event.nativeEvent.wheelDelta > 0) {
+            history.push('/about/who-we-are')
+          } else { 
+            history.push('/about/thinking')     
+          }
+    }}> 
         <Philosophy />
       </div>
-      <div ref={ thinkingRef } >
+
+
+      {/* <div classNasnap-scrollme="snap-scroll" ref={ thinkingRef }> */}
+      {/* section === 'philosophy' */}
+      <div className={['page-container', 'snap-scroll', section === 'thinking' ? 'page-container--show' : 'page-container--hide' ].join(' ')} onWheel={ event => {
+        if (event.nativeEvent.wheelDelta > 0) {
+          history.push('/about/philosophy')
+        } else { 
+          history.push('/about/workflow')    
+        }
+    }} ref={ thinkingRef } >
         <Thinking />
       </div>
-      <div ref={ workFlowRef }>
+
+      <div className={['page-container', 'snap-scroll', section === 'workflow' ? 'page-container--show' : 'page-container--hide' ].join(' ')} onWheel={ event => {
+        if (event.nativeEvent.wheelDelta > 0) {
+          history.push('/about/thinking')
+        } else { 
+          history.push('/about/clients')    
+        }
+    }} ref={ thinkingRef } >
         <WorkFlow />
       </div>
-     <div ref={clientRef}>
-        <Client />
+
+     <div className={['page-container', 'snap-scroll', section === 'clients' ? 'page-container--show' : 'page-container--hide' ].join(' ')} 
+           onWheel={ event => {
+            if (event.nativeEvent.wheelDelta > 0) {
+              if (clientRefVisible) {
+                history.push('/about/workflow')
+              }
+            } else {
+              executeScroll(footerRef)
+            }
+        }}>
+          <div ref={clientRef}>
+            <Client />
+          </div>
+          <div ref={footerRef} >
+            <Footer bg='white' next={{ link: "/services/our-services", name: "Our Services" }} previous={{ name: "Our Work", link: "/our-work" }}  />
+          </div>
      </div>
-      <Footer bg='white' next={{ link: "/services/our-services", name: "Our Services" }} previous={{ name: "Our Work", link: "/our-work" }}  />
     </main>
   );
 }
