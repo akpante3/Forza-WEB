@@ -11,6 +11,7 @@ import Client from '../../components/about/Clients';
 import AppContext from '../../context/context';
 import { useOnScreen } from '../../hooks/index';
 import './About.scss'
+import { SlowBuffer } from 'buffer';
 
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
@@ -65,7 +66,17 @@ const About = (props) => {
             history.push('/about/philosophy')  
           }
         }}
-        onTouchMove={(event) => history.push('/about/philosophy') }
+        onTouchMove={(event) => {
+          let currentY = event.nativeEvent.touches[0].clientY
+          if(currentY > lastY){
+            history.push('/about/who-we-are')
+            // moved down
+          } else if(currentY < lastY){
+            // moved up
+            history.push('/about/philosophy') 
+          }
+          lastY = currentY;
+        }}
         ref={ whoWeAreRef }>
         <WhoWeAre  />
       </div>
@@ -78,17 +89,16 @@ const About = (props) => {
             history.push('/about/thinking')     
           }
     }}
-    onTouchStart={ e => {
-      console.log(e)
-      // var currentY = e.originalEvent.touches[0].clientY;
-      // if(currentY > lastY){
-      //     // moved down
-      //     console.log('hello')
-      // }else if(currentY < lastY){
-      //     // moved up
-      //     console.log('moved down')
-      // }
-      // lastY = currentY;
+    onTouchMove={(event) => {
+      let currentY = event.nativeEvent.touches[0].clientY
+      if(currentY > lastY){
+        history.push('/about/who-we-are')
+        // moved down
+      } else if(currentY < lastY){
+        // moved up
+        history.push('/about/thinking') 
+      }
+      lastY = currentY;
     }}
     > 
         <Philosophy />
