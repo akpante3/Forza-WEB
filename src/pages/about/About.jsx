@@ -52,29 +52,21 @@ const About = (props) => {
 
   }, [section]);
 
-  // var touchobj = e.changedTouches[0]
-  // distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
-  // distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
-  // if (Math.abs(distX) > Math.abs(distY)){ // if distance traveled horizontally is greater than vertically, consider this a horizontal movement
-  //     dir = (distX < 0)? 'left' : 'right'
-  //     handletouch(e, dir, 'move', swipeType, distX) // fire callback function with params dir="left|right", phase="move", swipetype="none" etc
-  // }
-  // else{ // else consider this a vertical movement
-  //     dir = (distY < 0)? 'up' : 'down'
-  //     handletouch(e, dir, 'move', swipeType, distY) // fire callback function with params dir="up|down", phase="move", swipetype="none" etc
-  // }
-  // e.preventDefault() 
 
+  var lastY;
   return (
     <main className="main">
       {/* <div className="snap-scroll" ref={ whoWeAreRef }> */}
-      <div className={['page-container', 'snap-scroll', section === 'who-we-are' ? 'page-container--show' : 'page-container--hide' ].join(' ')} onWheel={ event => {
-            if (event.nativeEvent.wheelDelta > 0) {
-              return
-            } else { 
-              history.push('/about/philosophy')  
-            }
-    }} ref={ whoWeAreRef }>
+      <div className={['page-container', 'snap-scroll', section === 'who-we-are' ? 'page-container--show' : 'page-container--hide' ].join(' ')} 
+        onWheel={ event => {
+          if (event.nativeEvent.wheelDelta > 0) {
+            return
+          } else { 
+            history.push('/about/philosophy')  
+          }
+        }}
+        onTouchMove={(event) => history.push('/about/philosophy') }
+        ref={ whoWeAreRef }>
         <WhoWeAre  />
       </div>
 
@@ -86,7 +78,19 @@ const About = (props) => {
             history.push('/about/thinking')     
           }
     }}
-    onTouchMove> 
+    onTouchStart={ e => {
+      console.log(e)
+      // var currentY = e.originalEvent.touches[0].clientY;
+      // if(currentY > lastY){
+      //     // moved down
+      //     console.log('hello')
+      // }else if(currentY < lastY){
+      //     // moved up
+      //     console.log('moved down')
+      // }
+      // lastY = currentY;
+    }}
+    > 
         <Philosophy />
       </div>
 
