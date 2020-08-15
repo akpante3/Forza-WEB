@@ -81,49 +81,79 @@ const About = (props) => {
         <WhoWeAre  />
       </div>
 
-    <div className={['page-container', 'snap-scroll', section === 'philosophy' ? 'page-container--show' : 'page-container--hide' ].join(' ')} ref={ philosophyRef } 
-    onWheel={ event => {
-          if (event.nativeEvent.wheelDelta > 0) {
-            history.push('/about/who-we-are')
-          } else { 
-            history.push('/about/thinking')     
+      <div className={['page-container', 'snap-scroll', section === 'philosophy' ? 'page-container--show' : 'page-container--hide' ].join(' ')} ref={ philosophyRef } 
+        onWheel={ event => {
+              if (event.nativeEvent.wheelDelta > 0) {
+                history.push('/about/who-we-are')
+              } else { 
+                history.push('/about/thinking')     
+              }
+        }}
+        onTouchMove={(event) => {
+          let currentY = event.nativeEvent.touches[0].clientY
+
+          if(currentY > lastY){
+            if (window.scrollY == 0) history.push('/about/who-we-are')
+          } else if(currentY < lastY){
+            if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+              history.push('/about/thinking') 
+            }
           }
-    }}
-    onTouchMove={(event) => {
-      let currentY = event.nativeEvent.touches[0].clientY
-      if(currentY > lastY){
-        history.push('/about/who-we-are')
-        // moved down
-      } else if(currentY < lastY){
-        // moved up
-        history.push('/about/thinking') 
-      }
-      lastY = currentY;
-    }}
-    > 
+          lastY = currentY;
+        }}
+      >
         <Philosophy />
       </div>
 
 
       {/* <div classNasnap-scrollme="snap-scroll" ref={ thinkingRef }> */}
       {/* section === 'philosophy' */}
-      <div className={['page-container', 'snap-scroll', section === 'thinking' ? 'page-container--show' : 'page-container--hide' ].join(' ')} onWheel={ event => {
+      <div className={['page-container', 'snap-scroll', section === 'thinking' ? 'page-container--show' : 'page-container--hide' ].join(' ')} 
+      onWheel={ event => {
         if (event.nativeEvent.wheelDelta > 0) {
           history.push('/about/philosophy')
         } else { 
           history.push('/about/workflow')    
         }
-    }} ref={ thinkingRef } >
+      }} 
+      onTouchMove={(event) => {
+        let currentY = event.nativeEvent.touches[0].clientY
+
+        if(currentY > lastY){
+          if (window.scrollY == 0) history.push('/about/philosophy')
+        } else if(currentY < lastY){
+          if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+             history.push('/about/workflow')
+          }
+        }
+        lastY = currentY;
+      }}
+    ref={ thinkingRef } >
         <Thinking />
       </div>
 
-      <div className={['page-container', 'snap-scroll', section === 'workflow' ? 'page-container--show' : 'page-container--hide' ].join(' ')} onWheel={ event => {
+
+      <div className={['page-container', 'snap-scroll', section === 'workflow' ? 'page-container--show' : 'page-container--hide' ].join(' ')} 
+      onWheel={ event => {
         if (event.nativeEvent.wheelDelta > 0) {
           history.push('/about/thinking')
         } else { 
           history.push('/about/clients')    
         }
-    }} ref={ thinkingRef } >
+      }}
+      onTouchMove={(event) => {
+        let currentY = event.nativeEvent.touches[0].clientY
+
+        if(currentY > lastY){
+          if (window.scrollY == 0) history.push('/about/thinking')
+        } else if(currentY < lastY){
+          if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            history.push('/about/clients')
+          }
+        }
+        lastY = currentY;
+      }}
+      ref={ thinkingRef } >
         <WorkFlow />
       </div>
 
@@ -136,7 +166,16 @@ const About = (props) => {
             } else {
               executeScroll(footerRef)
             }
-        }}>
+        }}
+        onTouchMove={(event) => {
+          let currentY = event.nativeEvent.touches[0].clientY
+  
+          if(currentY > lastY){
+            if (window.scrollY == 0) history.push('/about/workflow')
+          }
+          lastY = currentY;
+        }}
+    >
           <div ref={clientRef}>
             <Client />
           </div>

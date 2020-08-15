@@ -154,33 +154,36 @@ a {
   scroll-snap-stop: normal;
 }
 .page-container {
-  // transition-timing-function: ease-in-out;
   transition-timing-function: ease-in;
   transition: 0.3s;
   overflow: scroll;
   &--show {
     transition-timing-function: ease-in;
-    //  opacity: 1;
      height: inherit;
-    //  position: fixed;
-
-    //  position: fixed;
   }
 
   &--hide {
     transition-timing-function: ease-in;
-    // opacity: 0;
     height: 0px;
-    // position: relative;
-    // height: 50vh;
   }
 }
 .main {
   scroll-snap-type: y mandatory;
-  height: 100vh;
   overflow: hidden; 
+  height: 100vh;
+  @media (max-width: 1000px ) {
+    height: auto;
+  }
 }
 
+@keyframes loadPage {
+  0% { 
+    transform: translateY(1000px)
+  }
+  100% {
+    transform: translateY(0px)
+  }
+}
 
 @keyframes birds-flight {
   0% { 
@@ -202,6 +205,7 @@ a {
     width: 5px;
   }
 }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

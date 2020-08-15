@@ -25,8 +25,12 @@ const WhoWeAre = (props) => {
         }
     }, [visible])
 
+
+
+  var lastY;
     return (
-        <div className="philosophy snap-scroll" ref={ref}>
+        <div className="philosophy snap-scroll" ref={ref}
+>
         <SideNav visible={ visible } bg='white' list={ aboutNavList } />
         <div>
             <div className="philosophy__text">
