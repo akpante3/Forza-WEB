@@ -42,22 +42,27 @@ const About = (props) => {
   }
 
   
-  const pushToSection = (data) => {
-    // if (!scrollTo) {
-      console.log(data, 'this is data')
-
-    }    
-
-
   useEffect(() => {
+    const paramList = ['who-we-are', 'philosophy', 'thinking', 'workflow', 'clients']
+    if (!paramList.includes(section)) history.push('/404')
+  }, [section]);   
 
-  }, [section]);
+
+  const wheelEvent =  (event, link) => {
+    if (event.nativeEvent.wheelDelta > 0) {
+      history.push(`/about/${link.to}`)
+    } else {
+      history.push(`/about/${link.from}`)
+    }
+  }
 
 
   var lastY;
+
   return (
     <main className="main">
       {/* <div className="snap-scroll" ref={ whoWeAreRef }> */}
+      {/* /* who-we-are container */}
       <div className={['page-container', 'snap-scroll', section === 'who-we-are' ? 'page-container--show' : 'page-container--hide' ].join(' ')} 
         onWheel={ event => {
           if (event.nativeEvent.wheelDelta > 0) {
@@ -82,13 +87,7 @@ const About = (props) => {
       </div>
 
       <div className={['page-container', 'snap-scroll', section === 'philosophy' ? 'page-container--show' : 'page-container--hide' ].join(' ')} ref={ philosophyRef } 
-        onWheel={ event => {
-              if (event.nativeEvent.wheelDelta > 0) {
-                history.push('/about/who-we-are')
-              } else { 
-                history.push('/about/thinking')     
-              }
-        }}
+        onWheel={ event => wheelEvent(event, {to:'who-we-are', from: 'thinking'})}
         onTouchMove={(event) => {
           let currentY = event.nativeEvent.touches[0].clientY
 
@@ -109,14 +108,8 @@ const About = (props) => {
       {/* <div classNasnap-scrollme="snap-scroll" ref={ thinkingRef }> */}
       {/* section === 'philosophy' */}
       <div className={['page-container', 'snap-scroll', section === 'thinking' ? 'page-container--show' : 'page-container--hide' ].join(' ')} 
-      onWheel={ event => {
-        if (event.nativeEvent.wheelDelta > 0) {
-          history.push('/about/philosophy')
-        } else { 
-          history.push('/about/workflow')    
-        }
-      }} 
-      onTouchMove={(event) => {
+      onWheel={ event => wheelEvent(event, {to:'philosophy', from: 'workflow'})} 
+      onTouchMove={ event => {
         let currentY = event.nativeEvent.touches[0].clientY
 
         if(currentY > lastY){
@@ -134,13 +127,7 @@ const About = (props) => {
 
 
       <div className={['page-container', 'snap-scroll', section === 'workflow' ? 'page-container--show' : 'page-container--hide' ].join(' ')} 
-      onWheel={ event => {
-        if (event.nativeEvent.wheelDelta > 0) {
-          history.push('/about/thinking')
-        } else { 
-          history.push('/about/clients')    
-        }
-      }}
+      onWheel={ event => wheelEvent(event, {to:'thinking', from: 'clients'})} 
       onTouchMove={(event) => {
         let currentY = event.nativeEvent.touches[0].clientY
 
@@ -157,25 +144,24 @@ const About = (props) => {
         <WorkFlow />
       </div>
 
-     <div className={['page-container', 'snap-scroll', section === 'clients' ? 'page-container--show' : 'page-container--hide' ].join(' ')} 
-           onWheel={ event => {
-            if (event.nativeEvent.wheelDelta > 0) {
-              if (clientRefVisible) {
-                history.push('/about/workflow')
-              }
-            } else {
-              executeScroll(footerRef)
+      <div className={['page-container', 'snap-scroll', section === 'clients' ? 'page-container--show' : 'page-container--hide' ].join(' ')} 
+        onWheel={ event => {
+          if (event.nativeEvent.wheelDelta > 0) {
+            if (clientRefVisible) {
+              history.push('/about/workflow')
             }
+          } else {
+            executeScroll(footerRef)
+          }
         }}
         onTouchMove={(event) => {
           let currentY = event.nativeEvent.touches[0].clientY
-  
           if(currentY > lastY){
             if (window.scrollY == 0) history.push('/about/workflow')
           }
           lastY = currentY;
         }}
-    >
+      >
           <div ref={clientRef}>
             <Client />
           </div>

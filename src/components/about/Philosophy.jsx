@@ -14,8 +14,8 @@ const WhoWeAre = (props) => {
     let location = useLocation()
 
     useEffect(() => {
-      if(location.pathname.includes('/about/clients')) {
-        setNavColor('black')
+      if(location.pathname.includes('/about/philosophy')) {
+        setNavColor('white')
       }
     }, [location])
 

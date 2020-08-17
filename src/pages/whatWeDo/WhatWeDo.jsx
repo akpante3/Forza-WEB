@@ -23,7 +23,7 @@ const WhatWeDo = (props) => {
   const [brandIdentityDevRef, brandIdentityDevRefVisible] = useOnScreen({ threshold: 0.5 })
   const [desginAndCreativeRef, desginAndCreativeRefVisible] = useOnScreen({ threshold: 0.5 })
   const [communicationRef, communicationRefVisible] = useOnScreen({ threshold: 0.5 })
-  const [marketStrategyRef, marketStrategyRefVisible] = useOnScreen({ threshold: 0.5 })
+  const [marketStrategyRef, marketStrategyRefVisible] = useOnScreen({ threshold: 1.0 })
 
   const { scrollTo, setScrollTo, setNavColor  } = useContext(AppContext);
 
@@ -41,73 +41,74 @@ const WhatWeDo = (props) => {
       setScrollTo(false)
     }, 800)
   }
-    // const { previous, next, bg } = props
+
+  const wheelEvent =  (event, link) => {
+    if (event.nativeEvent.wheelDelta > 0) {
+      if (link.to) history.push(`/services/${link.to}`)
+    } else {
+      if (link.from) history.push(`/services/${link.from}`)
+    }
+  }
   useEffect(() => {
-    setTimeout(() => {
-        if( section === 'our-services') {
-          executeScroll(servicesRef)
-        } else if (section === 'brand-identity-development') {
-          executeScroll(brandIdentityDevRef)        
-        } else if (section === 'design-and-creation') {
-          executeScroll(desginAndCreativeRef)  
-        } else if (section === 'communication') {
-          executeScroll(communicationRef)  
-        } else if (section === 'market-strategy') {
-          executeScroll(marketStrategyRef)
-        } else {
-          history.push('/404')
-        }
-      disableScroll() 
-    }, 0.5)
-  }, [section]);
+    const paramList = ['our-services', 'brand-identity-development', 'design-and-creative', 'communication', 'market-strategy']
+    if (!paramList.includes(section)) history.push('/404')
+  }, [section]);   
 
-
-    // change route as you scroll down the page
-    useEffect(() => {
-      if (!scrollTo) {
-          if(servicesRefVisible) {
-            // setScrollTo(false)
-            history.push('/services/our-services')
-          } else if (brandIdentityDevRefVisible) {
-            // setScrollTo(false)
-            history.push('/services/brand-identity-development')
-          } else if (desginAndCreativeRefVisible) {
-            // setScrollTo(false)
-            history.push('/services/design-and-creation')
-          } else if (communicationRefVisible) {
-            // setScrollTo(false)
-            history.push('/services/communication')
-          } else if (marketStrategyRefVisible) {
-            // setScrollTo(false)
-            history.push('/services/market-strategy')
-          }
-      }
-  }, [
-    servicesRefVisible, 
-    brandIdentityDevRefVisible, 
-    desginAndCreativeRefVisible, 
-    communicationRefVisible, 
-    marketStrategyRefVisible
-  ]);
-
+  var lastY;
+  // if( section !== 'our-services' || section !== 'brand-identity-development' || section !== 'design-and-creation' || section !== 'communication' || section !== 'market-strategy' ) {
   return (
-      <main>
-        <div ref={ servicesRef }>
+      <main className='main'>
+        <div
+          className={['page-container', 'snap-scroll', section === 'our-services' ? 'page-container--show' : 'page-container--hide' ].join(' ')} 
+          onWheel={ event => {
+            if (event.nativeEvent.wheelDelta > 0) {
+              return
+            } else { 
+              history.push('/services/brand-identity-development')  
+            }
+          }}
+        ref={ servicesRef }>
           <OurServices  />
         </div>
-        <div ref={ brandIdentityDevRef }>
+
+
+        <div 
+          className={['page-container', 'snap-scroll', section === 'brand-identity-development' ? 'page-container--show' : 'page-container--hide' ].join(' ')} 
+          onWheel={ event => wheelEvent(event, {to:'our-services', from: 'design-and-creative'})}
+          ref={ brandIdentityDevRef }>
           <BrandIdentityDev />
         </div>
-        <div ref={ desginAndCreativeRef }>
+
+        <div
+          className={['page-container', 'snap-scroll', section === 'design-and-creative' ? 'page-container--show' : 'page-container--hide' ].join(' ')}
+          onWheel={ event => wheelEvent(event, {to:'brand-identity-development', from: 'communication'})}
+          ref={ desginAndCreativeRef }
+        >
           <DesginAndCreative />
         </div>
-        <div ref={communicationRef}>
+
+
+        <div
+          className={['page-container', 'snap-scroll', section === 'communication' ? 'page-container--show' : 'page-container--hide' ].join(' ')}
+          onWheel={ event => wheelEvent(event, {to:'design-and-creative', from: 'market-strategy'})}
+          ref={communicationRef}
+        >
           <Communication />
         </div>
-        <div ref={marketStrategyRef}>
-          <MarketStrategy />
+        <div className={['page-container', 'snap-scroll', section === 'market-strategy' ? 'page-container--show' : 'page-container--hide' ].join(' ')}>
+          <div
+            onWheel={ event => {
+              if (event.nativeEvent.wheelDelta > 0) {
+                if (marketStrategyRefVisible) {
+                  history.push('/services/communication')
+                }
+              } 
+            }}
+          ref={marketStrategyRef}>
+            <MarketStrategy />
+          </div>
+          <Footer bg='white' previous={{ link: "/about/who-we-are", name: "About Us" }} next={{ name: "Our Work", link: "/our-work" }} />
         </div>
-        <Footer bg='white' previous={{ link: "/about/who-we-are", name: "About Us" }} next={{ name: "Our Work", link: "/our-work" }} />
       </main>
   );
 }
