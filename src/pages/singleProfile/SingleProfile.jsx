@@ -113,7 +113,7 @@ const WorkFlow = (props) => {
                             { userProfile.descriptionQuote }
                             </p>
                             <p className="single-profile__body__quote__bottom">
-                            We work with goal oriented brands and companies
+                            { userProfile.passion }
                             </p>
                         </div>
                     </div>
