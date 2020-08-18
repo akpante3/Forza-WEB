@@ -3,9 +3,10 @@ import { useOnScreen } from '../../hooks/index';
 import { useParams } from "react-router-dom";
 import AppContext from '../../context/context';
 import db from '../../services/firestore';
+import { ReactComponent as Ball } from '../../icons/orange-ball.svg';
 import Footer from '../../components/app-footer/Footer';
 import Spinner from '../../components/spinner/Spinner';
-import Typing from 'react-typing-animation';
+
 import './SingleProfile.scss';
 
 
@@ -18,7 +19,6 @@ const WorkFlow = (props) => {
     const [footerData, setFooterData] = useState('')
     const executeScroll = (ref) => scrollToRef(ref)
     let { id } = useParams();
-    let footer;
 
     const Data = [
         {
@@ -97,16 +97,13 @@ const WorkFlow = (props) => {
                                 <div className={['single-profile__line', visible ? 'single-profile__line--on' : 'single-profile__line--off'].join(' ')}></div>
                             </div>
                                 <p className="single-profile__header__text__quote">
-                                 {/* { userProfile.quote ?   (<Typing speed={30}>
-                                    <span>{ userProfile.quote }</span>
-                                </Typing>) : ''} */}
                                 { userProfile.quote ? (<span className="animate-appear">{ userProfile.quote }</span>) : ''}
-
                                 </p>
                             </div>
                         </div>
                         <div className="single-profile__header__image">
-                            <img src={userProfile.image} />
+                            <div className="single-profile__header__image__ball"><Ball /></div>
+                            <div className="single-profile__header__image__profile"><img src={userProfile.image} /></div>
                         </div>
                     </div>
                     <div className="single-profile__body">

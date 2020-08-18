@@ -6,6 +6,8 @@ import { ourservicesNavList } from '../../utils/lists'
 const BrandIdentityDev = (props) => {
   const [ref, visible] = useOnScreen({ threshold: 0.8 })
 
+  
+
   return (
       <div className="brand-identity-dev what-we-do-container" ref={ref}>
       {/* <div style={{width:'100%', maxWidth: '1800px', position: 'relative', margin: '0 auto'}}> */}

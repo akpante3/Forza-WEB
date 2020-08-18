@@ -8,6 +8,6 @@ export const aboutNavList = [
 export const ourservicesNavList = [ 
 { name: 'Our services', link: '/services/our-services' }, 
 { name: 'Brand Identity Develoment', link: '/services/brand-identity-development' },
-{ name: 'Design & Creative', link: '/services/design-and-creation' },
+{ name: 'Design & Creative', link: '/services/design-and-creative' },
 { name: 'Communications', link: '/services/communication' },
 { name: 'Market Strategy', link: '/services/market-strategy' } ]

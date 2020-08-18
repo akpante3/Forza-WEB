@@ -54,9 +54,19 @@ const Project= (props) => {
                 </div>
             </div>
             <div className="project__images">
-            <AwesomeSlider  mobileTouch={true} >
-                { project.descriptionImageList.map((data, index) => <div key={index} data-src={data} />) }
-            </AwesomeSlider>
+                <AwesomeSlider  mobileTouch={true} >
+                    { project.descriptionImageList.map((data, index) => <div key={index} data-src={data} />) }
+                </AwesomeSlider>
+            </div>
+            <div className="project__text">
+                <div className="project__text__body">
+                    <div className="project__text__body__decription" dangerouslySetInnerHTML={{ __html: project.description }} />
+                    <div className="project__text__body__list">
+                        <ul>
+                            { project.descriptionTextList.map((data, index) => <li key={index}>{ data }</li>)}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>) : <Spinner />}
 

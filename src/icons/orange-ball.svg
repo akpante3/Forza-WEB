@@ -1,0 +1,15 @@
+
+<svg viewBox="0 0 506 506" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <radialGradient cx="50%" cy="50.1755173%" fx="50%" fy="50.1755173%" r="49.8244827%" id="radialGradient-1">
+            <stop stop-color="#000000" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="0.351034628%"></stop>
+            <stop stop-color="#FF5F4B" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Update" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Partner-page-Copy" transform="translate(-1091.000000, -195.000000)" fill="url(#radialGradient-1)">
+            <circle id="Oval" cx="1344" cy="448" r="253"></circle>
+        </g>
+    </g>
+</svg>

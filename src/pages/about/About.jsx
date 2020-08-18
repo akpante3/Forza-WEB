@@ -15,19 +15,13 @@ import { SlowBuffer } from 'buffer';
 
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
-// {
-//   top: 100,
-//   left: 100,
-//   behavior: 'smooth'
-// }
+
 const About = (props) => {
   const [thinkingRef] = useOnScreen({ threshold: 0.8 })
-  // , thinkingRefVisible philosophyRefVisible , whoWeAreRefVisible, workFlowRefVisible , clientRefVisible  SetpresentPage
   const [philosophyRef] = useOnScreen({ threshold: 0.8 })
   const [whoWeAreRef] = useOnScreen({ threshold: 0.8 })
   const [footerRef] = useOnScreen({ threshold: 0.8 })
   const [ clientRef, clientRefVisible ] = useOnScreen({ threshold: 1.0 })
-  const [presentPage] = useState(' ')
   const { scrollTo, setScrollTo } = useContext(AppContext);
 
   let { section } = useParams();
@@ -40,7 +34,6 @@ const About = (props) => {
       setScrollTo(false)
     }, 800)
   }
-
   
   useEffect(() => {
     const paramList = ['who-we-are', 'philosophy', 'thinking', 'workflow', 'clients']
@@ -61,8 +54,6 @@ const About = (props) => {
 
   return (
     <main className="main">
-      {/* <div className="snap-scroll" ref={ whoWeAreRef }> */}
-      {/* /* who-we-are container */}
       <div className={['page-container', 'snap-scroll', section === 'who-we-are' ? 'page-container--show' : 'page-container--hide' ].join(' ')} 
         onWheel={ event => {
           if (event.nativeEvent.wheelDelta > 0) {

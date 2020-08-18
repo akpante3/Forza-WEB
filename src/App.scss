@@ -155,11 +155,11 @@ a {
 }
 .page-container {
   transition-timing-function: ease-in;
-  transition: 0.3s;
+  transition: 0.5s;
   overflow: scroll;
   &--show {
     transition-timing-function: ease-in;
-     height: inherit;
+    height: inherit;
   }
 
   &--hide {
@@ -171,9 +171,9 @@ a {
   scroll-snap-type: y mandatory;
   overflow: hidden; 
   height: 100vh;
-  @media (max-width: 1000px ) {
-    height: auto;
-  }
+  // @media (max-width: 1000px ) {
+  //   max-height: 125vh;
+  // }
 }
 
 @keyframes loadPage {
