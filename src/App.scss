@@ -9,7 +9,7 @@ html, body {
 }
 * {
   box-sizing: border-box;
-  transition: 0.7s;
+  // transition: 0.2s;
   scroll-behavior: smooth;
 }
 a {
@@ -155,16 +155,27 @@ a {
 }
 .page-container {
   transition-timing-function: ease-in;
-  transition: 0.5s;
+  transition: 0.3s;
   overflow: scroll;
+  @media (max-width: 1100px) {
+    overflow: visible;
+  }
+
   &--show {
     transition-timing-function: ease-in;
     height: inherit;
+    @media (max-width: 1100px) {
+      height: auto;
+      overflow: hidden;
+    }
   }
 
   &--hide {
     transition-timing-function: ease-in;
     height: 0px;
+    @media (max-width: 1100px) {
+      height: auto;
+    }
   }
 }
 .main {
@@ -173,6 +184,7 @@ a {
   height: 100vh;
   @media (max-width: 1000px ) {
     height: inherit;
+    overflow: scroll;
   }
 }
 
