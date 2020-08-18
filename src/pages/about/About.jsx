@@ -149,7 +149,7 @@ const About = (props) => {
           let currentY = event.nativeEvent.touches[0].clientY
           if(currentY > lastY){
             if (window.scrollY == 0) history.push('/about/workflow')
-          }
+          } 
           lastY = currentY;
         }}
       >

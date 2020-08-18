@@ -44,7 +44,7 @@ const Nav = (props) => {
         <div style={{display: 'flex'}}>
         { match.isExact ? '' : 
         <div onClick={() => 
-          history.push('/')
+          history.goBack()
           } className={["nav__back-button", navColor === 'white' ? 'nav__back-button--white' : 'nav__back-button--black'].join(' ')}>
               <BackButton />
           </div>  

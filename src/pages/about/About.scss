@@ -110,7 +110,7 @@
             position: relative;
             span {
                 position: absolute;
-                top: -4%;
+                top: -8%;
             }
             &--animate {
                 animation: textHeader 0.8s ease forwards;
@@ -191,7 +191,7 @@
             position: relative;
             span {
                 position: absolute;
-                top: -4%;
+                top: -8%;
             }
             &--animate {
                 animation: textHeader 0.8s ease forwards;
@@ -624,6 +624,17 @@
     100%{ 
         top: 10%;
         right: 12%;
+    }
+}
+
+@keyframes textAnimate { 
+    0%{ 
+      height: 0px;
+      opacity: 0;
+    }
+    100%{ 
+       height: inherit;
+       opacity: 1;
     }
 }
 
