@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useOnScreen } from '../../hooks/index';
 import { ourservicesNavList } from '../../utils/lists';
 import { Link } from "react-router-dom";
+import AppContext from '../../context/context';
+import { useLocation } from "react-router-dom";
 import SideNav from '../sideNav/SideNav';
 
 const DesignAndCreative = (props) => {
@@ -17,6 +19,15 @@ const DesignAndCreative = (props) => {
     require('../../icons/images/blankon-8.png'),
   ]
   const [ displayImage, setDisplayImage ]= useState( image[0] )
+  const { setNavColor } = useContext(AppContext);
+  let location = useLocation()
+
+
+  useEffect(() => {
+    if(location.pathname.includes('design-and-creative')) {
+      setNavColor('black')
+    }
+  }, [location])
 
   useEffect(() => {
     setInterval(() => {

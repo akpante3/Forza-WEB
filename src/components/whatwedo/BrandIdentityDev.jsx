@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useOnScreen } from '../../hooks/index';
 import SideNav from '../sideNav/SideNav';
-import { ourservicesNavList } from '../../utils/lists'
+import AppContext from '../../context/context';
+import { ourservicesNavList } from '../../utils/lists';
+import { useLocation } from "react-router-dom";
 
 const BrandIdentityDev = (props) => {
   const [ref, visible] = useOnScreen({ threshold: 0.8 })
+  const { setNavColor } = useContext(AppContext);
+  let location = useLocation()
 
-  
+  useEffect(() => {
+      console.log(location.pathname.includes('brand-identity-development'), '=========>><<<>>><<')
+    if(location.pathname.includes('brand-identity-development')) {
+      setNavColor('white')
+    }
+  }, [location])
+
 
   return (
       <div className="brand-identity-dev what-we-do-container" ref={ref}>

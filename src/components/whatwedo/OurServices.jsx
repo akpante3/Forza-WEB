@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useOnScreen } from '../../hooks/index';
+import { useLocation } from "react-router-dom";
+import AppContext from '../../context/context';
 import { ourservicesNavList } from '../../utils/lists';
 import SideNav from '../sideNav/SideNav';
 
 const OverServices = (props) => {
   const [ref, visible] = useOnScreen({ threshold: 0.8 })
+  const { setNavColor } = useContext(AppContext);
+  let location = useLocation()
+
+  useEffect(() => {
+    if(location.pathname.includes('our-services')) {
+      setNavColor('black')
+    }
+  }, [location])
+
   return (
       <div className="our-services what-we-do-container" ref={ref}>
         <SideNav visible={visible}  list={ourservicesNavList} />

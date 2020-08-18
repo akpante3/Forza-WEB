@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useOnScreen } from '../../hooks/index';
 import SideNav from '../sideNav/SideNav';
+import { useLocation } from "react-router-dom";
+import AppContext from '../../context/context';
 import { ReactComponent as Thought1 } from '../../icons/thought/1.svg';
 import { ReactComponent as Thought2 } from '../../icons/thought/2.svg';
 import { ReactComponent as Thought3 } from '../../icons/thought/3.svg';
@@ -12,6 +14,17 @@ import { ourservicesNavList } from '../../utils/lists'
 
 const Communication= (props) => {
     const [ref, visible] = useOnScreen({ threshold: 0.8 })
+    const { setNavColor } = useContext(AppContext);
+    let location = useLocation()
+
+    useEffect(() => {
+        console.log(location.pathname.includes('communication'), 'communition')
+      if(location.pathname.includes('communication')) {
+        setNavColor('white')
+      }
+    }, [location])
+
+
     return (
         <div className="communication what-we-do-container" ref={ref}>
                 <SideNav visible={visible} bg='white' list={ourservicesNavList} />

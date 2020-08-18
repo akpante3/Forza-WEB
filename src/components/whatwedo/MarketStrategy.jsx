@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useOnScreen } from '../../hooks/index';
+import { useLocation } from "react-router-dom";
+import AppContext from '../../context/context';
 import SideNav from '../sideNav/SideNav';
 import { ourservicesNavList } from '../../utils/lists';
 import { ReactComponent as Path1 } from '../../icons/boat/path1.svg';
@@ -10,6 +12,14 @@ import { ReactComponent as Path4 } from '../../icons/boat/path4.svg';
 
 const MarketStrategy = (props) => {
   const [ref, visible] = useOnScreen({ threshold: 0.8 })
+  const { setNavColor } = useContext(AppContext);
+  let location = useLocation()
+
+  useEffect(() => {
+    if(location.pathname.includes('market-strategy')) {
+      setNavColor('black')
+    }
+  }, [location])
   
   return (
       <div className="market-strategy what-we-do-container" ref={ref}>

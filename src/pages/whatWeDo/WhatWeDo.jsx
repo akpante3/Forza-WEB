@@ -32,9 +32,9 @@ const WhatWeDo = (props) => {
   let { section } = useParams();
   let history = useHistory()
   
-  useEffect(() => {
-    setNavColor('black')
-  }); 
+  // useEffect(() => {
+  //   setNavColor('black')
+  // }); 
 
   const disableScroll =  () => {
     setTimeout(() => {
