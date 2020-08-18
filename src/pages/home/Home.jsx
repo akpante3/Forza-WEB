@@ -38,6 +38,7 @@ const Home = () => {
  
     let [ counter, setCounter ] = useState(0)
     const executeScroll = (ref) => scrollToRef(ref)
+    let lastY;
     
 
     useEffect(() => {
@@ -80,8 +81,15 @@ const Home = () => {
       <main className={['home', isDay ? '' : 'home--dark-theme', 'main' ].join(' ')}>
         <div 
           className={['page-container', 'snap-scroll', section === 'header' ? 'page-container--show' : 'page-container--hide' ].join(' ')}
-          style={{position: 'relative'}}
+          style={{position: 'relative', overflow: 'hidden'}}
           onWheel={ event => wheelEvent(event, { to:'', from: 'body' })}
+          onTouchMove={(event) => {
+            let currentY = event.nativeEvent.touches[0].clientY
+            if(currentY > lastY) return
+            if(currentY < lastY) setSection('body')
+
+            lastY = currentY;
+          }}
         >
             <div className={["home-text-headers" ].join(' ')}>
               <div className="home-text-headers__text home-text-headers__bold">
@@ -110,6 +118,14 @@ const Home = () => {
             } else {
               executeScroll(footerRef)
             }
+          }}
+
+          onTouchMove={(event) => {
+            let currentY = event.nativeEvent.touches[0].clientY
+            if(currentY > lastY){
+              if (window.scrollY == 0) setSection('header')
+            } 
+            lastY = currentY;
           }}
         >
           <div className={["home-body", isDay ? '' : 'home-body--dark-theme'].join(' ')} ref={bodyRef}>

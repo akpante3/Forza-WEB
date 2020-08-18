@@ -171,9 +171,9 @@ a {
   scroll-snap-type: y mandatory;
   overflow: hidden; 
   height: 100vh;
-  // @media (max-width: 1000px ) {
-  //   max-height: 125vh;
-  // }
+  @media (max-width: 1000px ) {
+    height: inherit;
+  }
 }
 
 @keyframes loadPage {

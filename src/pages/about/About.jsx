@@ -65,10 +65,12 @@ const About = (props) => {
         onTouchMove={(event) => {
           let currentY = event.nativeEvent.touches[0].clientY
           if(currentY > lastY){
-            history.push('/about/who-we-are')
+            console.log('move down')
+            return
             // moved down
           } else if(currentY < lastY){
             // moved up
+            console.log('moved up')
             history.push('/about/philosophy') 
           }
           lastY = currentY;

@@ -13,7 +13,7 @@ import './SingleProfile.scss';
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
 
 const WorkFlow = (props) => {
-    const [ref, visible] = useOnScreen({ threshold: 0.7 })
+    const [ref, visible] = useOnScreen({ threshold: 0.1 })
     const { setNavColor } = useContext(AppContext);
     const [ userProfile, setUserProfile ] = useState('')
     const [footerData, setFooterData] = useState('')
