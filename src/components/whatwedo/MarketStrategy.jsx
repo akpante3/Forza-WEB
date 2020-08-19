@@ -7,7 +7,6 @@ import { ourservicesNavList } from '../../utils/lists';
 import { ReactComponent as Path1 } from '../../icons/boat/path1.svg';
 import { ReactComponent as Path2 } from '../../icons/boat/path2.svg';
 import { ReactComponent as Path3 } from '../../icons/boat/path3.svg';
-import { ReactComponent as Path4 } from '../../icons/boat/path4.svg';
 
 
 const MarketStrategy = (props) => {
@@ -28,13 +27,13 @@ const MarketStrategy = (props) => {
                 <div style={ {position: 'relative', width: '100%'}}>
                     <div className="market-strategy__boat">
                         <div className={[ visible ? 'market-strategy__boat-image' : 'dont-display' ].join(' ')}>
-                            <img className="market-strategy__boat-image__boat"  src={require('../../icons/boat/boat.png')} />
+                            <img className="market-strategy__boat-image__boat"  src={require('../../icons/boat/boat.png')} alt="boat-image" />
                             <Path3 className="market-strategy__boat-image__path3" />
                             <Path2 className="market-strategy__boat-image__path2"/>
                             <Path1 className="market-strategy__boat-image__path1"/>
                         </div>
                     </div>
-                    { visible ? (<img className="market-strategy__image" src={require('../../icons/images/boatimage.png')} />) : (<img className="market-strategy__image" src={require('../../icons/images/boatimage.png')} />)}
+                    { visible ? (<img className="market-strategy__image" src={require('../../icons/images/boatimage.png')} alt="market-strategy1" />) : (<img className="market-strategy__image" src={require('../../icons/images/boatimage.png')} alt="market-strategy2" />)}
                 </div>
             </div>
             <div className="what-we-do-container__text market-strategy__text">

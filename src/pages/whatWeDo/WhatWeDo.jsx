@@ -8,7 +8,6 @@ import BrandIdentityDev from '../../components/whatwedo/BrandIdentityDev';
 import DesginAndCreative from '../../components/whatwedo/DesignAndCreative';
 import Communication from '../../components/whatwedo/Communication';
 import MarketStrategy from '../../components/whatwedo/MarketStrategy';
-import { Link } from "react-router-dom";
 import Footer from '../../components/app-footer/Footer'
 import { useOnScreen } from '../../hooks/index';
 import './WhatWeDo.scss';
