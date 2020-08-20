@@ -8,8 +8,6 @@ import { ReactComponent as Building } from '../../icons/building.svg';
 import { ReactComponent as Cloud } from '../../icons/cloud.svg';
 import { ReactComponent as CloudTop } from '../../icons/cloudTop.svg';
 import { ReactComponent as Bird } from '../../icons/bird.svg';
-import { ReactComponent as Moon } from '../../icons/moon.svg';
-import { ReactComponent as Sun } from '../../icons/sun.svg';
 import { ReactComponent as LetsTalk } from '../../icons/letsTalk.svg';
 import { ReactComponent as  PowerIcon } from '../../icons/navIcon.svg';
 import { ReactComponent as DoubleBirds } from '../../icons/doubleBirds.svg';
@@ -25,8 +23,8 @@ const Home = () => {
     const [ headerRef, HeaderVisible ] = useOnScreen({ threshold: 0.8 })
     const [ footerRef, footerRefVisible ] = useOnScreen({ threshold: 0.8 })
     const [ switchText, setSwitchText ] = useState('Branding')
-    const [ isDay, setIsDay ]= useState( true )
-    const [ section, setSection ] = useState('header')
+    const { navColor, setIsDay, isDay } = useContext(AppContext);
+    const [ section, setSection ] = useState('footer')
     let history = useHistory()
     const headerWords = ['Branding', 'Content', 'Design', 'Market Intelligence']
     const coverImageList = [
@@ -41,9 +39,9 @@ const Home = () => {
     let lastY;
     
 
-    useEffect(() => {
+    // useEffect(() => {
 
-    }); 
+    // }); 
 
     //#endregion
     useEffect(() => {
@@ -68,28 +66,23 @@ const Home = () => {
           setSwitchText(headerWords[counter + 1])
        }
     }
+     /*** commented code is still useful pending when style comes back to normal */
+      // const wheelEvent =  (event, link) => {
+      //   if (event.nativeEvent.wheelDelta > 0) {
+      //     if (link.to) setSection(link.to)
+      //   } else {
+      //     if (link.from) setSection(link.from)
+      //   }
+      // }
+      // <main className={['home', isDay ? '' : 'home--dark-theme', 'main' ].join(' ')}></main>
 
-    const wheelEvent =  (event, link) => {
-      if (event.nativeEvent.wheelDelta > 0) {
-        if (link.to) setSection(link.to)
-      } else {
-        if (link.from) setSection(link.from)
-      }
-    }
 
     return (
-      <main className={['home', isDay ? '' : 'home--dark-theme', 'main' ].join(' ')}>
-        <div 
+      <main className={['home', isDay ? '' : 'home--dark-theme', '' ].join(' ')}>
+        {/* <div 
           className={['page-container', 'snap-scroll', section === 'header' ? 'page-container--show' : 'page-container--hide' ].join(' ')}
           style={{position: 'relative', overflow: 'hidden'}}
           onWheel={ event => wheelEvent(event, { to:'', from: 'body' })}
-          onTouchMove={(event) => {
-            let currentY = event.nativeEvent.touches[0].clientY
-            if(currentY > lastY) return
-            if(currentY < lastY) setSection('body')
-
-            lastY = currentY;
-          }}
         >
             <div className={["home-text-headers" ].join(' ')}>
               <div className="home-text-headers__text home-text-headers__bold">
@@ -107,8 +100,8 @@ const Home = () => {
                 { coverImageList[counter] }
               <img onClick={() => setSection('body')} className="home-header__direction-icon" src={require('../../icons/downward-arrow.png')} />
             </div>
-        </div>
-        <div 
+        </div> */}
+        {/* <div 
           className={['page-container', 'snap-scroll', section === 'body' ? 'page-container--show' : 'page-container--hide' ].join(' ')} 
           onWheel={ event => {
             if (event.nativeEvent.wheelDelta > 0) {
@@ -120,29 +113,37 @@ const Home = () => {
             }
           }}
 
-          onTouchMove={(event) => {
-            let currentY = event.nativeEvent.touches[0].clientY
-            if(currentY > lastY){
-              if (window.scrollY == 0) setSection('header')
-            } 
-            lastY = currentY;
-          }}
-        >
+          // onTouchMove={(event) => {
+          //   let currentY = event.nativeEvent.touches[0].clientY
+          //   if(currentY > lastY){
+          //     if (window.scrollY == 0) setSection('header')
+          //   } 
+          //   lastY = currentY;
+          // }}
+        > */}
           <div className={["home-body", isDay ? '' : 'home-body--dark-theme'].join(' ')} ref={bodyRef}>
             <div className={["home-text-body", bodyRefVisible ? 'home-text-body--animate-in' : 'home-text-body--animate-out'].join(' ')}>
-              <h2>The <span style={{ color:'#FF5F4B' }}>p<div className="power-icon"><PowerIcon /></div>wer</span> to create</h2>           
-              <p>
+              {/* <h2>The <span style={{ color:'#FF5F4B' }}>p<div className="power-icon"><PowerIcon /></div>wer</span> to create</h2>            */}
+              <div className={["home-text-headers" ].join(' ')}>
+                <div className="home-text-headers__text home-text-headers__bold">
+                  {   bodyRefVisible ?        
+                    (<Typing onFinishedTyping={() => AfterType()} loop={true} speed={200} startDelay={50}>
+                    <span>{switchText}</span>
+                    <Typing.Backspace count={switchText.length} delay={5000} />
+                  </Typing>) : switchText}
+                  </div>
+                <p className="home-text-headers__text home-text-headers__medium">that</p>
+                <p className="home-text-headers__text home-text-headers__medium">works</p>
+                {/* <p className="home-text-headers__link"><Link to="/our-work">VIEW OUR WORK</Link></p> */}
+              </div>
+              <p className="home-text-body__text">
                 We’re a marketing agency. We work with goal oriented brands and companies to create digital marketing solutions that people love. Because what works for people, works for business.
               </p>
               <div className="home-text-body__link">
-                <Link to="/about/who-we-are"> Get to know us</Link>
+                <Link to="/about/who-we-are">View Our Work</Link>
               </div>
             </div>
             <div className="home__images">
-                <div className="home__toggle-button">
-                    <input type="checkbox" id="switch" onClick={ () => toggleTheme() } /><label htmlFor="switch">Toggle</label>
-                    { isDay ? (<div className="home__images__theme"><Sun /></div>) : (<div className="home__images__theme"><Moon /></div>)}
-                </div>
                   <div className="double-birds">
                       <DoubleBirds />
                   </div>
@@ -175,11 +176,11 @@ const Home = () => {
                 <p>work together</p>
               </div>
               <div className="home-footer__lets-talk__text__link">
-                <Link to="/contact">START A PROJECT</Link>
+                <Link to="/services/our-services">GET TO KNOW US</Link>
               </div>
             </div>
           </div>
-        </div>
+        {/* </div> */}
       </main>
     );
 }

@@ -17,6 +17,7 @@ const App = () => {
   const [ menuClass, setMenuClass ] = useState('');
   const [ navColor, setNavColor ] = useState('')
   const [ scrollTo, setScrollTo ] = useState(true)
+  const [ isDay, setIsDay ]= useState( false )
 
   const toggleNavColor = (color) => setNavColor(color)
   const toggleScrollTo= (color) => setScrollTo(color)
@@ -32,6 +33,8 @@ const App = () => {
       value={{
         navColor,
         setNavColor: (color) => toggleNavColor(color),
+        isDay,
+        setIsDay: (val) => setIsDay(val),
         scrollTo,
         setScrollTo: (value) => toggleScrollTo(value)
       }}

@@ -6,13 +6,15 @@ import AppContext from '../../context/context';
 import { ReactComponent as MenuButton } from '../../icons/hamburger.svg';
 import { ReactComponent as CloseButton } from '../../icons/closebutton.svg';
 import { ReactComponent as BackButton } from '../../icons/navBackButton.svg';
+import { ReactComponent as Moon } from '../../icons/moon.svg';
+import { ReactComponent as Sun } from '../../icons/sun.svg';
 import'./Nav.scss'
 
 const Nav = (props) => {
   const { toggleMenu,  showMenu } = props
   const location = useLocation()
   const [ navName, setNavName ] = useState('')
-  const { navColor } = useContext(AppContext);
+  const { navColor, setIsDay, isDay } = useContext(AppContext);
   let history = useHistory()
 
   useEffect(() => {
@@ -38,13 +40,17 @@ const Nav = (props) => {
   return (
     <nav className="nav">
         <div className="nav__logo">
-          { match.isExact ? <Logo /> : <div className="nav-icon" onClick={() => 
-          history.push('/') }><NavIcon /><span className={["nav-icon__name", navColor === 'white' ? 'nav-icon__name--white' : ''].join(' ')}>{ navName }</span></div> }
+          { match.isExact ? <Logo /> : 
+          <div className="nav-icon" onClick={() => history.push('/') }><NavIcon /><span className={["nav-icon__name", navColor === 'white' ? 
+          'nav-icon__name--white' : ''].join(' ')}>{ navName }</span></div> }
         </div>
         <div style={{display: 'flex'}}>
-        { match.isExact ? '' : 
-        <div onClick={() => 
-          history.goBack()
+        { match.isExact ? 
+          ( <div className="home__toggle-button">
+          <input type="checkbox" id="switch" onClick={ () => setIsDay(!isDay) } /><label htmlFor="switch">Toggle</label>
+        { isDay ? (<div className="home__images__theme"><Sun /></div>) : (<div className="home__images__theme"><Moon /></div>)}
+                </div>) : 
+        <div onClick={history.goBack
           } className={["nav__back-button", navColor === 'white' ? 'nav__back-button--white' : 'nav__back-button--black'].join(' ')}>
               <BackButton />
           </div>  

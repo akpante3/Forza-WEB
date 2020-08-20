@@ -155,14 +155,14 @@ a {
 }
 .page-container {
   transition-timing-function: ease;
-  transition: 0.3s;
+  transition: 0.4s;
   overflow: scroll;
   @media (max-width: 1100px) {
     overflow: visible;
   }
 
   &--show {
-    transition-timing-function: ease;
+    // transition-timing-function: ease;
     height: inherit;
     @media (max-width: 1100px) {
       height: auto;
@@ -171,7 +171,7 @@ a {
   }
 
   &--hide {
-    transition-timing-function: ease;
+    // transition-timing-function: ease;
     height: 0px;
     @media (max-width: 1100px) {
       height: auto;

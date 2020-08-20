@@ -25,9 +25,6 @@ const WhoWeAre = (props) => {
         }
     }, [visible])
 
-
-
-  var lastY;
     return (
         <div className="philosophy snap-scroll" ref={ref}
 >

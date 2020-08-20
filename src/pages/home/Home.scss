@@ -10,13 +10,14 @@
         color: white;
     }
     &__toggle-button {
-        left: 3%;
-        top: 15%;
+        right: 15%;
+        top: 37px;
         display: flex;
         z-index: 20;
         position: absolute;
         @media(max-width: 850px) {
-            top: 50%;
+            top: 100%;
+            right: 20px;
         }
         input[type=checkbox]{
             height: 0;
@@ -89,7 +90,9 @@
         &__theme {
             // position: absolute;
             margin-left: 10px;
-            width: 25px;
+            svg {
+                width: 25px;
+            }
         }
         &__cloud {
             animation: move 110s infinite; 
@@ -185,18 +188,18 @@
     }
 }
 .home-text-headers {
-    padding-left: 10px;
-    max-width: 80%;
-    margin-left: 70px;
-    position: absolute;
-    top: 55vh;
-    z-index: 5;
+    // padding-left: 10px;
+    // max-width: 80%;
+    // margin-left: 70px;
+    // position: absolute;
+    // top: 55vh;
+    // z-index: 5;
     @media (max-width: 1080px) {
-        height: 700px;
+        // height: 700px;
     }
     @media (max-width: 700px) {
-        margin-left: 20px;
-        height: 600px;
+        // margin-left: 20px;
+        // height: 600px;
         .home-text-headers__text {
             font-size: 50px;
             line-height: 45px;
@@ -224,13 +227,13 @@
     }
     &__medium {
         font-weight: 600;
-        color: white;
+        // color: white;
     }
     &__link {
         font-size: 16px;
         cursor: pointer;
         text-decoration: underline;
-        color: white
+        // color: white
     }
 }
 .home-header {
@@ -255,8 +258,8 @@
     }
 }
 .home-text-body {
-    max-width: 500px;
-    padding: 30px;
+    max-width: 80%;
+    // padding: 30px;
     position: absolute;
     top: 20vh;
     z-index: 5;
@@ -294,16 +297,17 @@
             line-height: 45px; 
         }
     }
-    p {
+    &__text {
         font-size: 18px;
         line-height: 27px;
+        max-width: 450px;
         @media (max-width: 800px) {
             font-size: 16px;
             line-height: 26px;
         }
     }
     &--animate-in {
-        margin-left: 35px;
+        margin-left: 70px;
         @media (max-width: 800px) {
             margin-left: 30px;
         }
@@ -312,12 +316,12 @@
         margin-left: 150px;
     }
     @media (max-width: 1080px) {
-       top: 8vh
-    }
-    @media (max-width: 750px) {
-        margin-left: 10px;
-        top: 10vh;
+        margin-left: 60px;
+        top: 20vh;
         padding: 10px;
+    }
+    @media (max-width: 850px) {
+        margin-left: 10px;
     }
 }
 
