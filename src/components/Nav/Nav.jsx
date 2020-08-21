@@ -44,7 +44,7 @@ const Nav = (props) => {
   });
 
   return (
-    <nav className="nav">
+    <nav className={["nav", navColor === 'white' ?  'nav--white' : ''].join(' ')}>
         <div className="nav__logo">
           { match.isExact ? <Logo /> : 
           <div className="nav-icon" onClick={() => history.push('/') }><NavIcon /><span className={["nav-icon__name", navColor === 'white' ? 
