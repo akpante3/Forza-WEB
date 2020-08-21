@@ -197,7 +197,7 @@ const Home = () => {
             </div>
           </div>
           <div
-            onWheel={ () => setSection('header')}
+            // onWheel={ () => setSection('header')}
             ref={footerRef} className={["home-footer", isDay ? '' : 'home-footer--dark-theme'].join(' ')}
           >
             <div ref={footerRef} className="home-footer__lets-talk">
