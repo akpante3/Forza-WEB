@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import moment from 'moment';
 import { useRouteMatch, useLocation, useHistory } from "react-router-dom";
 import { ReactComponent as  NavIcon } from '../../icons/navIcon.svg';
 import { ReactComponent as Logo } from '../../icons/logo.svg';
@@ -14,8 +15,13 @@ const Nav = (props) => {
   const { toggleMenu,  showMenu } = props
   const location = useLocation()
   const [ navName, setNavName ] = useState('')
+  // const [ seconds, setSeconds] = useState('')
   const { navColor, setIsDay, isDay } = useContext(AppContext);
   let history = useHistory()
+  let hour = moment().format('h')
+  let min = moment().format('mm')
+
+  // useEffect(() => { setInterval(() => { setSeconds(moment().format('ss')) }, 1000)})
 
   useEffect(() => {
       if (location.pathname.includes('/about')) {
@@ -44,6 +50,7 @@ const Nav = (props) => {
           <div className="nav-icon" onClick={() => history.push('/') }><NavIcon /><span className={["nav-icon__name", navColor === 'white' ? 
           'nav-icon__name--white' : ''].join(' ')}>{ navName }</span></div> }
         </div>
+        <div className="time"><div>{ hour }:{ min }<span style={{fontSize: '20px'}}>{ moment().format('a') }</span></div><div style={{fontSize: '12px'}}> {moment().format('Do')} {moment().format('MMM')} {moment().format('YYYY')}</div></div>
         <div style={{display: 'flex'}}>
         { match.isExact ? 
           ( <div className="home__toggle-button">

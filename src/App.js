@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import moment from 'moment';
 import Routes from './routes'
 import Nav from './components/Nav/Nav'
 import Menu from './components/menu/Menu'
@@ -26,6 +27,10 @@ const App = () => {
     setshowMenu(!showMenu)
     showMenu ? setMenuClass('menu--close') : setMenuClass('menu--open')
   }
+
+  useEffect(() => {
+    if (moment().format('a') === 'am') setIsDay(true)
+  }, [])
 
 
   return (

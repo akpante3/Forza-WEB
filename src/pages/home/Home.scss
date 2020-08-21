@@ -163,8 +163,30 @@
         color: white;
     }
     &__lets-talk {
-       max-width: 600px;
        margin: 0 auto;
+       transition: 4s;
+       max-width: 800px;
+       &__icon {
+           display: flex;
+           flex-direction: column;
+           transition-timing-function: ease;
+           transition: 1s;
+           justify-content: space-between;
+           &__top {
+            animation: letsTalk 1.5s ease forwards;
+           }
+           &__bottom {
+              animation: letsTalk 2s ease forwards;
+           }
+           &__svg {
+               display: inline-block;
+               max-width: 300px;
+               transition: 1s;
+           }
+           svg {
+               width: 300px;
+           }
+       }
        &__text {
            text-align: center;
            margin-top: 20px;
@@ -325,6 +347,42 @@
     }
 }
 
+@keyframes letsTalk {
+    0%{ 
+        margin: 0 0 0 50%;
+    }
+    30%{ 
+        margin: 0 0 0 0%;
+    }
+
+    99%{
+        margin: 0 0 0 29%;
+    }
+    100% {
+        margin: 0 auto;  
+    }
+}
+
+@keyframes letsTalk2 {
+    0%{ 
+        margin: 0%;
+    }
+    10%{ 
+        margin: 0 0 0 10%;
+    }
+    100%{
+        margin: 0 0 0 30%;
+    }
+}
+
+// @keyframes letsTalkReserve {
+//     0%{ 
+//         width: 600px;
+//     }
+//     100%{
+//         width: 100%;
+//     }
+// }
 @keyframes scale {
     0%{ 
         transform: scale(1.0)

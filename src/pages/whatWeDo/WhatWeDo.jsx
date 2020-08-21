@@ -86,7 +86,6 @@ const WhatWeDo = (props) => {
           <DesginAndCreative />
         </div>
 
-
         <div
           className={['page-container', 'snap-scroll', section === 'communication' ? 'page-container--show' : 'page-container--hide' ].join(' ')}
           onWheel={ event => wheelEvent(event, {to:'design-and-creative', from: 'market-strategy'})}

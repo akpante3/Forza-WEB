@@ -62,19 +62,18 @@ const About = (props) => {
             history.push('/about/philosophy')  
           }
         }}
-        onTouchMove={(event) => {
-          let currentY = event.nativeEvent.touches[0].clientY
-          if(currentY > lastY){
-            console.log('move down')
-            return
-            // moved down
-          } else if(currentY < lastY){
-            // moved up
-            console.log('moved up')
-            history.push('/about/philosophy') 
-          }
-          lastY = currentY;
-        }}
+        // onTouchMove={(event) => {
+        //   let currentY = event.nativeEvent.touches[0].clientY
+        //   if(currentY > lastY){
+        //     return
+        //     // moved down
+        //   } else if(currentY < lastY){
+        //     // moved up
+        //     console.log('moved up')
+        //     history.push('/about/philosophy') 
+        //   }
+        //   lastY = currentY;
+        // }}
         ref={ whoWeAreRef }>
         <WhoWeAre  />
       </div>
@@ -102,18 +101,18 @@ const About = (props) => {
       {/* section === 'philosophy' */}
       <div className={['page-container', 'snap-scroll', section === 'thinking' ? 'page-container--show' : 'page-container--hide' ].join(' ')} 
       onWheel={ event => wheelEvent(event, {to:'philosophy', from: 'workflow'})} 
-      onTouchMove={ event => {
-        let currentY = event.nativeEvent.touches[0].clientY
+      // onTouchMove={ event => {
+      //   let currentY = event.nativeEvent.touches[0].clientY
 
-        if(currentY > lastY){
-          if (window.scrollY == 0) history.push('/about/philosophy')
-        } else if(currentY < lastY){
-          if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-             history.push('/about/workflow')
-          }
-        }
-        lastY = currentY;
-      }}
+      //   if(currentY > lastY){
+      //     if (window.scrollY == 0) history.push('/about/philosophy')
+      //   } else if(currentY < lastY){
+      //     if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      //        history.push('/about/workflow')
+      //     }
+      //   }
+      //   lastY = currentY;
+      // }}
     ref={ thinkingRef } >
         <Thinking />
       </div>
@@ -147,13 +146,13 @@ const About = (props) => {
             executeScroll(footerRef)
           }
         }}
-        onTouchMove={(event) => {
-          let currentY = event.nativeEvent.touches[0].clientY
-          if(currentY > lastY){
-            if (window.scrollY == 0) history.push('/about/workflow')
-          } 
-          lastY = currentY;
-        }}
+        // onTouchMove={(event) => {
+        //   let currentY = event.nativeEvent.touches[0].clientY
+        //   if(currentY > lastY){
+        //     if (window.scrollY == 0) history.push('/about/workflow')
+        //   } 
+        //   lastY = currentY;
+        // }}
       >
           <div ref={clientRef}>
             <Client />
