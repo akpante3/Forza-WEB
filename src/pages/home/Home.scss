@@ -2,7 +2,6 @@
 
 
 .home {
-    height: 100vh;
     width: 100%;
     position: relative;
     &--dark-theme {
@@ -58,7 +57,7 @@
         }
         
         label:active:after {
-            width: 65px;
+            width: 6px;
         }
     }
     &__header {
@@ -239,7 +238,7 @@
     &__text {
         font-size: 70px;
         line-height: 70px;
-        text-shadow: 1px 1px rgba(80, 79, 79, 0.4);
+        // text-shadow: 1px 1px rgba(80, 79, 79, 0.4);
     }
     &__bold {
         font-weight: 800;

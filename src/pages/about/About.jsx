@@ -36,6 +36,7 @@ const About = (props) => {
   }
   
   useEffect(() => {
+    console.log(section)
     const paramList = ['who-we-are', 'philosophy', 'thinking', 'workflow', 'clients']
     if (!paramList.includes(section)) history.push('/404')
   }, [section]);   

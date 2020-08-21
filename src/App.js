@@ -39,6 +39,7 @@ const App = () => {
         navColor,
         setNavColor: (color) => toggleNavColor(color),
         isDay,
+        showMenu,
         setIsDay: (val) => setIsDay(val),
         scrollTo,
         setScrollTo: (value) => toggleScrollTo(value)

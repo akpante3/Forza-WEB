@@ -50,7 +50,7 @@ const Nav = (props) => {
           <div className="nav-icon" onClick={() => history.push('/') }><NavIcon /><span className={["nav-icon__name", navColor === 'white' ? 
           'nav-icon__name--white' : ''].join(' ')}>{ navName }</span></div> }
         </div>
-        <div className="time"><div>{ hour }:{ min }<span style={{fontSize: '20px'}}>{ moment().format('a') }</span></div><div style={{fontSize: '12px'}}> {moment().format('Do')} {moment().format('MMM')} {moment().format('YYYY')}</div></div>
+        {/* <div className="time"><div>{ hour }:{ min }<span style={{fontSize: '20px'}}>{ moment().format('a') }</span></div><div style={{fontSize: '12px'}}> {moment().format('Do')} {moment().format('MMM')} {moment().format('YYYY')}</div></div> */}
         <div style={{display: 'flex'}}>
         { match.isExact ? 
           ( <div className="home__toggle-button">

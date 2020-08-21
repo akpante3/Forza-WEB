@@ -32,7 +32,7 @@ const Home = () => {
     // const [ headerRef, HeaderVisible ] = useOnScreen({ threshold: 0.8 })
     const [ footerRef, footerRefVisible ] = useOnScreen({ threshold: 0.7 })
     const [ switchText, setSwitchText ] = useState('Branding')
-    const { navColor, setIsDay, isDay } = useContext(AppContext);
+    const { navColor, setIsDay, isDay, showMenu } = useContext(AppContext);
     const [ showTyping, setShowTyping ] = useState(true)
     const [ section, setSection ] = useState('footer')
     // let history = useHistory()
@@ -63,11 +63,11 @@ const Home = () => {
     }, [ isDay ])
 
 
-    useEffect(() => {
-      console.log(section)
-      executeScroll(footerRef)
+    // useEffect(() => {
+    //   console.log(section)
+    //   executeScroll(footerRef)
 
-    }, [section])
+    // }, [section])
     // useEffect(() => {
     //   setInterval(()=> {
     //     // moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
@@ -84,6 +84,11 @@ const Home = () => {
         if (!bodyRefVisible) setShowTyping(false)
         else setShowTyping(true)     
     }, [bodyRefVisible])
+
+    useEffect(() => {
+      if (showMenu) setShowTyping(false)
+      else setShowTyping(true)
+    }, [showMenu])
 
 
     const AfterType = () => {
@@ -110,7 +115,12 @@ const Home = () => {
 
 
     return (
-      <main className={['home', isDay ? '' : 'home--dark-theme', '' ].join(' ')}>
+      <main 
+      // onWheel={(event) => {
+        
+      //   window.scrollTo(0, event.target.scrollHeight)
+      // }}
+      className={['home', isDay ? '' : 'home--dark-theme', '' ].join(' ')}>
         {/* <div 
           className={['page-container', 'snap-scroll', section === 'header' ? 'page-container--show' : 'page-container--hide' ].join(' ')}
           style={{position: 'relative', overflow: 'hidden'}}
@@ -153,7 +163,7 @@ const Home = () => {
           //   lastY = currentY;
           // }}
         > */}
-          <div className={["home-body", isDay ? '' : 'home-body--dark-theme'].join(' ')} ref={bodyRef} onWheel={ () => setSection('footer')}>
+          <div className={["home-body", isDay ? '' : 'home-body--dark-theme'].join(' ')} ref={bodyRef}>
             <div className={["home-text-body", bodyRefVisible ? 'home-text-body--animate-in' : 'home-text-body--animate-out'].join(' ')}>
               {/* <h2>The <span style={{ color:'#FF5F4B' }}>p<div className="power-icon"><PowerIcon /></div>wer</span> to create</h2>            */}
               <div className={["home-text-headers" ].join(' ')}>
@@ -175,7 +185,7 @@ const Home = () => {
                 We’re a marketing agency. We work with goal oriented brands and companies to create digital marketing solutions that people love. Because what works for people, works for business.
               </p>
               <div className="home-text-body__link">
-                <Link to="/about/who-we-are">View Our Work</Link>
+                <Link to="/our-work">View Our Work</Link>
               </div>
             </div>
             <div className="home__images">
