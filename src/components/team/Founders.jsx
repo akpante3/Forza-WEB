@@ -12,7 +12,7 @@ const Founders = (props) => {
       firstName: 'Chikodi',
       lastName: 'Ukaiwe',
       image1: 'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/chikodi.png?alt=media&token=83a96309-136a-4b4d-8686-979660efc162',
-      image2: 'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/image00004.png?alt=media&token=31a0b0df-f69d-476e-b5f4-119e342e25c1',
+      image2: 'https://firebasestorage.googleapis.com/v0/b/forza-application.appspot.com/o/Group%205.png?alt=media&token=77a92625-8a64-4868-8750-c52df9b1339e',
       role: 'Design Partner',
       link: '/chikodi-ukaiwe'
     },
@@ -36,7 +36,7 @@ const Founders = (props) => {
         firstName: 'Joshua',
         lastName: 'Biyere',
         image1: 'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/josh.png?alt=media&token=d4147b0e-a4a0-4f99-ae1e-e58f47017d6a',
-        image2: 'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/joshua%20biyere.png?alt=media&token=5be66ea3-a6ce-49fa-b837-853054c29992',
+        image2: 'https://firebasestorage.googleapis.com/v0/b/forza-application.appspot.com/o/josh.png?alt=media&token=41c7e611-b2ff-4dbe-8c25-75657d06d4c7',
         role: 'Design Partner',
         link: '/joshua-biyere',
       },
