@@ -12,9 +12,9 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 const Team = (props) => {
   const { setNavColor } = useContext(AppContext);
   const [team, setTeam] = useState([])
-  const [teamRef, teamRefVisible] = useOnScreen({ threshold: 0.01 })
+  const [teamRef, teamRefVisible] = useOnScreen({ threshold: 0.001 })
   const [ section, setSection ] = useState('header')
-  const [topteamRef, topteamRefVisible] = useOnScreen({ threshold: 0.01 })
+  const [topteamRef, topteamRefVisible] = useOnScreen({ threshold: 0.001 })
   const executeScroll = (ref) => scrollToRef(ref)
 
   useEffect(() => { 
