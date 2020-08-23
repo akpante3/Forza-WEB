@@ -156,7 +156,6 @@
 .home-footer {
     width: 100%;
     align-content: center;
-    padding: 40px 40px;
     &--dark-theme {
         background-color: #333232;
         color: white;
@@ -165,6 +164,15 @@
        margin: 0 auto;
        transition: 4s;
        max-width: 800px;
+       padding-top: 20px;
+       padding-bottom: 20px;
+       &--active {
+        height: 40vh;
+      }
+      &--inactive {
+          height: 0vh;
+          overflow: hidden;
+      }
        &__icon {
            display: flex;
            flex-direction: column;

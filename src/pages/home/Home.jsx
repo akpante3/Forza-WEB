@@ -30,11 +30,11 @@ const Home = () => {
     const { setNavColor } = useContext(AppContext);
     const [ bodyRef, bodyRefVisible ] = useOnScreen({ threshold: 1.0 })
     // const [ headerRef, HeaderVisible ] = useOnScreen({ threshold: 0.8 })
-    const [ footerRef, footerRefVisible ] = useOnScreen({ threshold: 0.7 })
+    const [ footerRef, footerRefVisible ] = useOnScreen({ threshold: 0.01 })
     const [ switchText, setSwitchText ] = useState('Branding')
     const { navColor, setIsDay, isDay, showMenu } = useContext(AppContext);
     const [ showTyping, setShowTyping ] = useState(true)
-    const [ section, setSection ] = useState('footer')
+    const [ section, setSection ] = useState('header')
     // let history = useHistory()
     const headerWords = ['Branding', 'Content', 'Design', 'Market Intelligence']
     // const coverImageList = [
@@ -46,7 +46,7 @@ const Home = () => {
  
     let [ counter, setCounter ] = useState(0)
     const executeScroll = (ref) => scrollToRef(ref)
-    let wheeled = false;
+    // let wheeled = false;
   
     //#endregion
     useEffect(() => {
@@ -62,28 +62,15 @@ const Home = () => {
       // setSwitchText('')
     }, [ isDay ])
 
+     useEffect(() => {
+       if(section === 'header') executeScroll(bodyRef)
+       else executeScroll(footerRef)
+     }, [ section ])
 
-    // useEffect(() => {
-    //   console.log(section)
-    //   executeScroll(footerRef)
-
-    // }, [section])
-    // useEffect(() => {
-    //   setInterval(()=> {
-    //     // moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
-    //     setSeconds(moment().format('ss'));
-    //     min = moment().format('mm');
-    //     hr = moment().format('h');
-    //     dayTime = moment().format('a');
-    //     setShowTyping(false)
-    //     setTimeout(() => setShowTyping(true), 0.5);
-    //     console.log(sec, 'sec')
-    //   }, 10000)
-    // })
     useEffect(() => {
         if (!bodyRefVisible) setShowTyping(false)
         else setShowTyping(true)     
-    }, [bodyRefVisible])
+    }, [ bodyRefVisible ])
 
     useEffect(() => {
       if (showMenu) setShowTyping(false)
@@ -115,11 +102,14 @@ const Home = () => {
 
 
     return (
-      <main 
-      // onWheel={(event) => {
-        
-      //   window.scrollTo(0, event.target.scrollHeight)
-      // }}
+      <main  
+      onWheel={ event => {
+        if (event.nativeEvent.wheelDelta > 0) {
+          setSection('header')
+        } else { 
+          setSection('footer')  
+        }
+      }}
       className={['home', isDay ? '' : 'home--dark-theme', '' ].join(' ')}>
         {/* <div 
           className={['page-container', 'snap-scroll', section === 'header' ? 'page-container--show' : 'page-container--hide' ].join(' ')}
@@ -210,22 +200,22 @@ const Home = () => {
             // onWheel={ () => setSection('header')}
             ref={footerRef} className={["home-footer", isDay ? '' : 'home-footer--dark-theme'].join(' ')}
           >
-            <div ref={footerRef} className="home-footer__lets-talk">
-            <div className={['home-footer__lets-talk__icon'].join(' ')}>
-              <div className={['home-footer__lets-talk__icon__svg', footerRefVisible ? 'home-footer__lets-talk__icon__top' : 'home-footer__lets-talk__icon__svg--animate-in'].join(' ')}>
-                <Lets />
-              </div>
-               <div className={['home-footer__lets-talk__icon__svg' , footerRefVisible ?  'home-footer__lets-talk__icon__bottom' : 'home-footer__lets-talk__icon__svg--animate-in'].join(' ')}>
-                <Talk />
-               </div>
-            </div>
-              <div className="home-footer__lets-talk__text">
-                <p>Find out more about how we can</p>
-                <p>work together</p>
-              </div>
-              <div className="home-footer__lets-talk__text__link">
-                <Link to="/services/our-services">GET TO KNOW US</Link>
-              </div>
+            <div ref={footerRef} className={['home-footer__lets-talk'].join(' ')}>
+                <div className={['home-footer__lets-talk__icon'].join(' ')}>
+                  <div className={['home-footer__lets-talk__icon__svg', footerRefVisible ? 'home-footer__lets-talk__icon__top' : 'home-footer__lets-talk__icon__svg--animate-in'].join(' ')}>
+                    <Lets />
+                  </div>
+                  <div className={['home-footer__lets-talk__icon__svg' , footerRefVisible ?  'home-footer__lets-talk__icon__bottom' : 'home-footer__lets-talk__icon__svg--animate-in'].join(' ')}>
+                    <Talk />
+                  </div>
+                </div>
+                <div className="home-footer__lets-talk__text">
+                  <p>Find out more about how we can</p>
+                  <p>work together</p>
+                </div>
+                <div className="home-footer__lets-talk__text__link">
+                  <Link to="/services/our-services">GET TO KNOW US</Link>
+                </div>
             </div>
           </div>
         {/* </div> */}
