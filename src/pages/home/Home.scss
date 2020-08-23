@@ -181,9 +181,15 @@
            justify-content: space-between;
            &__top {
             animation: letsTalk 1.5s ease forwards;
+            @media (max-width: 1080px) {
+                animation: normal;
+            }
            }
            &__bottom {
-              animation: letsTalk 2s ease forwards;
+                animation: letsTalk 2s ease forwards;
+                @media (max-width: 1080px) {
+                    animation: normal;
+                }
            }
            &__svg {
                display: inline-block;
