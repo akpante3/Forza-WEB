@@ -19,7 +19,6 @@ const Communication= (props) => {
     let location = useLocation()
 
     useEffect(() => {
-        console.log(location.pathname.includes('communication'), 'communition')
       if(location.pathname.includes('communication')) {
         setNavColor('white')
       }

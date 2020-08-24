@@ -2,7 +2,7 @@ import React,{ useEffect, useContext } from 'react';
 import {
   useParams, useHistory
 } from "react-router-dom";
-import AppContext from '../../context/context';
+// import AppContext from '../../context/context';
 import OurServices from '../../components/whatwedo/OurServices';
 import BrandIdentityDev from '../../components/whatwedo/BrandIdentityDev';
 import DesginAndCreative from '../../components/whatwedo/DesignAndCreative';
@@ -15,18 +15,18 @@ import './WhatWeDo.scss';
 
 
 
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
+// const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
 
-const WhatWeDo = (props) => {
-  const [servicesRef, servicesRefVisible] = useOnScreen({ threshold: 0.5 })
-  const [brandIdentityDevRef, brandIdentityDevRefVisible] = useOnScreen({ threshold: 0.5 })
-  const [desginAndCreativeRef, desginAndCreativeRefVisible] = useOnScreen({ threshold: 0.5 })
-  const [communicationRef, communicationRefVisible] = useOnScreen({ threshold: 0.5 })
+const WhatWeDo = ( ) => {
+  const [ servicesRef ] = useOnScreen({ threshold: 0.5 })
+  const [ brandIdentityDevRef ] = useOnScreen({ threshold: 0.5 })
+  const [desginAndCreativeRef ] = useOnScreen({ threshold: 0.5 })
+  const [communicationRef ] = useOnScreen({ threshold: 0.5 })
   const [marketStrategyRef, marketStrategyRefVisible] = useOnScreen({ threshold: 1.0 })
 
-  const { scrollTo, setScrollTo, setNavColor  } = useContext(AppContext);
+  // const {  setScrollTo   } = useContext(AppContext);
 
-  const executeScroll = (ref) => scrollToRef(ref)
+  // const executeScroll = (ref) => scrollToRef(ref)
 
   let { section } = useParams();
   let history = useHistory()
@@ -35,11 +35,11 @@ const WhatWeDo = (props) => {
   //   setNavColor('black')
   // }); 
 
-  const disableScroll =  () => {
-    setTimeout(() => {
-      setScrollTo(false)
-    }, 800)
-  }
+  // const disableScroll =  () => {
+  //   setTimeout(() => {
+  //     setScrollTo(false)
+  //   }, 800)
+  // }
 
   const wheelEvent =  (event, link) => {
     if (event.nativeEvent.wheelDelta > 0) {
@@ -51,9 +51,8 @@ const WhatWeDo = (props) => {
   useEffect(() => {
     const paramList = ['our-services', 'brand-identity-development', 'design-and-creative', 'communication', 'market-strategy']
     if (!paramList.includes(section)) history.push('/404')
-  }, [section]);   
+  }, [section, history]);   
 
-  var lastY;
   // if( section !== 'our-services' || section !== 'brand-identity-development' || section !== 'design-and-creation' || section !== 'communication' || section !== 'market-strategy' ) {
   return (
       <main className='main'>

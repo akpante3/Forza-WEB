@@ -12,7 +12,6 @@ const BrandIdentityDev = (props) => {
   let location = useLocation()
 
     useEffect(() => {
-        console.log(location.pathname.includes('brand-identity-development'), '=========>><<<>>><<')
         if(location.pathname.includes('brand-identity-development')) {
         setNavColor('white')
         }

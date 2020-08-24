@@ -31,7 +31,6 @@ const Team = (props) => {
        setNavColor('white')
      } else if (teamRefVisible && section !== 'body') {
       executeScroll(teamRef)
-      console.log('bottom team')
       setSection('body')
       setNavColor('black')
      }
@@ -46,7 +45,6 @@ const Team = (props) => {
       setTeam(TeamMembers)
   }
 
-  let lastScrollPos = 0;
   return (
       <div className="team">
           <div className="team__founders" ref={topteamRef}>

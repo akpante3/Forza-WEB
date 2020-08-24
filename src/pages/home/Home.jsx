@@ -21,18 +21,13 @@ import { useOnScreen } from '../../hooks/index';
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
 
-let sec;
-let min;
-let hr;
-let dayTime;
-
 const Home = () => {
     const { setNavColor } = useContext(AppContext);
     const [ bodyRef, bodyRefVisible ] = useOnScreen({ threshold: 1.0 })
     // const [ headerRef, HeaderVisible ] = useOnScreen({ threshold: 0.8 })
     const [ footerRef, footerRefVisible ] = useOnScreen({ threshold: 0.01 })
     const [ switchText, setSwitchText ] = useState('Branding')
-    const { navColor, setIsDay, isDay, showMenu } = useContext(AppContext);
+    const { isDay, showMenu } = useContext(AppContext);
     const [ showTyping, setShowTyping ] = useState(true)
     const [ section, setSection ] = useState('header')
     // let history = useHistory()
@@ -60,7 +55,7 @@ const Home = () => {
         setTimeout(() => setShowTyping(true), 0.5);
       }
       // setSwitchText('')
-    }, [ isDay ])
+    }, [ isDay, setNavColor ])
 
      useEffect(() => {
        if(section === 'header') executeScroll(bodyRef)

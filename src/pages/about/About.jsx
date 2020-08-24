@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect } from 'react';
 import {
   useParams, useHistory
 } from "react-router-dom";
@@ -8,10 +8,10 @@ import Thinking from '../../components/about/Thinking';
 import WorkFlow from '../../components/about/WorkFlow';
 import Footer from '../../components/app-footer/Footer';
 import Client from '../../components/about/Clients';
-import AppContext from '../../context/context';
+// import AppContext from '../../context/context';
 import { useOnScreen } from '../../hooks/index';
 import './About.scss'
-import { SlowBuffer } from 'buffer';
+// import { SlowBuffer } from 'buffer';
 
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
@@ -22,24 +22,17 @@ const About = (props) => {
   const [whoWeAreRef] = useOnScreen({ threshold: 0.8 })
   const [footerRef] = useOnScreen({ threshold: 0.8 })
   const [ clientRef, clientRefVisible ] = useOnScreen({ threshold: 1.0 })
-  const { scrollTo, setScrollTo } = useContext(AppContext);
+  // const { scrollTo, setScrollTo } = useContext(AppContext);
 
   let { section } = useParams();
   let history = useHistory()
 
   const executeScroll = (ref) => scrollToRef(ref)
   
-  const disableScroll =  () => {
-    setTimeout(() => {
-      setScrollTo(false)
-    }, 800)
-  }
-  
   useEffect(() => {
-    console.log(section)
     const paramList = ['who-we-are', 'philosophy', 'thinking', 'workflow', 'clients']
     if (!paramList.includes(section)) history.push('/404')
-  }, [section]);   
+  }, [section, history]);   
 
 
   const wheelEvent =  (event, link) => {
@@ -85,7 +78,7 @@ const About = (props) => {
           let currentY = event.nativeEvent.touches[0].clientY
 
           if(currentY > lastY){
-            if (window.scrollY == 0) history.push('/about/who-we-are')
+            if (window.scrollY === 0) history.push('/about/who-we-are')
           } else if(currentY < lastY){
             if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
               history.push('/about/thinking') 
@@ -125,7 +118,7 @@ const About = (props) => {
         let currentY = event.nativeEvent.touches[0].clientY
 
         if(currentY > lastY){
-          if (window.scrollY == 0) history.push('/about/thinking')
+          if (window.scrollY === 0) history.push('/about/thinking')
         } else if(currentY < lastY){
           if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
             history.push('/about/clients')

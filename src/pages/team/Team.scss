@@ -78,8 +78,12 @@
         &__body {
             font-size: 18px;
             line-height: 27px;
-            max-width: 400px;
+            text-justify: justify;
+            max-width: 500px;
             margin-left: 40px;
+            &__bold {
+                font-weight: 800;
+            }
             @media(max-width:850px) {
                 margin-left: 0px;
                 font-size: 14px;

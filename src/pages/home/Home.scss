@@ -15,7 +15,7 @@
         z-index: 20;
         position: absolute;
         @media(max-width: 850px) {
-            top: 100%;
+            top: 90%;
             right: 20px;
         }
         input[type=checkbox]{
@@ -183,12 +183,14 @@
             animation: letsTalk 1.5s ease forwards;
             @media (max-width: 1080px) {
                 animation: normal;
+                margin: 0 auto; 
             }
            }
            &__bottom {
                 animation: letsTalk 2s ease forwards;
                 @media (max-width: 1080px) {
                     animation: normal;
+                    margin: 0 auto; 
                 }
            }
            &__svg {

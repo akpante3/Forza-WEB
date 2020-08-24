@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useState } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useOnScreen } from '../../hooks/index';
 import db from '../../services/firestore';
 import AwesomeSlider from 'react-awesome-slider';
@@ -21,6 +21,7 @@ const Project= (props) => {
     const executeScroll = (ref) => scrollToRef(ref)
 
     let { id } = useParams();
+    let history = useHistory()
 
     useEffect(() => { 
         setNavColor('black')
@@ -34,21 +35,19 @@ const Project= (props) => {
           setNavColor('white')
         } else if (projectBodyRefVisible && section !== 'body') {
          executeScroll(projectBodyRef)
-         console.log('bottom team')
          setSection('body')
          setNavColor('black')
         }
      }, [ projectHeaderRefVisible, projectBodyRefVisible ])
 
     const fetchProject = () => {
-        console.log(id)
         var docRef = db.collection('projects').doc(id);
 
         docRef.get().then(function(doc) {
             if (doc.exists) {
-                console.log("Document data:", doc.data());
                 setProject(doc.data())
             } else {
+                history.push('/404')
                 console.log("No such document!");
             }
         }).catch(function(error) {

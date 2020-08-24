@@ -72,7 +72,7 @@ const Founders = (props) => {
                 </div>
             </div>
             <p className='founders__text__body'>
-              We’re FORZA, a marketing agency.We work with goal oriented brands and companies to create digital marketing solutions that people love. Because what works for people, works for business.
+            <span className='founders__text__body__bold'>Forza</span> is a melting pot of creatives, strategists and business people from diverse backgrounds coming together to create stellar communication for clients via shared experiences.
             </p>
          </div>
          <div className="founders__images">
