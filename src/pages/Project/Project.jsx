@@ -59,32 +59,41 @@ const Project= (props) => {
         <main className="project">
 { project ?  (<div>
             <div className="project__header" ref={projectHeaderRef}>
-                <img className="animate-appear" src={ project.descriptionHeaderImage } />
+                <img className="animate-appear" src={ project.headerImage } />
             </div>
             <div ref={projectBodyRef}>
                 <div className="project__text">
-                    <h1 className="project__text__header">{project.descriptionHeaderText}</h1>
+                    <h1 className="project__text__header">{ project.textHeader }</h1>
                     <div className="project__text__body">
-                        <div className="project__text__body__decription" dangerouslySetInnerHTML={{ __html: project.description }} />
+                        <div className="project__text__body__decription">
+                            <p>{ project.task }</p> 
+                        </div>
                         <div className="project__text__body__list">
-                            <ul>
-                                { project.descriptionTextList.map((data, index) => <li key={index}>{ data }</li>)}
-                            </ul>
+                            <div className="project__text__body__decription">
+                                <p>{ project.solution }</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="project__images">
-                    <AwesomeSlider  mobileTouch={true} >
-                        { project.descriptionImageList.map((data, index) => <div key={index} data-src={data} />) }
+                    <AwesomeSlider  mobileTouch={ true } >
+                        {/* { project.descriptionImageList.map((data, index) => <div key={index} data-src={data} />) } */}
                     </AwesomeSlider>
                 </div>
                 <div className="project__text">
                     <div className="project__text__body">
-                        <div className="project__text__body__decription" dangerouslySetInnerHTML={{ __html: project.description }} />
+                    {/* dangerouslySetInnerHTML={{ __html: project.problem }} */}
+                        <div className="project__text__body__decription" >
+                            <p>
+                                { project.problem }
+                            </p>
+                        </div>
                         <div className="project__text__body__list">
-                            <ul>
-                                { project.descriptionTextList.map((data, index) => <li key={index}>{ data }</li>)}
-                            </ul>
+                            <div className="project__text__body__decription" >
+                                <p>
+                                    { project.outcome }
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

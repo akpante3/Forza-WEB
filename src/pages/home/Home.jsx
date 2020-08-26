@@ -10,13 +10,83 @@ import { ReactComponent as CloudTop } from '../../icons/cloudTop.svg';
 import { ReactComponent as Bird } from '../../icons/bird.svg';
 import { ReactComponent as Talk } from '../../icons/talk.svg';
 import { ReactComponent as Lets } from '../../icons/lets.svg';
+import db from '../../services/firestore';
 // import { ReactComponent as  PowerIcon } from '../../icons/navIcon.svg';
 import { ReactComponent as DoubleBirds } from '../../icons/doubleBirds.svg';
 import { Link } from "react-router-dom";
 import AppContext from '../../context/context';
 import { useOnScreen } from '../../hooks/index';
 
+// Ajemart: Powering Prosperity in the Local Economy via Trade
 
+// Task:
+// Create and execute a campaign that generates considerable awareness for the Ajemart brand: Osun State’s attempt to help local producers access a market beyond their geographical confines and grow the local economy.
+
+// Problem:
+// Due to the experiences of patronizing ecommerce brands in the country, customers have grown numb to the promise of value while shopping online. They are now being presented with yet another one. We must differentiate Aje from being just a regular ecommerce outfit to one that gives maximum value to both sellers and buyers.
+// Our Solution:
+// We understood quickly that the success of the project would rely heavily on finding the true value points in the chain of activities and communicating them in plain terms to the users.
+// Our strategy was using communication to highlight how the Ajemart offerings can be embedded in the lives of the users while underplaying the political sentiments and focusing on functional relatable communication.
+// Communication was largely driven via digital channels mapping the journey of users who were already familiar with similar brands to Aje.
+
+// Outcome:
+// We delivered a digital campaign that familiarized Ajemart with over 6 million Nigerians in local and diaspora communities and also drove customer orders to more than 1000 orders/month.
+
+
+
+const data = [
+   {
+     image: 'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/worksImage.png?alt=media&token=3c70c859-0f03-4be8-8f5e-b450fec2771d',
+     headerImage: 'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/62DDFA63-EB83-4214-80BC-204EFCC0BDD4.png?alt=media&token=b74b31e5-5583-4c89-848b-f5efbe9544e1',
+     service: 'service',
+     name: 'Flytime Music Festival',
+     textHeader: 'A Fusion of Art, Entertainment and Culture',
+     task: 'Grow a community of engaged users and drive concert ticket sales for Flytime Music Festival: Africa’s Largest Indoor Concert',
+     problem: 'With the logistics of concert arrangements being delayed, the usual attendees of the music festival weren’t engaging with the brand via digital channels. Also, their biggest competition, Afronation, had begun communications since April and was commanding a bigger share of voice.',
+     solution: `We initiated the design and deployment of a deliberate content strategy. 
+     Using a mix of legacy content and top notch design, we developed 
+     a matrix of communication to engage users consistently with the few days left to the festival.
+     The key success of this campaign was consumer targeting; by profiling all of the relevant audience groups, we were able to deliver appropriate communication to an 
+     active group of individuals who were easy to convert to followers/fans of the brand.We also ensured proper management of communication across all touchpoints (Social Media, Email and Web) such that the intending consumers were not left out of loop at any point in time.`,
+     outcome: `Besides growing the following of the brand across all social media channels, we also improved engagement on communication by over 1000% within 60 days. This led to sold out concerts, along with other marketing efforts, on all the days of the music festival.`,
+   },
+   {
+    image: 'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/worksImage.png?alt=media&token=3c70c859-0f03-4be8-8f5e-b450fec2771d',
+    headerImage: 'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/62DDFA63-EB83-4214-80BC-204EFCC0BDD4.png?alt=media&token=b74b31e5-5583-4c89-848b-f5efbe9544e1',
+    service: 'service',
+    name: 'Ajemart',
+    textHeader: 'Powering Prosperity in the Local Economy via Trade',
+    task: 'Create and execute a campaign that generates considerable awareness for the Ajemart brand: Osun State’s attempt to help local producers access a market beyond their geographical confines and grow the local economy.',
+    problem: 'Due to the experiences of patronizing ecommerce brands in the country, customers have grown numb to the promise of value while shopping online. They are now being presented with yet another one. We must differentiate Aje from being just a regular ecommerce outfit to one that gives maximum value to both sellers and buyers.',
+    solution: `We understood quickly that the success of the project would rely heavily on finding the true value points in the chain of activities and communicating them in plain terms to the users.
+    Our strategy was using communication to highlight how the Ajemart offerings can be embedded in the lives of the users while underplaying the political sentiments and focusing on functional relatable communication.
+    Communication was largely driven via digital channels mapping the journey of users who were already familiar with similar brands to Aje.`,
+    outcome: ` We delivered a digital campaign that familiarized Ajemart with over 6 million Nigerians in local and diaspora communities and also drove customer orders to more than 1000 orders/month.`
+  },
+  {
+    image: 'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/worksImage.png?alt=media&token=3c70c859-0f03-4be8-8f5e-b450fec2771d',
+    headerImage: 'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/62DDFA63-EB83-4214-80BC-204EFCC0BDD4.png?alt=media&token=b74b31e5-5583-4c89-848b-f5efbe9544e1',
+    service: 'service',
+    name: 'Coscharis Group',
+    textHeader: 'Digital Transformation for a 40 Year Old Conglomerate',
+    task: 'Develop a proprietary footprint for Coscharis and all its related brands across all digital channels.',
+    problem: 'Coscharis, a diversified institution with trade verticals in automobile, agriculture, medical equipment & supplies, food and technology, had built a massive reputation in the Nigerian community as a progressive organisation with a commitment to the development of the society. However, they struggled with expanding the perception of the company beyond the influence of its founder, Dr. Cosmas Maduka. We were tasked with creative representation for the company on digital channels to further expand the understanding of the diversified nature of the company and connect to newer audiences.',
+    solution: ``,
+    outcome: `Created a growing digital footprint for the company across all channels growing at an average of 300% plus month on month. Also successfully deployed a lead generation engine connecting to users and customers all over the world and building serious consideration for all service offerings at Coscharis Group.`
+  },
+  {
+    image: 'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/worksImage.png?alt=media&token=3c70c859-0f03-4be8-8f5e-b450fec2771d',
+    headerImage: 'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/62DDFA63-EB83-4214-80BC-204EFCC0BDD4.png?alt=media&token=b74b31e5-5583-4c89-848b-f5efbe9544e1',
+    service: 'service',
+    name: 'Flour Mills of Nigeria',
+    textHeader: 'Digital Transformation for a 40 Year Old Conglomerate',
+    task: 'Develop a proprietary footprint for Coscharis and all its related brands across all digital channels.',
+    problem: 'Coscharis, a diversified institution with trade verticals in automobile, agriculture, medical equipment & supplies, food and technology, had built a massive reputation in the Nigerian community as a progressive organisation with a commitment to the development of the society. However, they struggled with expanding the perception of the company beyond the influence of its founder, Dr. Cosmas Maduka. We were tasked with creative representation for the company on digital channels to further expand the understanding of the diversified nature of the company and connect to newer audiences.',
+    solution: ``,
+    outcome: `Created a growing digital footprint for the company across all channels growing at an average of 300% plus month on month. Also successfully deployed a lead generation engine connecting to users and customers all over the world and building serious consideration for all service offerings at Coscharis Group.`
+  },
+
+]
 
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
@@ -38,6 +108,8 @@ const Home = () => {
     //   (<div className={[switchText === 'Design' ? 'animate-appear' : 'dont-display', 'home-header__cover-image' ].join(' ')}><img className={['home-header__cover-image' ].join(' ')}  src='https://firebasestorage.googleapis.com/v0/b/forza-application.appspot.com/o/Landing%20FL1.png?alt=media&token=73f485b2-fd27-48a0-b4e4-fcc2876763ed' alt="image3" /></div>),
     //   (<div className={[switchText === 'Market Intelligence' ? 'animate-appear' : 'dont-display', 'home-header__cover-image' ].join(' ')}><img className={['home-header__cover-image' ].join(' ')}  src='https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/bg-image-4.png?alt=media&token=9626ed91-e15e-41e5-bda9-aba153a2d786'  alt="image4"/></div>), 
     // ]
+
+
  
     let [ counter, setCounter ] = useState(0)
     const executeScroll = (ref) => scrollToRef(ref)
@@ -57,6 +129,12 @@ const Home = () => {
       // setSwitchText('')
     }, [ isDay, setNavColor ])
 
+    const trigger = () => {
+      data.forEach(element => {
+        db.collection('projects').add(element)     
+      });
+     }
+
      useEffect(() => {
        if(section === 'header') executeScroll(bodyRef)
        else executeScroll(footerRef)
@@ -68,6 +146,7 @@ const Home = () => {
     }, [ bodyRefVisible ])
 
     useEffect(() => {
+      // trigger()
       if (showMenu) setShowTyping(false)
       else setShowTyping(true)
     }, [showMenu])
