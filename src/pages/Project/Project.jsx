@@ -77,7 +77,7 @@ const Project= (props) => {
                 </div>
                 <div className="project__images">
                     <AwesomeSlider  mobileTouch={ true } >
-                        { project.images.map((data, index) => <div style={{width: '100%', backgroundColor: 'white'}} key={index}><img src={data} alt="hello" /></div>) }
+                        { project.images.map((data, index) => <div style={{width: '100%', backgroundColor: 'white'}} key={index}><img className="project__images__image" src={data} alt="hello" /></div>) }
                     </AwesomeSlider>
                 </div>
                 <div className="project__text">
