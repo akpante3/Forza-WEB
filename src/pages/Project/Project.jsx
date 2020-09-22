@@ -57,48 +57,78 @@ const Project= (props) => {
 
     return (
         <main className="project">
-{ project ?  (<div>
-            <div className="project__header" ref={projectHeaderRef}>
-                <img className="animate-appear" src={ project.headerImage } />
+{ project ?  (
+    <article>
+        <div className="project__header-text" >
+            <div className="project__header-text__name">
+                <h1>{ project.name }</h1>
+                <span>{ project.textHeader }</span>
             </div>
-            <div ref={projectBodyRef}>
-                <div className="project__text">
-                    <h1 className="project__text__header">{ project.textHeader }</h1>
-                    <div className="project__text__body">
-                        <div className="project__text__body__decription">
-                            <p>{ project.task }</p> 
+            <div className="project__header-text__task">
+                <p>Task:</p>
+                <span>{ project.task }</span>
+            </div>
+        </div>
+        <div className="project__header-image">
+            <img src={ project.headerImage } alt="" />
+        </div>
+        <div className="project__description">
+            <div className="project__description__text">
+                <div className="project__description__text__section">
+                    <h4>Problem:</h4>
+                    <p>
+                        { project.problem }
+                    </p>
+                </div>
+                <div className="project__description__text__section">
+                    <h4>Our Solution:</h4>
+                    <p>
+                        { project.solution }
+                    </p>
+                </div>
+                <div className="project__description__text__section">
+                    <h4>Outcome:</h4>
+                    <p>
+                        { project.outcome }
+                    </p>
+                </div>
+                <div className="project__overview">
+                    <div className="project__overview__header">
+                        Project Overview
+                    </div>
+                    <div className="project__overview__section">
+                        <div>
+                            <div className="project__overview__section__sub-header">Client</div>
+                            <span className="project__overview__section__content">{ project.name }</span>
                         </div>
-                        <div className="project__text__body__list">
-                            <div className="project__text__body__decription">
-                                <p>{ project.solution }</p>
-                            </div>
+                        <div>
+                            <div className="project__overview__section__sub-header">Office</div>
+                            <span className="project__overview__section__content">{ project.office }</span>
                         </div>
                     </div>
-                </div>
-                <div className="project__images">
-                    <AwesomeSlider  mobileTouch={ true } >
-                        { project.images.map((data, index) => <div style={{width: '100%', backgroundColor: 'white'}} key={index}><img className="project__images__image" src={data} alt="hello" /></div>) }
-                    </AwesomeSlider>
-                </div>
-                <div className="project__text">
-                    <div className="project__text__body">
-                    {/* dangerouslySetInnerHTML={{ __html: project.problem }} */}
-                        <div className="project__text__body__decription" >
-                            <p>
-                                { project.problem }
-                            </p>
+                    <div className="project__overview__section">
+                        <div>
+                            <div className="project__overview__section__sub-header">Sector</div>
+                            <span className="project__overview__section__content">{ project.sector }</span>
                         </div>
-                        <div className="project__text__body__list">
-                            <div className="project__text__body__decription" >
-                                <p>
-                                    { project.outcome }
-                                </p>
-                            </div>
+                        <div>
+                            <div className="project__overview__section__sub-header">Team & Partners </div>
+                            <span className="project__overview__section__content">FORZA</span>
                         </div>
+                    </div>
+                    <div>
+                        <div className="project__overview__section__sub-header">Discipline</div>
+                        {project.discipline.map(item => <div className="project__overview__section__content">{ item }</div>)}
                     </div>
                 </div>
             </div>
-        </div>) : <Spinner />}
+            <div className="project__description__images">
+               { project.images.map((item) => <div> <img src={item} /></div>)}
+            </div>
+        </div>
+        
+    </article>
+) : <Spinner />}
 
         </main>
     );
