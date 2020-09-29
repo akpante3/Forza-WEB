@@ -25,6 +25,7 @@ const Team = (props) => {
   }, [])
 
   useEffect(() => {
+    setNavColor('white')
      if (topteamRefVisible && section !== 'header') {
        executeScroll(topteamRef)
        setSection('header')
@@ -32,7 +33,7 @@ const Team = (props) => {
      } else if (teamRefVisible && section !== 'body') {
       executeScroll(teamRef)
       setSection('body')
-      setNavColor('black')
+      // setNavColor('black')
      }
   }, [topteamRefVisible, teamRefVisible])
    
