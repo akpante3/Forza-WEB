@@ -30,12 +30,11 @@ const Contact= (props) => {
         return (
             work.map((data, index) => (
                 <div className="our-works__item" key={index}>
-                    <div className="our-works__item__image">
-                    <img  onClick={() => history.push(`/our-work/projects/${data.id}`)} src={data.data.image} alt="" />
-                    </div>
                     <div className="our-works__item__description">
                         <h2>{ data.data.name }</h2>
-                        <span>{ data.data.service }</span>
+                    </div>
+                    <div className="our-works__item__image">
+                    <img  onClick={() => history.push(`/our-work/projects/${data.id}`)} src={data.data.headerImage} alt="" />
                     </div>
                 </div>
             )) 
@@ -46,7 +45,7 @@ const Contact= (props) => {
   return (
     <main className="our-works">
         <div className="our-works__wrapper">
-            { work.length ?  (<div>
+            { work.length ?  (<div style={{ display: 'flex', flexDirection: "column", justifyContent:'center'}}>
                 <header>Our work</header>
                 <div className="our-works__projects">
                     { Work() }
