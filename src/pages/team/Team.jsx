@@ -26,10 +26,10 @@ const Team = (props) => {
 
   useEffect(() => {
     setNavColor('white')
+    if (window.screen.width < 1200) return
      if (topteamRefVisible && section !== 'header') {
        executeScroll(topteamRef)
        setSection('header')
-       setNavColor('white')
      } else if (teamRefVisible && section !== 'body') {
       executeScroll(teamRef)
       setSection('body')
