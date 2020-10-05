@@ -33,6 +33,7 @@ const About = (props) => {
     if (!paramList.includes(section)) history.push('/404')
   }, [section, history]);   
 
+  
 
   const wheelEvent =  (event, link) => {
     if (event.nativeEvent.wheelDelta > 0) {
