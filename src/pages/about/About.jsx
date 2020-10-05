@@ -22,7 +22,6 @@ const About = (props) => {
   const [whoWeAreRef] = useOnScreen({ threshold: 0.8 })
   const [footerRef] = useOnScreen({ threshold: 0.8 })
   const [ clientRef, clientRefVisible ] = useOnScreen({ threshold: 1.0 })
-  // const { scrollTo, setScrollTo } = useContext(AppContext);
 
   let { section } = useParams();
   let history = useHistory()
