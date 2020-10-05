@@ -38,6 +38,7 @@ const Clients = (props) => {
     'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/client55.png?alt=media&token=efd22740-f162-4aac-8f97-cf7d347cb1dc',
     'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/client8.png?alt=media&token=0fac54b4-aa77-4174-b500-188bc5bc29ed'
   ]
+  
 
   const Logos = () => {
     return images.map((image, index) => <div key={index} className="clients__logo"><img src={image} /></div>)
