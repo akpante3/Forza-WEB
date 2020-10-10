@@ -13,7 +13,7 @@ const Founders = (props) => {
       lastName: 'Ukaiwe',
       image1: 'https://firebasestorage.googleapis.com/v0/b/forza-42793.appspot.com/o/chikodi.png?alt=media&token=83a96309-136a-4b4d-8686-979660efc162',
       image2: 'https://firebasestorage.googleapis.com/v0/b/forza-application.appspot.com/o/Group%205.png?alt=media&token=77a92625-8a64-4868-8750-c52df9b1339e',
-      role: 'Design Partner',
+      role: 'Partner',
       link: '/chikodi-ukaiwe'
     },
       {
