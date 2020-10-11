@@ -50,6 +50,17 @@ const Contact= (props) => {
         });
    }
 
+   const triggerWhatsapp = () => {
+    var yourNumber = "+2348064753028"
+    var yourMessage = "hello"
+    
+      let number = yourNumber
+      let message = yourMessage.split(' ').join('%20')
+    
+      window.open('https://api.whatsapp.com/send?phone=' + number + '&text=%20' + message)
+    
+   }
+
   return (
     <main className="contact">
         <div className="cloud-top">
@@ -108,8 +119,8 @@ const Contact= (props) => {
                 <button type="submit" className="btn">
                     SEND
                 </button>
-                <p className="contact__number">
-                  Call us on +234 709 22345 462
+                <p className="contact__number" onClick={ () => triggerWhatsapp() }>
+                  Whatsapp  +234 709 22345 462
                 </p>
             </form>
         </div>
