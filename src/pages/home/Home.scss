@@ -292,6 +292,9 @@
        height: 50px;
        cursor: pointer;
        animation: direction-icon 1s infinite; 
+        @media(max-width:750px) { 
+            left: 45%;
+        }
     }
 }
 .home-text-body {
