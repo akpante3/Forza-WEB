@@ -56,36 +56,12 @@ const About = (props) => {
             history.push('/about/philosophy')  
           }
         }}
-        // onTouchMove={(event) => {
-        //   let currentY = event.nativeEvent.touches[0].clientY
-        //   if(currentY > lastY){
-        //     return
-        //     // moved down
-        //   } else if(currentY < lastY){
-        //     // moved up
-        //     console.log('moved up')
-        //     history.push('/about/philosophy') 
-        //   }
-        //   lastY = currentY;
-        // }}
         ref={ whoWeAreRef }>
         <WhoWeAre  />
       </div>
 
       <div className={['page-container', 'snap-scroll', section === 'philosophy' ? 'page-container--show' : 'page-container--hide' ].join(' ')} ref={ philosophyRef } 
         onWheel={ event => wheelEvent(event, {to:'who-we-are', from: 'thinking'})}
-        onTouchMove={(event) => {
-          let currentY = event.nativeEvent.touches[0].clientY
-
-          if(currentY > lastY){
-            if (window.scrollY === 0) history.push('/about/who-we-are')
-          } else if(currentY < lastY){
-            if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-              history.push('/about/thinking') 
-            }
-          }
-          lastY = currentY;
-        }}
       >
         <Philosophy />
       </div>
@@ -140,13 +116,6 @@ const About = (props) => {
             executeScroll(footerRef)
           }
         }}
-        // onTouchMove={(event) => {
-        //   let currentY = event.nativeEvent.touches[0].clientY
-        //   if(currentY > lastY){
-        //     if (window.scrollY == 0) history.push('/about/workflow')
-        //   } 
-        //   lastY = currentY;
-        // }}
       >
           <div ref={clientRef}>
             <Client />

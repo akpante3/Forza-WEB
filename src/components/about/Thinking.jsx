@@ -28,7 +28,7 @@ const Thinking = (props) => {
     
 
     return (
-        <div className="thinking snap-scroll" ref={ref} list={aboutNavList}>
+        <div className="thinking snap-scroll" ref={ref}>
             <SideNav visible={visible} list={aboutNavList}/>
             <div>
                 <ThinkingCloud className="thinking__cloud"/>

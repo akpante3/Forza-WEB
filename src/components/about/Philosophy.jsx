@@ -21,13 +21,14 @@ const WhoWeAre = (props) => {
 
     useEffect(() => {
         if(visible) {
-            setAnimate(true)
+            setTimeout(() => {
+                setAnimate(true)
+            }, 3000)
         }
     }, [visible])
 
     return (
-        <div className="philosophy snap-scroll" ref={ref}
->
+        <div className="philosophy snap-scroll" ref={ref}>
         <SideNav visible={ visible } bg='white' list={ aboutNavList } />
         <div>
             <div className="philosophy__text">
@@ -38,8 +39,9 @@ const WhoWeAre = (props) => {
             </div>
         </div>
                 {
-                    animate ? (<ForzaFuse className="philosophy__forza-fuse animate-appear"/>) : ''
+                    visible ? (<ForzaFuse className="philosophy__forza-fuse animate-appear"/>) : ''
                 }
+                
                 <ForzaFuseOff className="philosophy__forza-fuse"/>
         </div>
     );
