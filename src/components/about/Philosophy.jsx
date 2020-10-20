@@ -21,9 +21,9 @@ const WhoWeAre = (props) => {
 
     useEffect(() => {
         if(visible) {
-            setTimeout(() => {
+            // setTimeout(() => {
                 setAnimate(true)
-            }, 3000)
+            // }, 3000)
         }
     }, [visible])
 
