@@ -51,7 +51,7 @@ const Contact= (props) => {
    }
 
    const triggerWhatsapp = () => {
-    var yourNumber = "+2348064753028"
+    var yourNumber = "+2348028949223"
     var yourMessage = "hello"
     
       let number = yourNumber
